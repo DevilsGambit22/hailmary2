@@ -2,12 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1,viewport-fit=cover"
->
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071427">
 
 <title>ACFA Live Dashboard</title>
@@ -15,8 +10,8 @@
 <style>
 :root{
   --bg:#03070d;
-  --panel:#081a31;
-  --panel2:#0c2850;
+  --navy:#06152f;
+  --navy2:#0a2b5d;
   --blue:#12488e;
   --blue2:#1760bb;
   --gold:#d5a73d;
@@ -39,27 +34,10 @@ body{
   margin:0;
   min-height:100vh;
   color:var(--text);
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:
-    radial-gradient(
-      circle at 50% -5%,
-      rgba(22,79,151,.38),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      #06101f,
-      #03070d 72%
-    );
+    radial-gradient(circle at 50% -5%,rgba(22,79,151,.38),transparent 34%),
+    linear-gradient(180deg,#06101f,#03070d 72%);
 }
 
 a{
@@ -70,10 +48,6 @@ a{
 button{
   font:inherit;
 }
-
-/* =========================================================
-   PARTICLES
-   ========================================================= */
 
 #fx{
   position:fixed;
@@ -86,21 +60,13 @@ button{
 .spark{
   position:absolute;
   bottom:-10px;
-
   width:3px;
   height:3px;
-
   border-radius:50%;
-
   background:#f3c85c;
-
-  box-shadow:
-    0 0 8px #f3c85c;
-
+  box-shadow:0 0 8px #f3c85c;
   opacity:.55;
-
-  animation:
-    rise linear infinite;
+  animation:rise linear infinite;
 }
 
 @keyframes rise{
@@ -110,46 +76,26 @@ button{
   }
 }
 
-/* =========================================================
-   MAIN SHELL
-   ========================================================= */
-
 .app{
   position:relative;
   z-index:1;
-
   width:min(100%,470px);
-
   margin:auto;
-
-  padding:
-    8px
-    8px
-    28px;
+  padding:8px 8px 28px;
 }
 
 .frame{
   overflow:hidden;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:20px;
-
   background:
     linear-gradient(
       180deg,
       rgba(8,30,60,.94),
       rgba(4,13,27,.98)
     );
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
-
-/* =========================================================
-   HERO
-   ========================================================= */
 
 .hero{
   position:relative;
@@ -157,24 +103,17 @@ button{
 
 .hero img{
   display:block;
-
   width:100%;
-
-  aspect-ratio:1.5 / 1;
-
+  aspect-ratio:1.5/1;
   object-fit:contain;
-
   background:transparent;
 }
 
 .hero::after{
   content:"";
-
   position:absolute;
   inset:0;
-
   pointer-events:none;
-
   background:
     linear-gradient(
       180deg,
@@ -186,89 +125,47 @@ button{
 .hero-copy{
   position:absolute;
   z-index:2;
-
   left:12px;
   right:12px;
   bottom:10px;
-
   text-align:center;
-
-  text-shadow:
-    0 2px 10px #000;
+  text-shadow:0 2px 10px #000;
 }
 
 .hero-copy h1{
   margin:0;
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:30px;
-
   letter-spacing:.08em;
 }
 
 .hero-copy div{
   color:var(--gold2);
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:13px;
-
   font-style:italic;
 }
 
-/* =========================================================
-   CLOCK
-   ========================================================= */
-
 .clock-card{
   margin:8px;
-
-  padding:
-    10px
-    8px;
-
+  padding:10px 8px;
   text-align:center;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:15px;
-
   background:
     radial-gradient(
       circle at 50% 0,
       rgba(24,92,184,.30),
       rgba(5,18,38,.97) 68%
     );
-
-  box-shadow:
-    inset 0 0 24px rgba(34,102,206,.16),
-    0 8px 22px rgba(0,0,0,.28);
 }
 
 .digital-clock{
   color:#dff4ff;
-
-  font-family:
-    "Courier New",
-    monospace;
-
-  font-size:
-    clamp(
-      28px,
-      9vw,
-      42px
-    );
-
+  font-family:"Courier New",monospace;
+  font-size:clamp(28px,9vw,42px);
   font-weight:700;
-
   letter-spacing:.06em;
-
   text-shadow:
     0 0 6px #58b7ff,
     0 0 16px rgba(34,143,255,.9);
@@ -276,60 +173,32 @@ button{
 
 .digital-date{
   margin-top:2px;
-
   color:var(--gold2);
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:12px;
-
   letter-spacing:.12em;
-
   text-transform:uppercase;
 }
 
 .clock-label{
   margin-top:4px;
-
   color:var(--muted);
-
   font-size:8px;
-
   letter-spacing:.2em;
 }
 
-/* =========================================================
-   STATS
-   ========================================================= */
-
 .stats{
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:6px;
-
-  padding:
-    0
-    8px
-    8px;
+  padding:0 8px 8px;
 }
 
 .stat{
-  padding:
-    9px
-    4px;
-
+  padding:9px 4px;
   text-align:center;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:12px;
-
   background:
     linear-gradient(
       180deg,
@@ -340,103 +209,56 @@ button{
 
 .stat b{
   display:block;
-
   color:var(--gold2);
-
   font-size:17px;
 }
 
 .stat span{
   display:block;
-
   margin-top:2px;
-
   color:var(--muted);
-
   font-size:9px;
-
   letter-spacing:.1em;
-
   text-transform:uppercase;
 }
-
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
 
 .tabs{
   position:sticky;
   top:0;
   z-index:10;
-
   display:grid;
-
-  grid-template-columns:
-    repeat(5,1fr);
-
+  grid-template-columns:repeat(5,1fr);
   gap:5px;
-
-  padding:
-    7px
-    8px;
-
-  background:
-    rgba(3,8,16,.92);
-
-  backdrop-filter:
-    blur(10px);
+  padding:7px 8px;
+  background:rgba(3,8,16,.92);
+  backdrop-filter:blur(10px);
 }
 
 .tab{
   cursor:pointer;
-
-  padding:
-    8px
-    2px;
-
+  padding:8px 2px;
   color:#dfe8f5;
-
   font-size:10px;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:10px;
-
-  background:
-    #0a2449;
-
+  background:#0a2449;
   transition:.2s;
 }
 
 .tab:hover,
 .tab.active{
   transform:translateY(-1px);
-
-  background:
-    #12488e;
-
-  box-shadow:
-    0 0 15px
-    rgba(32,94,184,.42);
+  background:#12488e;
+  box-shadow:0 0 15px rgba(32,94,184,.42);
 }
 
-/* =========================================================
-   PANELS
-   ========================================================= */
-
 .content{
-  padding:
-    0
-    8px
-    8px;
+  padding:0 8px 8px;
 }
 
 .panel{
   display:none;
-
-  animation:
-    fade .2s ease;
+  animation:fade .2s ease;
 }
 
 .panel.active{
@@ -448,468 +270,267 @@ button{
     opacity:0;
     transform:translateY(5px);
   }
-
   to{
     opacity:1;
     transform:none;
   }
 }
 
-/* =========================================================
-   CARDS
-   ========================================================= */
-
 .card{
-  margin:
-    8px
-    0;
-
+  margin:8px 0;
   padding:11px;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:15px;
-
   background:
     linear-gradient(
       145deg,
       rgba(13,45,89,.92),
       rgba(5,18,38,.98)
     );
-
-  box-shadow:
-    var(--shadow);
-
+  box-shadow:var(--shadow);
   transition:.2s;
 }
 
 .card:hover{
-  transform:
-    translateY(-2px);
-
-  box-shadow:
-    0 15px 36px rgba(0,0,0,.46),
-    0 0 18px rgba(37,101,192,.16);
+  transform:translateY(-2px);
 }
 
 .card h2{
-  margin:
-    0
-    0
-    8px;
-
+  margin:0 0 8px;
   color:var(--gold2);
-
-  font:
-    700
-    18px
-    Georgia,
-    serif;
+  font:700 18px Georgia,serif;
 }
-
-/* =========================================================
-   LADY JUSTICE
-   ========================================================= */
 
 .lady{
   display:flex;
-
   gap:10px;
-
   align-items:center;
 }
 
 .lady img{
   width:105px;
   height:145px;
-
   object-fit:contain;
-
   background:transparent;
 }
 
 .lady p{
   margin:0;
-
   color:#dce4f0;
-
   font-size:12px;
-
   line-height:1.5;
 }
 
-/* =========================================================
-   ANNOUNCEMENTS
-   ========================================================= */
-
 .announcement{
   padding:9px;
-
-  border-left:
-    3px solid var(--gold);
-
+  border-left:3px solid var(--gold);
   border-radius:8px;
-
-  background:
-    rgba(255,255,255,.035);
+  background:rgba(255,255,255,.035);
 }
-
-.announcement strong{
-  display:block;
-
-  margin-bottom:4px;
-
-  color:#fff;
-}
-
-/* =========================================================
-   QUICK LINKS
-   ========================================================= */
 
 .links{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:6px;
 }
 
 .links a{
   padding:9px;
-
   text-align:center;
-
   font-size:11px;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:9px;
-
-  background:
-    #0d3470;
-
-  transition:.2s;
+  background:#0d3470;
 }
-
-.links a:hover{
-  transform:translateY(-2px);
-
-  background:
-    #1552a0;
-}
-
-/* =========================================================
-   API STATUS
-   ========================================================= */
 
 .api-status{
   display:flex;
-
   gap:7px;
-
   align-items:center;
 }
 
 .dot{
   width:9px;
   height:9px;
-
-  flex:0 0 auto;
-
   border-radius:50%;
-
   background:#f0b541;
-
-  box-shadow:
-    0 0 8px #f0b541;
 }
 
 .dot.live{
   background:#45d17b;
-
-  box-shadow:
-    0 0 8px #45d17b;
 }
 
 .dot.error{
   background:#ff5d5d;
-
-  box-shadow:
-    0 0 8px #ff5d5d;
 }
 
 .note{
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.5;
 }
 
-/* =========================================================
-   BOARDS
-   ========================================================= */
-
 .board{
   position:relative;
-
-  margin:
-    8px
-    0;
-
+  margin:8px 0;
   overflow:hidden;
-
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:17px;
-
   background:transparent;
-
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 }
 
 .board > img{
   display:block;
-
   width:100%;
   height:auto;
-
   background:transparent;
 }
 
-/* =========================================================
-   NEW MEMBERS
-   ========================================================= */
-
 .member-slots{
   position:absolute;
-
   left:18%;
   right:10%;
-
   top:42.8%;
   bottom:13.4%;
-
   display:grid;
-
-  grid-template-rows:
-    repeat(5,1fr);
-
+  grid-template-rows:repeat(5,1fr);
   gap:1.8%;
 }
 
 .member{
   display:flex;
-
   align-items:center;
-
   min-width:0;
-
-  padding:
-    0
-    3.5%;
-
+  padding:0 3.5%;
   cursor:pointer;
-
   color:#071b33;
-
-  text-shadow:
-    0 1px
-    rgba(255,255,255,.52);
 }
 
 .member img{
   width:36px;
   height:36px;
-
   margin-right:7px;
-
   object-fit:cover;
-
-  border:
-    2px solid #164b8f;
-
+  border:2px solid #164b8f;
   border-radius:50%;
-
   background:#d8e4f4;
 }
 
 .member strong{
   display:block;
-
   max-width:210px;
-
   overflow:hidden;
-
   font-size:14px;
-
   text-overflow:ellipsis;
-
   white-space:nowrap;
 }
 
 .member small{
   display:block;
-
   margin-top:2px;
-
   color:#44576d;
-
   font-size:10px;
 }
 
-/* =========================================================
-   TITLED PLAYERS
-   ========================================================= */
-
 .titled-slots{
   position:absolute;
-
   left:22%;
   right:12%;
-
   top:58%;
   bottom:17%;
-
   display:grid;
-
-  grid-template-rows:
-    repeat(2,1fr);
-
+  grid-template-rows:repeat(2,1fr);
   gap:10%;
 }
 
 .titled-member{
   display:flex;
-
   align-items:center;
-
-  padding:
-    0
-    3%;
-
+  padding:0 3%;
   cursor:pointer;
-
   color:#071b33;
 }
 
 .titled-member img{
   width:42px;
   height:42px;
-
   margin-right:8px;
-
   object-fit:cover;
-
-  border:
-    2px solid #c2942a;
-
+  border:2px solid #c2942a;
   border-radius:50%;
-
   background:#e9eef7;
-}
-
-.titled-member strong{
-  font-size:15px;
 }
 
 .badge{
   display:inline-block;
-
   margin-left:4px;
-
-  padding:
-    2px
-    5px;
-
+  padding:2px 5px;
   color:#fff;
-
   font-size:8px;
-
   border-radius:5px;
-
   background:#b9861d;
 }
 
-/* =========================================================
-   TOURNAMENT
-   ========================================================= */
-
 .countdown{
-  padding:
-    10px
-    0;
-
+  padding:10px 0;
   color:var(--gold2);
-
   font-size:21px;
-
   font-weight:800;
-
   text-align:center;
 }
 
 .status{
   display:inline-block;
-
-  padding:
-    4px
-    7px;
-
+  padding:4px 7px;
   color:#fff;
-
   font-size:10px;
-
   border-radius:999px;
-
   background:#174d98;
 }
 
-/* =========================================================
-   PODIUM
-   ========================================================= */
+.tournament-buttons{
+  display:grid;
+  gap:8px;
+  margin-top:12px;
+}
+
+.tournament-button{
+  display:block;
+  padding:11px 12px;
+  text-align:center;
+  color:#fff;
+  font-weight:700;
+  font-size:12px;
+  border:1px solid var(--ring);
+  border-radius:10px;
+  background:
+    linear-gradient(
+      180deg,
+      #1556a8,
+      #0a2d63
+    );
+}
 
 .podium-stage{
   position:relative;
-
   margin-top:12px;
-
   padding-top:82px;
 }
 
 .podium-art{
   display:block;
-
   width:100%;
   height:auto;
-
-  margin:0;
-
   background:transparent;
-
-  filter:
-    drop-shadow(
-      0 10px 20px
-      rgba(0,0,0,.28)
-    );
 }
 
 .podium-player{
   position:absolute;
-
   z-index:5;
-
   width:29%;
-
   text-align:center;
-
-  transform:
-    translateX(-50%);
+  transform:translateX(-50%);
 }
 
 .podium-player.first{
@@ -928,793 +549,257 @@ button{
 }
 
 .podium-avatar{
-  width:
-    clamp(
-      48px,
-      14vw,
-      68px
-    );
-
-  height:
-    clamp(
-      48px,
-      14vw,
-      68px
-    );
-
+  width:clamp(48px,14vw,68px);
+  height:clamp(48px,14vw,68px);
   object-fit:cover;
-
-  border:
-    3px solid var(--gold2);
-
   border-radius:50%;
-
-  background:#0a2851;
-
-  box-shadow:
-    0 0 14px
-    rgba(255,211,99,.68);
-}
-
-.second .podium-avatar{
-  border-color:#d9dee8;
-
-  box-shadow:
-    0 0 12px
-    rgba(220,230,245,.6);
-}
-
-.third .podium-avatar{
-  border-color:#d47b3b;
-
-  box-shadow:
-    0 0 12px
-    rgba(212,123,59,.6);
+  border:3px solid var(--gold2);
 }
 
 .podium-rank{
-  margin-top:3px;
-
   color:var(--gold2);
-
-  font-family:
-    Georgia,
-    serif;
-
   font-size:10px;
-
   font-weight:700;
-
-  text-shadow:
-    0 2px 4px #000;
 }
 
 .podium-name{
-  overflow:hidden;
-
   color:#fff;
-
   font-size:11px;
-
   font-weight:800;
-
-  text-overflow:ellipsis;
-
-  text-shadow:
-    0 2px 5px #000;
-
   white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
 }
 
 .podium-info{
   color:var(--gold2);
-
   font-size:8px;
-
-  text-shadow:
-    0 2px 4px #000;
 }
 
-/* =========================================================
-   STAFF
-   ========================================================= */
-
-.grid2{
+.staff-grid{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
-  gap:7px;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
 }
 
-.person{
-  padding:9px;
-
-  border:
-    1px solid
-    rgba(255,255,255,.08);
-
-  border-radius:10px;
-
-  background:
-    rgba(255,255,255,.045);
+.staff-person{
+  padding:10px;
+  text-align:center;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  background:rgba(255,255,255,.045);
 }
 
-.person strong{
+.staff-avatar{
   display:block;
+  width:54px;
+  height:54px;
+  margin:0 auto 7px;
+  object-fit:cover;
+  border:2px solid var(--gold);
+  border-radius:50%;
+}
 
+.staff-person strong{
+  display:block;
   font-size:12px;
 }
 
-.person small{
+.staff-person small{
   color:var(--gold2);
-
   font-size:10px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
 .footer{
-  padding:
-    12px
-    0
-    2px;
-
+  padding:12px 0 2px;
   color:#7f8ea3;
-
   font-size:9px;
-
   text-align:center;
-}
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
-@media(max-width:360px){
-
-  .app{
-    padding:5px;
-  }
-
-  .content{
-    padding:
-      0
-      5px
-      5px;
-  }
-
-  .hero-copy h1{
-    font-size:24px;
-  }
-
-  .member img{
-    width:31px;
-    height:31px;
-  }
-
-  .member strong{
-    font-size:12px;
-  }
-
-  .titled-member img{
-    width:36px;
-    height:36px;
-  }
-
-  .titled-member strong{
-    font-size:12px;
-  }
-
-  .podium-name{
-    font-size:9px;
-  }
-
 }
 </style>
 </head>
 
 <body>
 
-<script>
-/*
-  IMPORTANT:
-  Remove the old ACFA service worker and all old caches.
-  This prevents previous versions of index.html from continuing
-  to appear after GitHub has been updated.
-*/
-
-(async function clearOldACFACache(){
-
-  try{
-
-    if("serviceWorker" in navigator){
-
-      const registrations =
-        await navigator.serviceWorker.getRegistrations();
-
-      for(const registration of registrations){
-
-        await registration.unregister();
-
-      }
-
-    }
-
-    if("caches" in window){
-
-      const names =
-        await caches.keys();
-
-      await Promise.all(
-
-        names.map(
-          name =>
-            caches.delete(name)
-        )
-
-      );
-
-    }
-
-    console.log(
-      "Old ACFA service worker/cache cleared."
-    );
-
-  }
-
-  catch(error){
-
-    console.warn(
-      "ACFA cache cleanup:",
-      error
-    );
-
-  }
-
-})();
-</script>
-
 <div id="fx"></div>
 
 <main class="app">
-
 <div class="frame">
 
-<!-- ======================================================
-     HERO
-     ====================================================== -->
-
 <section class="hero">
-
-<img
-  src="assets/images/acfa-emblem.png"
-  alt="And Chess For All"
->
-
-<div class="hero-copy">
-
-<h1>
-ACFA
-</h1>
-
-<div>
-Every Player Belongs • Every Move Matters
-</div>
-
-</div>
-
+  <img src="assets/images/acfa-emblem.png" alt="ACFA">
+  <div class="hero-copy">
+    <h1>ACFA</h1>
+    <div>Every Player Belongs • Every Move Matters</div>
+  </div>
 </section>
-
-<!-- ======================================================
-     BROWSER CLOCK
-     ====================================================== -->
 
 <section class="clock-card">
-
-<div
-  id="digitalClock"
-  class="digital-clock"
->
---:--:--
-</div>
-
-<div
-  id="digitalDate"
-  class="digital-date"
->
-Loading date…
-</div>
-
-<div class="clock-label">
-YOUR LOCAL TIME
-</div>
-
+  <div id="digitalClock" class="digital-clock">--:--:--</div>
+  <div id="digitalDate" class="digital-date">Loading date…</div>
+  <div class="clock-label">YOUR LOCAL TIME</div>
 </section>
-
-<!-- ======================================================
-     STATS
-     ====================================================== -->
 
 <section class="stats">
+  <div class="stat">
+    <b id="membersCount">—</b>
+    <span>Members</span>
+  </div>
 
-<div class="stat">
+  <div class="stat">
+    <b id="titledCount">—</b>
+    <span>Titled</span>
+  </div>
 
-<b id="membersCount">
-—
-</b>
-
-<span>
-Members
-</span>
-
-</div>
-
-<div class="stat">
-
-<b id="titledCount">
-—
-</b>
-
-<span>
-Titled
-</span>
-
-</div>
-
-<div class="stat">
-
-<b id="nextEvent">
-Oct 5
-</b>
-
-<span>
-Next Event
-</span>
-
-</div>
-
+  <div class="stat">
+    <b id="nextEvent">Oct 5</b>
+    <span>Next Event</span>
+  </div>
 </section>
 
-<!-- ======================================================
-     NAVIGATION
-     ====================================================== -->
-
 <nav class="tabs">
-
-<button
-  class="tab active"
-  data-go="home"
->
-Home
-</button>
-
-<button
-  class="tab"
-  data-go="members"
->
-Members
-</button>
-
-<button
-  class="tab"
-  data-go="titled"
->
-Titled
-</button>
-
-<button
-  class="tab"
-  data-go="tourney"
->
-Tourney
-</button>
-
-<button
-  class="tab"
-  data-go="staff"
->
-Staff
-</button>
-
+  <button class="tab active" data-go="home">Home</button>
+  <button class="tab" data-go="members">Members</button>
+  <button class="tab" data-go="titled">Titled</button>
+  <button class="tab" data-go="tourney">Tourney</button>
+  <button class="tab" data-go="staff">Staff</button>
 </nav>
 
 <div class="content">
 
-<!-- ======================================================
-     HOME
-     ====================================================== -->
+<section id="home" class="panel active">
 
-<section
-  id="home"
-  class="panel active"
->
+  <article class="card lady">
+    <img src="assets/images/lady-justice.png" alt="Lady Justice">
 
-<article class="card lady">
+    <div>
+      <h2>Welcome to ACFA</h2>
+      <p>
+        Different people. Same passion. One community.
+        Member data loads directly from Chess.com.
+      </p>
+    </div>
+  </article>
 
-<img
-  src="assets/images/lady-justice.png"
-  alt="ACFA Lady Justice"
->
+  <article class="card">
+    <h2>Announcements</h2>
 
-<div>
+    <div class="announcement">
+      <strong>ACFA Fall Championship</strong>
+      Registration is open through October 4.
+    </div>
+  </article>
 
-<h2>
-Welcome to ACFA
-</h2>
+  <article class="card">
+    <h2>Quick Links</h2>
 
-<p>
-Different people. Same passion. One community.
-The member count, newest members, titled players,
-avatars, and ratings are loaded directly from
-Chess.com's public API.
-</p>
+    <div class="links">
+      <a href="https://www.chess.com/clubs/forum/and-chess-for-all-official" target="_blank">Forums</a>
+      <a href="https://www.chess.com/clubs/events/and-chess-for-all-official" target="_blank">Events</a>
+      <a href="https://www.chess.com/club/and-chess-for-all-official" target="_blank">Club</a>
+      <a href="https://www.chess.com/club/notes/and-chess-for-all-official" target="_blank">Notes</a>
+    </div>
+  </article>
 
-</div>
+  <article class="card">
+    <h2>Chess.com PubAPI</h2>
 
-</article>
+    <div class="api-status">
+      <span id="apiDot" class="dot"></span>
+      <strong id="apiStatus">Connecting…</strong>
+    </div>
 
-<article class="card">
-
-<h2>
-Announcements
-</h2>
-
-<div class="announcement">
-
-<strong>
-ACFA Fall Championship
-</strong>
-
-Registration is open through October 4.
-The tournament begins October 5.
-
-</div>
-
-</article>
-
-<article class="card">
-
-<h2>
-Quick Links
-</h2>
-
-<div class="links">
-
-<a
-  target="_blank"
-  href="https://www.chess.com/clubs/forum/and-chess-for-all-official"
->
-Forums
-</a>
-
-<a
-  target="_blank"
-  href="https://www.chess.com/clubs/events/and-chess-for-all-official"
->
-Events
-</a>
-
-<a
-  target="_blank"
-  href="https://www.chess.com/club/and-chess-for-all-official"
->
-Club
-</a>
-
-<a
-  target="_blank"
-  href="https://www.chess.com/club/notes/and-chess-for-all-official"
->
-Notes
-</a>
-
-</div>
-
-</article>
-
-<article class="card">
-
-<h2>
-Chess.com PubAPI
-</h2>
-
-<div class="api-status">
-
-<span
-  id="apiDot"
-  class="dot"
-></span>
-
-<strong id="apiStatus">
-Connecting…
-</strong>
-
-</div>
-
-<div
-  id="apiDetails"
-  class="note"
->
-Requesting ACFA public data directly from Chess.com.
-</div>
-
-</article>
+    <div id="apiDetails" class="note">
+      Loading public ACFA data.
+    </div>
+  </article>
 
 </section>
 
-<!-- ======================================================
-     NEW MEMBERS
-     ====================================================== -->
+<section id="members" class="panel">
 
-<section
-  id="members"
-  class="panel"
->
-
-<div class="board">
-
-<img
-  src="assets/images/new-members-board.png"
-  alt="ACFA New Members"
->
-
-<div
-  id="memberSlots"
-  class="member-slots"
-></div>
-
-</div>
+  <div class="board">
+    <img src="assets/images/new-members-board.png" alt="New Members">
+    <div id="memberSlots" class="member-slots"></div>
+  </div>
 
 </section>
 
-<!-- ======================================================
-     TITLED
-     ====================================================== -->
+<section id="titled" class="panel">
 
-<section
-  id="titled"
-  class="panel"
->
-
-<div class="board">
-
-<img
-  src="assets/images/titled-players-board.png"
-  alt="ACFA Titled Players"
->
-
-<div
-  id="titledSlots"
-  class="titled-slots"
-></div>
-
-</div>
+  <div class="board">
+    <img src="assets/images/titled-players-board.png" alt="Titled Players">
+    <div id="titledSlots" class="titled-slots"></div>
+  </div>
 
 </section>
 
-<!-- ======================================================
-     TOURNAMENT
-     ====================================================== -->
+<section id="tourney" class="panel">
 
-<section
-  id="tourney"
-  class="panel"
->
+  <article class="card">
 
-<article class="card">
+    <h2>ACFA Seasonal Tournaments</h2>
 
-<h2>
-ACFA Fall Championship
-</h2>
+    <span id="tourneyStatus" class="status">
+      Registration Open
+    </span>
 
-<span
-  class="status"
-  id="tourneyStatus"
->
-Registration Open
-</span>
+    <div id="countdown" class="countdown">—</div>
 
-<div
-  class="countdown"
-  id="countdown"
->
-—
-</div>
+    <div id="tournamentButtons" class="tournament-buttons"></div>
 
-<div class="note">
-Starts October 5, 2026
-</div>
+  </article>
 
-</article>
+  <article class="card">
 
-<article class="card">
+    <h2>Champions Podium</h2>
 
-<h2>
-Champions Podium
-</h2>
+    <div class="podium-stage">
 
-<div class="podium-stage">
+      <div id="podiumSecond" class="podium-player second">
+        <img class="podium-avatar" src="assets/icons/logo.svg">
+        <div class="podium-rank">2ND PLACE</div>
+        <div class="podium-name">To Be Crowned</div>
+        <div class="podium-info">—</div>
+      </div>
 
-<div
-  id="podiumSecond"
-  class="podium-player second"
->
+      <div id="podiumFirst" class="podium-player first">
+        <img class="podium-avatar" src="assets/icons/logo.svg">
+        <div class="podium-rank">1ST PLACE</div>
+        <div class="podium-name">To Be Crowned</div>
+        <div class="podium-info">—</div>
+      </div>
 
-<img
-  class="podium-avatar"
-  src="assets/icons/logo.svg"
-  alt=""
->
+      <div id="podiumThird" class="podium-player third">
+        <img class="podium-avatar" src="assets/icons/logo.svg">
+        <div class="podium-rank">3RD PLACE</div>
+        <div class="podium-name">To Be Crowned</div>
+        <div class="podium-info">—</div>
+      </div>
 
-<div class="podium-rank">
-2ND PLACE
-</div>
+      <img
+        class="podium-art"
+        src="assets/images/acfa-champions-podium.png"
+        alt="Champions Podium"
+      >
 
-<div class="podium-name">
-To Be Crowned
-</div>
+    </div>
 
-<div class="podium-info">
-—
-</div>
-
-</div>
-
-<div
-  id="podiumFirst"
-  class="podium-player first"
->
-
-<img
-  class="podium-avatar"
-  src="assets/icons/logo.svg"
-  alt=""
->
-
-<div class="podium-rank">
-1ST PLACE
-</div>
-
-<div class="podium-name">
-To Be Crowned
-</div>
-
-<div class="podium-info">
-—
-</div>
-
-</div>
-
-<div
-  id="podiumThird"
-  class="podium-player third"
->
-
-<img
-  class="podium-avatar"
-  src="assets/icons/logo.svg"
-  alt=""
->
-
-<div class="podium-rank">
-3RD PLACE
-</div>
-
-<div class="podium-name">
-To Be Crowned
-</div>
-
-<div class="podium-info">
-—
-</div>
-
-</div>
-
-<img
-  class="podium-art"
-  src="assets/images/acfa-champions-podium.png"
-  alt="ACFA Champions Podium"
->
-
-</div>
-
-</article>
+  </article>
 
 </section>
 
-<!-- ======================================================
-     STAFF
-     ====================================================== -->
+<section id="staff" class="panel">
 
-<section
-  id="staff"
-  class="panel"
->
-
-<article class="card">
-
-<h2>
-ACFA Staff
-</h2>
-
-<div class="grid2">
-
-<a
-  class="person"
-  target="_blank"
-  href="https://www.chess.com/member/DevilsGambit22"
->
-
-<strong>
-DevilsGambit22
-</strong>
-
-<small>
-Owner
-</small>
-
-</a>
-
-<a
-  class="person"
-  target="_blank"
-  href="https://www.chess.com/member/SaintsGambit98"
->
-
-<strong>
-SaintsGambit98
-</strong>
-
-<small>
-Co-Owner
-</small>
-
-</a>
-
-<a
-  class="person"
-  target="_blank"
-  href="https://www.chess.com/member/OfficialLadyJustice"
->
-
-<strong>
-OfficialLadyJustice
-</strong>
-
-<small>
-Mascot
-</small>
-
-</a>
-
-<a
-  class="person"
-  target="_blank"
-  href="https://www.chess.com/member/Bgeerr"
->
-
-<strong>
-Bgeerr
-</strong>
-
-<small>
-Head of Staff
-</small>
-
-</a>
-
-</div>
-
-</article>
+  <article class="card">
+    <h2>ACFA Staff</h2>
+    <div id="staffGrid" class="staff-grid"></div>
+  </article>
 
 </section>
 
 <div class="footer">
-And Chess For All Official • ACFA Live Dashboard
+  And Chess For All Official
 </div>
 
 </div>
@@ -1722,28 +807,15 @@ And Chess For All Official • ACFA Live Dashboard
 </main>
 
 <script>
-/* =========================================================
-   CONFIG
-   ========================================================= */
+const API = "https://api.chess.com/pub";
 
-const API =
-  "https://api.chess.com/pub";
+const CLUB_SLUG = "and-chess-for-all-official";
 
-const CLUB_SLUG =
-  "and-chess-for-all-official";
+const FALLBACK_AVATAR = "assets/icons/logo.svg";
 
-const FALLBACK_AVATAR =
-  "assets/icons/logo.svg";
+const FALL_START = new Date("2026-10-05T00:00:00-05:00");
 
-const FALL_START =
-  new Date(
-    "2026-10-05T00:00:00-05:00"
-  );
-
-const FALL_CLOSE =
-  new Date(
-    "2026-10-04T23:59:59-05:00"
-  );
+const FALL_CLOSE = new Date("2026-10-04T23:59:59-05:00");
 
 const TITLE_CODES = [
   "GM",
@@ -1758,299 +830,132 @@ const TITLE_CODES = [
   "WCM"
 ];
 
-const sleep =
-  ms =>
-    new Promise(
-      resolve =>
-        setTimeout(
-          resolve,
-          ms
-        )
-    );
+const sleep = ms =>
+  new Promise(resolve => setTimeout(resolve, ms));
 
-/* =========================================================
-   HELPERS
-   ========================================================= */
-
-function esc(
-  value = ""
-){
-
+function esc(value = ""){
   return String(value).replace(
-
     /[&<>"']/g,
-
     char => ({
-
       "&":"&amp;",
       "<":"&lt;",
       ">":"&gt;",
       '"':"&quot;",
       "'":"&#039;"
-
     })[char]
-
   );
-
 }
 
-function profileURL(
-  username
-){
-
-  return (
-    "https://www.chess.com/member/" +
-    encodeURIComponent(
-      username
-    )
-  );
-
+function profileURL(username){
+  return "https://www.chess.com/member/" + encodeURIComponent(username);
 }
 
-/* =========================================================
-   CHESS.COM PUBAPI
-   ========================================================= */
+async function getJSON(path, fallback){
 
-async function chessFetch(
-  path,
-  attempts = 3
-){
+  try{
 
-  const url =
-    API +
-    path;
-
-  let lastError;
-
-  for(
-    let attempt = 0;
-    attempt < attempts;
-    attempt++
-  ){
-
-    try{
-
-      const response =
-        await fetch(
-          url,
-          {
-            method:"GET",
-            mode:"cors",
-            cache:"no-store",
-            headers:{
-              "Accept":"application/json"
-            }
-          }
-        );
-
-      if(
-        response.status === 429
-      ){
-
-        const wait =
-          1200 *
-          (
-            attempt + 1
-          );
-
-        await sleep(
-          wait
-        );
-
-        continue;
-
+    const response = await fetch(
+      path + "?v=" + Date.now(),
+      {
+        cache:"no-store"
       }
+    );
 
-      if(
-        !response.ok
-      ){
-
-        throw new Error(
-          "Chess.com HTTP " +
-          response.status
-        );
-
-      }
-
-      return await response.json();
-
+    if(!response.ok){
+      throw new Error("HTTP " + response.status);
     }
 
-    catch(error){
-
-      lastError =
-        error;
-
-      if(
-        attempt <
-        attempts - 1
-      ){
-
-        await sleep(
-          700 *
-          (
-            attempt + 1
-          )
-        );
-
-      }
-
-    }
+    return await response.json();
 
   }
 
-  throw (
-    lastError ||
-    new Error(
-      "Chess.com API request failed"
-    )
+  catch(error){
+
+    console.warn(path, error);
+
+    return fallback;
+
+  }
+
+}
+
+async function chessFetch(path){
+
+  const response = await fetch(
+    API + path,
+    {
+      cache:"no-store"
+    }
   );
 
-}
-
-/* =========================================================
-   CLUB MEMBERS
-   ========================================================= */
-
-function normalizeMember(
-  item
-){
-
-  if(
-    typeof item === "string"
-  ){
-
-    return {
-      username:item,
-      joined:0,
-      title:""
-    };
-
+  if(!response.ok){
+    throw new Error("Chess.com HTTP " + response.status);
   }
 
-  if(
-    item &&
-    typeof item === "object"
-  ){
-
-    return {
-      username:
-        item.username ||
-        "",
-
-      joined:
-        Number(
-          item.joined ||
-          0
-        ),
-
-      title:
-        item.title ||
-        ""
-    };
-
-  }
-
-  return null;
+  return await response.json();
 
 }
 
-function parseClubMembers(
-  data
-){
+function parseClubMembers(data){
 
   const collection = [];
 
-  [
-    "weekly",
-    "monthly",
-    "all_time"
-  ]
-  .forEach(
-    bucket => {
+  ["weekly","monthly","all_time"].forEach(bucket => {
 
-      const list =
-        Array.isArray(
-          data?.[bucket]
-        )
-        ?
-        data[bucket]
-        :
-        [];
+    const list =
+      Array.isArray(data?.[bucket])
+      ?
+      data[bucket]
+      :
+      [];
 
-      list.forEach(
-        raw => {
+    list.forEach(item => {
 
-          const member =
-            normalizeMember(
-              raw
-            );
+      if(typeof item === "string"){
 
-          if(
-            member?.username
-          ){
-
-            collection.push(
-              member
-            );
-
-          }
-
-        }
-      );
-
-    }
-  );
-
-  const unique =
-    new Map();
-
-  collection.forEach(
-    member => {
-
-      const key =
-        member.username
-        .toLowerCase();
-
-      const existing =
-        unique.get(
-          key
-        );
-
-      if(
-        !existing ||
-        member.joined >
-        existing.joined
-      ){
-
-        unique.set(
-          key,
-          member
-        );
+        collection.push({
+          username:item,
+          joined:0,
+          title:""
+        });
 
       }
 
-    }
-  );
+      else if(item?.username){
 
-  return (
-    [...unique.values()]
-    .sort(
-      (a,b) =>
-        b.joined -
-        a.joined
-    )
+        collection.push({
+          username:item.username,
+          joined:Number(item.joined || 0),
+          title:item.title || ""
+        });
+
+      }
+
+    });
+
+  });
+
+  const unique = new Map();
+
+  collection.forEach(member => {
+
+    const key = member.username.toLowerCase();
+
+    const existing = unique.get(key);
+
+    if(!existing || member.joined > existing.joined){
+      unique.set(key, member);
+    }
+
+  });
+
+  return [...unique.values()].sort(
+    (a,b) => b.joined - a.joined
   );
 
 }
 
-/* =========================================================
-   RATINGS
-   ========================================================= */
-
-function getBestRating(
-  stats
-){
+function bestRating(stats){
 
   const ratings = [];
 
@@ -2059,820 +964,348 @@ function getBestRating(
     "chess_blitz",
     "chess_bullet",
     "chess_daily"
-  ]
-  .forEach(
-    key => {
+  ].forEach(key => {
 
-      const rating =
-        stats?.[key]
-        ?.last
-        ?.rating;
+    const rating =
+      stats?.[key]?.last?.rating;
 
-      if(
-        Number.isFinite(
-          rating
-        )
-      ){
-
-        ratings.push(
-          rating
-        );
-
-      }
-
+    if(Number.isFinite(rating)){
+      ratings.push(rating);
     }
-  );
 
-  return (
-    ratings.length
-    ?
-    Math.max(
-      ...ratings
-    )
-    :
-    0
-  );
+  });
+
+  return ratings.length
+    ? Math.max(...ratings)
+    : 0;
 
 }
 
-/* =========================================================
-   PLAYER DETAILS
-   ========================================================= */
-
-async function enrichPlayer(
-  member
-){
+async function enrichPlayer(member){
 
   const username =
-
-    typeof member ===
-    "string"
-
+    typeof member === "string"
     ?
-
     member
-
     :
-
     member.username;
-
-  const existingTitle =
-
-    typeof member ===
-    "object"
-
-    ?
-
-    member.title || ""
-
-    :
-
-    "";
 
   let profile = {};
   let stats = {};
 
   try{
-
-    profile =
-      await chessFetch(
-
-        "/player/" +
-
-        encodeURIComponent(
-          username
-        )
-
-      );
-
-  }
-
-  catch(error){
-
-    console.warn(
-      "Profile request failed:",
-      username,
-      error
+    profile = await chessFetch(
+      "/player/" +
+      encodeURIComponent(username)
     );
-
   }
+  catch{}
 
-  await sleep(
-    250
-  );
+  await sleep(250);
 
   try{
-
-    stats =
-      await chessFetch(
-
-        "/player/" +
-
-        encodeURIComponent(
-          username
-        ) +
-
-        "/stats"
-
-      );
-
-  }
-
-  catch(error){
-
-    console.warn(
-      "Stats request failed:",
-      username,
-      error
+    stats = await chessFetch(
+      "/player/" +
+      encodeURIComponent(username) +
+      "/stats"
     );
-
   }
-
-  await sleep(
-    250
-  );
+  catch{}
 
   return {
-
     username,
-
-    avatar:
-      profile.avatar ||
-      FALLBACK_AVATAR,
-
-    title:
-      profile.title ||
-      existingTitle ||
-      "",
-
-    rating:
-      getBestRating(
-        stats
-      )
-
+    avatar:profile.avatar || FALLBACK_AVATAR,
+    title:profile.title || member.title || "",
+    rating:bestRating(stats)
   };
 
 }
 
-/* =========================================================
-   NEWEST MEMBER BOARD
-   ========================================================= */
+async function loadChessComData(){
 
-async function renderNewestMembers(
-  members
-){
+  const dot = document.getElementById("apiDot");
+  const status = document.getElementById("apiStatus");
+  const details = document.getElementById("apiDetails");
 
-  const box =
-    document.getElementById(
-      "memberSlots"
+  try{
+
+    const club = await chessFetch(
+      "/club/" +
+      CLUB_SLUG
     );
 
-  box.innerHTML =
-    "";
+    await sleep(300);
 
-  const newest =
-    members.slice(
-      0,
-      5
+    const memberData = await chessFetch(
+      "/club/" +
+      CLUB_SLUG +
+      "/members"
     );
 
-  const players = [];
+    const members = parseClubMembers(memberData);
 
-  /*
-    SERIAL REQUESTS.
+    document.getElementById("membersCount").textContent =
+      club.members_count ?? members.length;
 
-    This is intentional.
-    Do not change this to Promise.all().
-  */
+    const newest = members.slice(0,5);
 
-  for(
-    const member
-    of newest
-  ){
+    const memberBox =
+      document.getElementById("memberSlots");
 
-    const player =
-      await enrichPlayer(
-        member
-      );
+    memberBox.innerHTML = "";
 
-    players.push(
-      player
-    );
+    for(const member of newest){
 
-    await sleep(
-      200
-    );
+      const player = await enrichPlayer(member);
 
-  }
+      const row = document.createElement("div");
 
-  while(
-    players.length < 5
-  ){
-
-    players.push({
-
-      username:
-        "Waiting for member",
-
-      avatar:
-        FALLBACK_AVATAR,
-
-      rating:
-        0
-
-    });
-
-  }
-
-  players.forEach(
-    player => {
-
-      const row =
-        document.createElement(
-          "div"
-        );
-
-      row.className =
-        "member";
+      row.className = "member";
 
       row.innerHTML = `
-
-        <img
-          src="${esc(player.avatar)}"
-          alt=""
-        >
-
+        <img src="${esc(player.avatar)}">
         <div>
-
-          <strong>
-            ${esc(player.username)}
-          </strong>
-
-          <small>
-
-            ${
-              player.rating
-
-              ?
-
-              player.rating +
-              " rating"
-
-              :
-
-              "ACFA member"
-            }
-
-          </small>
-
+          <strong>${esc(player.username)}</strong>
+          <small>${player.rating || "ACFA member"}</small>
         </div>
-
       `;
 
-      if(
-        !player.username
-        .startsWith(
-          "Waiting"
-        )
-      ){
-
-        row.onclick =
-          () => {
-
-            window.open(
-              profileURL(
-                player.username
-              ),
-              "_blank"
-            );
-
-          };
-
-      }
-
-      box.appendChild(
-        row
-      );
-
-    }
-  );
-
-}
-
-/* =========================================================
-   TITLED PLAYERS
-   ========================================================= */
-
-async function findTitledPlayers(
-  members
-){
-
-  const clubMembers =
-    new Map(
-
-      members.map(
-        member => [
-
-          member.username
-          .toLowerCase(),
-
-          member
-
-        ]
-      )
-
-    );
-
-  const found =
-    new Map();
-
-  /*
-    Search Chess.com's official title lists.
-
-    As soon as two ACFA members are found,
-    stop requesting additional title lists.
-  */
-
-  for(
-    const title
-    of TITLE_CODES
-  ){
-
-    if(
-      found.size >= 2
-    ){
-
-      break;
-
-    }
-
-    try{
-
-      const data =
-        await chessFetch(
-
-          "/titled/" +
-          title
-
+      row.onclick =
+        () => window.open(
+          profileURL(player.username),
+          "_blank"
         );
 
-      const usernames =
+      memberBox.appendChild(row);
 
-        Array.isArray(
-          data?.players
-        )
+      await sleep(200);
 
-        ?
+    }
 
-        data.players
+    const memberMap = new Map(
+      members.map(m => [
+        m.username.toLowerCase(),
+        m
+      ])
+    );
 
-        :
+    const titledFound = [];
 
-        [];
+    for(const title of TITLE_CODES){
 
-      for(
-        const username
-        of usernames
-      ){
+      if(titledFound.length >= 2){
+        break;
+      }
 
-        const key =
-          String(
-            username
-          )
-          .toLowerCase();
+      try{
 
-        const clubMember =
-          clubMembers.get(
-            key
-          );
+        const data = await chessFetch(
+          "/titled/" + title
+        );
 
-        if(
-          clubMember &&
-          !found.has(
-            key
-          )
-        ){
+        for(const username of data.players || []){
 
-          found.set(
-            key,
-            {
-              ...clubMember,
-              username,
-              title
-            }
-          );
+          const member =
+            memberMap.get(
+              username.toLowerCase()
+            );
 
           if(
-            found.size >= 2
+            member &&
+            !titledFound.some(
+              x =>
+                x.username.toLowerCase() ===
+                username.toLowerCase()
+            )
           ){
 
-            break;
+            titledFound.push({
+              ...member,
+              username,
+              title
+            });
+
+            if(titledFound.length >= 2){
+              break;
+            }
 
           }
 
         }
 
       }
+      catch{}
+
+      await sleep(200);
 
     }
 
-    catch(error){
+    const titledBox =
+      document.getElementById("titledSlots");
 
-      console.warn(
-        "Title list failed:",
-        title,
-        error
-      );
+    titledBox.innerHTML = "";
 
-    }
+    for(const member of titledFound){
 
-    await sleep(
-      250
-    );
-
-  }
-
-  const detailed = [];
-
-  for(
-    const member
-    of [...found.values()]
-  ){
-
-    detailed.push(
-
-      await enrichPlayer(
-        member
-      )
-
-    );
-
-    await sleep(
-      200
-    );
-
-  }
-
-  return detailed;
-
-}
-
-function renderTitledPlayers(
-  players
-){
-
-  const box =
-    document.getElementById(
-      "titledSlots"
-    );
-
-  box.innerHTML =
-    "";
-
-  const rows =
-    [...players];
-
-  while(
-    rows.length < 2
-  ){
-
-    rows.push({
-
-      username:
-        "Waiting for titled player",
-
-      title:
-        "TITLE",
-
-      avatar:
-        FALLBACK_AVATAR,
-
-      rating:
-        0
-
-    });
-
-  }
-
-  rows
-  .slice(
-    0,
-    2
-  )
-  .forEach(
-    player => {
+      const player = await enrichPlayer(member);
 
       const row =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
-      row.className =
-        "titled-member";
+      row.className = "titled-member";
 
       row.innerHTML = `
-
-        <img
-          src="${esc(player.avatar)}"
-          alt=""
-        >
-
+        <img src="${esc(player.avatar)}">
         <div>
-
           <strong>
-
             ${esc(player.username)}
-
-            <span class="badge">
-
-              ${esc(
-                player.title ||
-                "TITLE"
-              )}
-
-            </span>
-
+            <span class="badge">${esc(player.title)}</span>
           </strong>
-
-          <small>
-
-            ${
-              player.rating
-
-              ?
-
-              player.rating +
-              " rating"
-
-              :
-
-              "Titled player"
-            }
-
-          </small>
-
+          <small>${player.rating || "Titled Player"}</small>
         </div>
-
       `;
 
-      if(
-        !player.username
-        .startsWith(
-          "Waiting"
-        )
-      ){
+      row.onclick =
+        () => window.open(
+          profileURL(player.username),
+          "_blank"
+        );
 
-        row.onclick =
-          () => {
-
-            window.open(
-              profileURL(
-                player.username
-              ),
-              "_blank"
-            );
-
-          };
-
-      }
-
-      box.appendChild(
-        row
-      );
+      titledBox.appendChild(row);
 
     }
-  );
 
-}
+    document.getElementById("titledCount").textContent =
+      titledFound.length;
 
-/* =========================================================
-   LOAD ACFA CHESS.COM DATA
-   ========================================================= */
-
-async function loadChessComData(){
-
-  const dot =
-    document.getElementById(
-      "apiDot"
-    );
-
-  const status =
-    document.getElementById(
-      "apiStatus"
-    );
-
-  const details =
-    document.getElementById(
-      "apiDetails"
-    );
-
-  dot.classList.remove(
-    "live",
-    "error"
-  );
-
-  status.textContent =
-    "Connecting…";
-
-  details.textContent =
-    "Requesting ACFA public data directly from Chess.com.";
-
-  try{
-
-    /*
-      STEP 1
-      Club data.
-    */
-
-    const club =
-      await chessFetch(
-
-        "/club/" +
-        CLUB_SLUG
-
-      );
-
-    /*
-      STEP 2
-      Small pause before next Chess.com request.
-    */
-
-    await sleep(
-      350
-    );
-
-    /*
-      STEP 3
-      Club member list.
-    */
-
-    const memberData =
-      await chessFetch(
-
-        "/club/" +
-        CLUB_SLUG +
-        "/members"
-
-      );
-
-    const members =
-      parseClubMembers(
-        memberData
-      );
-
-    /*
-      MEMBER COUNT
-    */
-
-    document
-    .getElementById(
-      "membersCount"
-    )
-    .textContent =
-
-      Number.isFinite(
-        club?.members_count
-      )
-
-      ?
-
-      club.members_count
-
-      :
-
-      members.length;
-
-    /*
-      NEW MEMBERS
-    */
-
-    await renderNewestMembers(
-      members
-    );
-
-    /*
-      TITLED MEMBERS
-    */
-
-    const titled =
-      await findTitledPlayers(
-        members
-      );
-
-    document
-    .getElementById(
-      "titledCount"
-    )
-    .textContent =
-      titled.length;
-
-    renderTitledPlayers(
-      titled
-    );
-
-    /*
-      CONNECTED
-    */
-
-    dot.classList.add(
-      "live"
-    );
+    dot.classList.add("live");
 
     status.textContent =
       "Chess.com PubAPI Connected";
 
     details.textContent =
-
-      "Loaded " +
-
-      members.length +
-
-      " ACFA members directly from Chess.com at " +
-
-      new Date()
-      .toLocaleTimeString();
+      "Live ACFA public data loaded.";
 
   }
 
   catch(error){
 
-    console.error(
-      "ACFA PubAPI:",
-      error
-    );
-
-    dot.classList.add(
-      "error"
-    );
+    dot.classList.add("error");
 
     status.textContent =
       "Chess.com PubAPI Error";
 
     details.textContent =
-
-      error?.message ||
-
-      "Unable to load Chess.com public club data.";
+      error.message;
 
   }
 
 }
 
-/* =========================================================
-   GITHUB CHAMPIONS JSON
-   ========================================================= */
+async function loadTournamentButtons(){
+
+  const tournaments =
+    await getJSON(
+      "generated/tournaments.json",
+      []
+    );
+
+  const container =
+    document.getElementById("tournamentButtons");
+
+  container.innerHTML = "";
+
+  tournaments
+    .filter(t => t.active && t.url)
+    .forEach(tournament => {
+
+      const button =
+        document.createElement("a");
+
+      button.className =
+        "tournament-button";
+
+      button.href =
+        tournament.url;
+
+      button.target =
+        "_blank";
+
+      button.textContent =
+        tournament.button ||
+        tournament.name ||
+        "Open Tournament";
+
+      container.appendChild(button);
+
+    });
+
+}
+
+async function loadStaff(){
+
+  const staff =
+    await getJSON(
+      "generated/staff.json",
+      []
+    );
+
+  const container =
+    document.getElementById("staffGrid");
+
+  container.innerHTML = "";
+
+  staff.sort(
+    (a,b) =>
+      (a.order || 999) -
+      (b.order || 999)
+  );
+
+  for(const member of staff){
+
+    const player =
+      await enrichPlayer(member);
+
+    const card =
+      document.createElement("a");
+
+    card.className =
+      "staff-person";
+
+    card.href =
+      profileURL(member.username);
+
+    card.target =
+      "_blank";
+
+    card.innerHTML = `
+      <img
+        class="staff-avatar"
+        src="${esc(player.avatar)}"
+      >
+      <strong>${esc(member.username)}</strong>
+      <small>${esc(member.role)}</small>
+    `;
+
+    container.appendChild(card);
+
+    await sleep(200);
+
+  }
+
+}
 
 async function loadChampions(){
 
-  let champions = {
-
-    first:"",
-    second:"",
-    third:""
-
-  };
-
-  try{
-
-    const response =
-      await fetch(
-
-        "generated/champions.json?v=" +
-        Date.now(),
-
-        {
-          cache:"no-store"
-        }
-
-      );
-
-    if(
-      response.ok
-    ){
-
-      const data =
-        await response.json();
-
-      champions =
-
-        data["fall-2026"]
-
-        ||
-
-        data;
-
-    }
-
-  }
-
-  catch(error){
-
-    console.warn(
-      "Champions JSON:",
-      error
+  const champions =
+    await getJSON(
+      "generated/champions.json",
+      {
+        first:"",
+        second:"",
+        third:""
+      }
     );
-
-  }
 
   await populatePodium(
     "podiumFirst",
@@ -2900,24 +1333,8 @@ async function populatePodium(
   rank
 ){
 
-  const element =
-    document.getElementById(
-      id
-    );
-
-  element
-  .querySelector(
-    ".podium-rank"
-  )
-  .textContent =
-    rank;
-
-  if(
-    !username
-  ){
-
+  if(!username){
     return;
-
   }
 
   const player =
@@ -2925,88 +1342,33 @@ async function populatePodium(
       username
     });
 
-  element
-  .querySelector(
-    ".podium-avatar"
-  )
-  .src =
+  const element =
+    document.getElementById(id);
+
+  element.querySelector(".podium-avatar").src =
     player.avatar;
 
-  element
-  .querySelector(
-    ".podium-name"
-  )
-  .textContent =
+  element.querySelector(".podium-rank").textContent =
+    rank;
+
+  element.querySelector(".podium-name").textContent =
     player.username;
 
-  const information = [];
-
-  if(
-    player.title
-  ){
-
-    information.push(
-      player.title
-    );
-
-  }
-
-  if(
-    player.rating
-  ){
-
-    information.push(
+  element.querySelector(".podium-info").textContent =
+    [
+      player.title,
       player.rating
-    );
-
-  }
-
-  element
-  .querySelector(
-    ".podium-info"
-  )
-  .textContent =
-
-    information.join(
-      " • "
-    )
-
-    ||
-
-    "ACFA Champion";
-
-  element.style.cursor =
-    "pointer";
-
-  element.onclick =
-    () => {
-
-      window.open(
-        profileURL(
-          player.username
-        ),
-        "_blank"
-      );
-
-    };
+    ]
+    .filter(Boolean)
+    .join(" • ");
 
 }
 
-/* =========================================================
-   CLOCK
-   ========================================================= */
-
 function updateClock(){
 
-  const now =
-    new Date();
+  const now = new Date();
 
-  document
-  .getElementById(
-    "digitalClock"
-  )
-  .textContent =
-
+  document.getElementById("digitalClock").textContent =
     now.toLocaleTimeString(
       [],
       {
@@ -3017,12 +1379,7 @@ function updateClock(){
       }
     );
 
-  document
-  .getElementById(
-    "digitalDate"
-  )
-  .textContent =
-
+  document.getElementById("digitalDate").textContent =
     now.toLocaleDateString(
       [],
       {
@@ -3035,29 +1392,17 @@ function updateClock(){
 
 }
 
-/* =========================================================
-   TOURNAMENT COUNTDOWN
-   ========================================================= */
-
 function updateTournament(){
 
-  const now =
-    new Date();
+  const now = new Date();
 
   const status =
-    document.getElementById(
-      "tourneyStatus"
-    );
+    document.getElementById("tourneyStatus");
 
   const output =
-    document.getElementById(
-      "countdown"
-    );
+    document.getElementById("countdown");
 
-  if(
-    now >=
-    FALL_START
-  ){
+  if(now >= FALL_START){
 
     status.textContent =
       "Tournament Started";
@@ -3070,217 +1415,101 @@ function updateTournament(){
   }
 
   status.textContent =
-
-    now <
-    FALL_CLOSE
-
+    now < FALL_CLOSE
     ?
-
     "Registration Open"
-
     :
-
     "Registration Closed";
 
-  let difference =
-    FALL_START -
-    now;
+  let diff =
+    FALL_START - now;
 
   const days =
-    Math.floor(
-      difference /
-      86400000
-    );
+    Math.floor(diff / 86400000);
 
-  difference %=
-    86400000;
+  diff %= 86400000;
 
   const hours =
-    Math.floor(
-      difference /
-      3600000
-    );
+    Math.floor(diff / 3600000);
 
-  difference %=
-    3600000;
+  diff %= 3600000;
 
   const minutes =
-    Math.floor(
-      difference /
-      60000
-    );
+    Math.floor(diff / 60000);
 
-  difference %=
-    60000;
+  diff %= 60000;
 
   const seconds =
-    Math.floor(
-      difference /
-      1000
-    );
+    Math.floor(diff / 1000);
 
   output.textContent =
-
-    days +
-    "d " +
-
-    hours +
-    "h " +
-
-    minutes +
-    "m " +
-
-    seconds +
-    "s";
+    `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
 }
 
-/* =========================================================
-   TABS
-   ========================================================= */
-
 document
-.querySelectorAll(
-  ".tab"
-)
-.forEach(
-  button => {
+.querySelectorAll(".tab")
+.forEach(button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-        document
-        .querySelectorAll(
-          ".tab"
-        )
-        .forEach(
-          tab =>
-            tab.classList.remove(
-              "active"
-            )
-        );
+      document
+      .querySelectorAll(".tab")
+      .forEach(tab =>
+        tab.classList.remove("active")
+      );
 
-        document
-        .querySelectorAll(
-          ".panel"
-        )
-        .forEach(
-          panel =>
-            panel.classList.remove(
-              "active"
-            )
-        );
+      document
+      .querySelectorAll(".panel")
+      .forEach(panel =>
+        panel.classList.remove("active")
+      );
 
-        button.classList.add(
-          "active"
-        );
+      button.classList.add("active");
 
-        document
-        .getElementById(
-          button.dataset.go
-        )
-        .classList.add(
-          "active"
-        );
+      document
+      .getElementById(button.dataset.go)
+      .classList.add("active");
 
-      }
-    );
+    }
+  );
 
-  }
-);
+});
 
-/* =========================================================
-   PARTICLES
-   ========================================================= */
-
-for(
-  let i = 0;
-  i < 24;
-  i++
-){
+for(let i=0;i<24;i++){
 
   const spark =
-    document.createElement(
-      "i"
-    );
+    document.createElement("i");
 
   spark.className =
     "spark";
 
   spark.style.left =
-
-    Math.random() *
-    100 +
-
-    "%";
+    Math.random()*100 + "%";
 
   spark.style.animationDuration =
-
-    (
-      8 +
-      Math.random() *
-      12
-    )
-
-    +
-
-    "s";
+    (8 + Math.random()*12) + "s";
 
   spark.style.animationDelay =
-
-    (
-      -Math.random() *
-      15
-    )
-
-    +
-
-    "s";
+    (-Math.random()*15) + "s";
 
   document
-  .getElementById(
-    "fx"
-  )
-  .appendChild(
-    spark
-  );
+  .getElementById("fx")
+  .appendChild(spark);
 
 }
 
-/* =========================================================
-   START
-   ========================================================= */
-
 updateClock();
-
 updateTournament();
 
-setInterval(
-  updateClock,
-  250
-);
-
-setInterval(
-  updateTournament,
-  1000
-);
-
-/*
-  MEMBERS / TITLED / MEMBER COUNT
-
-  DIRECT FROM CHESS.COM.
-*/
+setInterval(updateClock,250);
+setInterval(updateTournament,1000);
 
 loadChessComData();
-
-/*
-  FALL CHAMPIONS
-
-  ONLY THIS USES:
-  generated/champions.json
-*/
-
+loadTournamentButtons();
+loadStaff();
 loadChampions();
 
 </script>
