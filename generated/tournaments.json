@@ -5,5 +5,12 @@
     "button": "Enter Fall Championship",
     "url": "",
     "active": true
+  },
+  {
+    "id": "",
+    "name": "Fall Tournament",
+    "button": "Enter Tournament",
+    "url": "https://www.chess.com/tournament/open-fall-championship-tournament",
+    "active": true
   }
 ]
