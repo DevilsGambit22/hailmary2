@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#071427">
+<title>ACFA Live Dashboard</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="assets/icons/logo.svg" type="image/svg+xml">
+<style>
+:root{
+ --bg:#050b14;--panel:#081a31;--panel2:#0c2850;--blue:#134f98;--gold:#d5a73d;
+ --gold2:#f4d989;--text:#f7f9fc;--muted:#9eb0c9;--ring:rgba(216,172,71,.42);
+ --shadow:0 12px 34px rgba(0,0,0,.42)
+}
+*{box-sizing:border-box}html{background:#03070d}
+body{margin:0;color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+background:radial-gradient(circle at 50% -5%,rgba(22,79,151,.38),transparent 33%),linear-gradient(180deg,#06101f,#03070d 72%);min-height:100vh}
+a{color:inherit;text-decoration:none}button{font:inherit}
+#fx{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+.spark{position:absolute;bottom:-8px;width:3px;height:3px;border-radius:50%;background:#f3c85c;box-shadow:0 0 8px #f3c85c;animation:up linear infinite;opacity:.55}
+@keyframes up{to{transform:translateY(-110vh);opacity:0}}
+.app{position:relative;z-index:1;width:min(100%,470px);margin:auto;padding:8px 8px 28px}
+.frame{border:1px solid var(--ring);border-radius:20px;overflow:hidden;box-shadow:var(--shadow);background:linear-gradient(180deg,rgba(8,30,60,.92),rgba(4,13,27,.97))}
+.hero{position:relative}.hero img{display:block;width:100%;aspect-ratio:1.5/1;object-fit:cover;object-position:center}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 52%,rgba(2,8,17,.87) 100%)}
+.hero-copy{position:absolute;z-index:2;left:12px;right:12px;bottom:10px;text-align:center;text-shadow:0 2px 10px #000}
+.hero-copy h1{margin:0;font-family:Georgia,serif;letter-spacing:.06em;font-size:30px}.hero-copy div{color:var(--gold2);font-family:Georgia,serif;font-style:italic;font-size:13px}
+.clock-card{margin:8px;padding:10px 8px;text-align:center;border-radius:15px;background:radial-gradient(circle at 50% 0,rgba(24,92,184,.28),rgba(5,18,38,.96) 68%);border:1px solid var(--ring);box-shadow:inset 0 0 24px rgba(34,102,206,.16),0 8px 22px rgba(0,0,0,.28)}
+.digital-clock{font-family:"Courier New",monospace;font-weight:700;font-size:clamp(28px,9vw,42px);letter-spacing:.06em;color:#dff4ff;text-shadow:0 0 6px #58b7ff,0 0 16px rgba(34,143,255,.9)}
+.digital-date{margin-top:2px;font-family:Georgia,serif;font-size:12px;letter-spacing:.12em;color:var(--gold2);text-transform:uppercase}
+.clock-label{margin-top:4px;font-size:8px;letter-spacing:.2em;color:var(--muted)}
+.hero img,.lady img,.board>img{background:transparent}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:8px}
+.stat{text-align:center;padding:8px 4px;border-radius:12px;background:linear-gradient(180deg,#0c2d5d,#071b38);border:1px solid var(--ring)}
+.stat b{display:block;color:var(--gold2);font-size:17px}.stat span{display:block;color:var(--muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase;margin-top:2px}
+.tabs{position:sticky;top:0;z-index:10;display:grid;grid-template-columns:repeat(5,1fr);gap:5px;padding:7px 8px;background:rgba(3,8,16,.9);backdrop-filter:blur(10px)}
+.tab{border:1px solid var(--ring);border-radius:10px;padding:8px 2px;background:#0a2449;color:#dfe8f5;font-size:10px;cursor:pointer;transition:.2s}
+.tab:hover,.tab.active{background:#12488e;transform:translateY(-1px);box-shadow:0 0 15px rgba(32,94,184,.4)}
+.content{padding:0 8px 8px}.panel{display:none;animation:fade .2s ease}.panel.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.card{margin:8px 0;padding:11px;border-radius:15px;background:linear-gradient(145deg,rgba(13,45,89,.91),rgba(5,18,38,.97));border:1px solid var(--ring);box-shadow:var(--shadow);transition:.2s}
+.card:hover{transform:translateY(-2px);box-shadow:0 15px 36px rgba(0,0,0,.46),0 0 18px rgba(37,101,192,.15)}
+.card h2{margin:0 0 8px;color:var(--gold2);font:700 18px Georgia,serif}
+.lady{display:flex;gap:10px;align-items:center}.lady img{width:105px;height:145px;object-fit:cover;object-position:50% 8%;border-radius:12px;border:1px solid var(--ring)}
+.lady p{margin:0;font-size:12px;line-height:1.5;color:#dce4f0}
+.announcement{padding:9px;border-left:3px solid var(--gold);background:rgba(255,255,255,.035);border-radius:8px}.announcement strong{display:block;color:#fff;margin-bottom:4px}
+.links{display:grid;grid-template-columns:1fr 1fr;gap:6px}.links a{padding:9px;text-align:center;background:#0d3470;border:1px solid var(--ring);border-radius:9px;font-size:11px}
+.board{position:relative;margin:8px 0;border-radius:17px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--ring)}.board>img{display:block;width:100%;height:auto}
+.member-slots{position:absolute;left:18%;right:10%;top:42.8%;bottom:13.4%;display:grid;grid-template-rows:repeat(5,1fr);gap:1.8%}
+.member{display:flex;align-items:center;min-width:0;padding:0 3.5%;color:#071b33;text-shadow:0 1px rgba(255,255,255,.5);cursor:pointer}
+.member img{width:36px;height:36px;object-fit:cover;border-radius:50%;margin-right:7px;border:2px solid #164b8f;background:#d8e4f4}
+.member strong{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:210px}.member small{display:block;color:#44576d;font-size:10px;margin-top:2px}
+.titled-slots{position:absolute;left:22%;right:12%;top:58%;bottom:17%;display:grid;grid-template-rows:repeat(2,1fr);gap:10%}
+.titled-member{display:flex;align-items:center;color:#071b33;padding:0 3%;cursor:pointer}.titled-member img{width:42px;height:42px;object-fit:cover;border-radius:50%;margin-right:8px;border:2px solid #c2942a;background:#e9eef7}
+.titled-member strong{font-size:15px}.badge{display:inline-block;margin-left:4px;padding:2px 5px;border-radius:5px;background:#b9861d;color:#fff;font-size:8px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:7px}.person{padding:9px;border-radius:10px;background:rgba(255,255,255,.045);border:1px solid rgba(255,255,255,.08)}
+.person strong{display:block;font-size:12px}.person small{color:var(--gold2);font-size:10px}
+.podium-art{display:block;width:100%;height:auto;margin:0 0 10px;background:transparent;filter:drop-shadow(0 10px 20px rgba(0,0,0,.28))}
+.countdown{font-size:21px;text-align:center;color:var(--gold2);font-weight:800;padding:10px 0}.status{display:inline-block;padding:4px 7px;border-radius:999px;background:#174d98;font-size:10px}
+.note{color:var(--muted);font-size:10px;line-height:1.45}.syncstatus{display:flex;align-items:center;gap:6px}.dot{width:8px;height:8px;border-radius:50%;background:#f0b541;box-shadow:0 0 8px #f0b541}
+.dot.live{background:#4bd17d;box-shadow:0 0 8px #4bd17d}.footer{text-align:center;color:#7f8ea3;font-size:9px;padding:12px 0 2px}
+@media(max-width:360px){.app{padding:5px}.content{padding:0 5px 5px}.hero-copy h1{font-size:24px}.member img{width:31px;height:31px}.member strong{font-size:12px}.titled-member img{width:36px;height:36px}.titled-member strong{font-size:12px}}
+</style>
+</head>
+<body>
+<div id="fx"></div>
+<main class="app">
+<div class="frame">
+<section class="hero">
+<img src="assets/images/acfa-emblem.png" alt="ACFA emblem">
+<div class="hero-copy"><h1>ACFA</h1><div>Every Player Belongs • Every Move Matters</div></div>
+</section>
+
+<section class="clock-card" aria-label="Local browser time">
+  <div id="digitalClock" class="digital-clock">--:--:--</div>
+  <div id="digitalDate" class="digital-date">Loading local date…</div>
+  <div class="clock-label">YOUR LOCAL TIME</div>
+</section>
+<section class="stats">
+<div class="stat"><b id="membersCount">—</b><span>Members</span></div>
+<div class="stat"><b id="titledCount">—</b><span>Titled</span></div>
+<div class="stat"><b id="nextEvent">Oct 5</b><span>Next Event</span></div>
+</section>
+
+<nav class="tabs">
+<button class="tab active" data-go="home">Home</button>
+<button class="tab" data-go="members">Members</button>
+<button class="tab" data-go="titled">Titled</button>
+<button class="tab" data-go="tourney">Tourney</button>
+<button class="tab" data-go="staff">Staff</button>
+</nav>
+
+<div class="content">
+<section id="home" class="panel active">
+<article class="card lady">
+<img src="assets/images/lady-justice.png" alt="Lady Justice">
+<div><h2>Welcome to ACFA</h2><p>Different people. Same passion. One community. This dashboard is wired to GitHub-generated Chess.com data and remains usable while the next sync is pending.</p></div>
+</article>
+
+<article class="card"><h2>Announcements</h2><div id="announcements">Loading…</div></article>
+
+<article class="card">
+<h2>Quick Links</h2>
+<div id="links" class="links"></div>
+</article>
+
+<article class="card">
+<h2>Automatic Data</h2>
+<div class="syncstatus"><span id="syncDot" class="dot"></span><span id="syncText">Waiting for first GitHub data sync</span></div>
+<div class="note" id="updatedText"></div>
+</article>
+</section>
+
+<section id="members" class="panel">
+<div class="board">
+<img src="assets/images/new-members-board.png" alt="New Members board">
+<div id="memberSlots" class="member-slots"></div>
+</div>
+</section>
+
+<section id="titled" class="panel">
+<div class="board">
+<img src="assets/images/titled-players-board.png" alt="Titled Players board">
+<div id="titledSlots" class="titled-slots"></div>
+</div>
+</section>
+
+<section id="tourney" class="panel">
+<article class="card">
+<h2 id="tournamentName">ACFA Fall Championship</h2>
+<span class="status" id="tourneyStatus">Loading</span>
+<div class="countdown" id="countdown">—</div>
+<div class="note" id="tourneyDate"></div>
+</article>
+<article class="card"><h2>Champions Podium</h2><img class="podium-art" src="assets/images/acfa-champions-podium.png" alt="ACFA champions podium"><div id="champions" class="grid2"></div></article>
+</section>
+
+<section id="staff" class="panel">
+<article class="card"><h2>ACFA Staff</h2><div id="staffGrid" class="grid2"></div></article>
+</section>
+
+<div class="footer">And Chess For All Official • GitHub Pages Live Dashboard</div>
+</div>
+</div>
+</main>
+
+<script>
+const fallbackAvatar="assets/icons/logo.svg";
+const state={config:{},members:[],titled:[],stats:{},staff:[],tournaments:[],champions:{},announcements:[],apiStatus:{}};
+
+async function getJSON(path,fallback){
+ try{const r=await fetch(path,{cache:"no-store"});if(!r.ok)throw new Error(path);return await r.json()}
+ catch(e){console.warn("Using fallback:",path);return fallback}
+}
+function esc(v=""){return String(v).replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#039;"}[m]))}
+function profile(u){return "https://www.chess.com/member/"+encodeURIComponent(u)}
+function renderMembers(){
+ const box=document.getElementById("memberSlots");box.innerHTML="";
+ const rows=state.members.slice(0,5);
+ while(rows.length<5) rows.push({username:"Waiting for sync",rating:0,avatar:null});
+ rows.forEach(p=>{
+  const el=document.createElement("div");el.className="member";
+  el.innerHTML=`<img src="${esc(p.avatar||fallbackAvatar)}" alt=""><div><strong>${esc(p.username)}</strong><small>${p.rating?esc(p.rating)+" rating":"Auto-sync slot"}</small></div>`;
+  if(p.username!=="Waiting for sync")el.onclick=()=>window.open(profile(p.username),"_blank");
+  box.appendChild(el);
+ });
+}
+function renderTitled(){
+ const box=document.getElementById("titledSlots");box.innerHTML="";
+ const rows=state.titled.slice(0,2);
+ while(rows.length<2) rows.push({username:"Waiting for titled player",title:"TITLE",rating:0,avatar:null});
+ rows.forEach(p=>{
+  const el=document.createElement("div");el.className="titled-member";
+  el.innerHTML=`<img src="${esc(p.avatar||fallbackAvatar)}" alt=""><div><strong>${esc(p.username)} <span class="badge">${esc(p.title||"TITLE")}</span></strong><small>${p.rating?esc(p.rating)+" rating":"Auto-sync slot"}</small></div>`;
+  if(!p.username.startsWith("Waiting"))el.onclick=()=>window.open(profile(p.username),"_blank");
+  box.appendChild(el);
+ });
+}
+function renderHome(){
+ document.getElementById("membersCount").textContent=state.stats.member_count||"—";
+ document.getElementById("titledCount").textContent=state.stats.titled_count||state.titled.length||"—";
+ const live=!!state.stats.updated_at && state.apiStatus?.ok===true;
+ document.getElementById("syncDot").classList.toggle("live",live);
+ if(live){
+   document.getElementById("syncText").textContent="Chess.com PubAPI sync active";
+   document.getElementById("updatedText").textContent="Last successful update: "+new Date(state.stats.updated_at).toLocaleString();
+ }else if(state.apiStatus?.finished_at){
+   document.getElementById("syncText").textContent="API sync needs attention";
+   const e=(state.apiStatus.errors||[])[0];
+   document.getElementById("updatedText").textContent=e ? "Last error: "+e : "Open GitHub Actions → Update ACFA Data for diagnostics.";
+ }else{
+   document.getElementById("syncText").textContent="Waiting for first GitHub data sync";
+   document.getElementById("updatedText").textContent="Run Actions → Update ACFA Data once after publishing.";
+ }
+ document.getElementById("announcements").innerHTML=(state.announcements.filter(x=>x.active!==false).map(x=>`<div class="announcement"><strong>${esc(x.title)}</strong>${esc(x.message)}</div>`).join(""))||"No current announcements.";
+ const links=state.config.links||{};
+ document.getElementById("links").innerHTML=[["Forums",links.forums],["Events",links.events],["Club",links.club],["Notes",links.notes]].filter(x=>x[1]).map(([n,u])=>`<a target="_blank" href="${esc(u)}">${n}</a>`).join("");
+}
+function renderStaff(){
+ document.getElementById("staffGrid").innerHTML=state.staff.map(x=>`<a class="person" target="_blank" href="${profile(x.username)}"><strong>${esc(x.username)}</strong><small>${esc(x.role)}</small></a>`).join("");
+}
+function renderChampions(){
+ const c=state.champions["fall-2026"]||{};
+ const vals=[["🥇 1st Place",c.first],["🥈 2nd Place",c.second],["🥉 3rd Place",c.third]];
+ document.getElementById("champions").innerHTML=vals.map(([a,b])=>`<div class="person"><strong>${a}</strong><small>${esc(b||"To be crowned")}</small></div>`).join("");
+}
+function setupTournament(){
+ const t=state.tournaments[0];if(!t)return;
+ document.getElementById("tournamentName").textContent=t.name;
+ const start=new Date(t.starts), close=new Date(t.registration_closes);
+ document.getElementById("nextEvent").textContent=start.toLocaleDateString(undefined,{month:"short",day:"numeric"});
+ document.getElementById("tourneyDate").textContent="Starts "+start.toLocaleString();
+ const tick=()=>{
+  const now=new Date(),s=document.getElementById("tourneyStatus"),out=document.getElementById("countdown");
+  if(now>=start){s.textContent="Tournament Started";out.textContent="LIVE / STARTED";return}
+  s.textContent=now<close?"Registration Open":"Registration Closed";
+  let d=start-now,days=Math.floor(d/86400000);d%=86400000;
+  const h=Math.floor(d/3600000);d%=3600000;const m=Math.floor(d/60000);d%=60000;const sec=Math.floor(d/1000);
+  out.textContent=`${days}d ${h}h ${m}m ${sec}s`;
+ };
+ tick();setInterval(tick,1000);
+}
+document.querySelectorAll(".tab").forEach(btn=>btn.addEventListener("click",()=>{
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+ document.querySelectorAll(".panel").forEach(x=>x.classList.remove("active"));
+ btn.classList.add("active");document.getElementById(btn.dataset.go).classList.add("active");
+}));
+for(let i=0;i<24;i++){const s=document.createElement("i");s.className="spark";s.style.left=Math.random()*100+"%";s.style.animationDuration=(8+Math.random()*12)+"s";s.style.animationDelay=(-Math.random()*15)+"s";document.getElementById("fx").appendChild(s)}
+
+
+function updateBrowserClock(){
+ const now=new Date();
+ const time=now.toLocaleTimeString([],{
+   hour:"2-digit",minute:"2-digit",second:"2-digit",hour12:true
+ });
+ const date=now.toLocaleDateString([],{
+   weekday:"short",month:"short",day:"numeric",year:"numeric"
+ });
+ const c=document.getElementById("digitalClock");
+ const d=document.getElementById("digitalDate");
+ if(c)c.textContent=time;
+ if(d)d.textContent=date;
+}
+updateBrowserClock();
+setInterval(updateBrowserClock,250);
+
+async function init(){
+ [state.config,state.members,state.titled,state.stats,state.staff,state.tournaments,state.champions,state.announcements,state.apiStatus]=await Promise.all([
+  getJSON("generated/config.json",{}),
+  getJSON("generated/members.json",[]),
+  getJSON("generated/titled.json",[]),
+  getJSON("generated/stats.json",{}),
+  getJSON("data/staff.json",[]),
+  getJSON("data/tournaments.json",[]),
+  getJSON("data/champions.json",{}),
+  getJSON("data/announcements.json",[]),
+  getJSON("generated/api-status.json",{})
+ ]);
+ renderHome();renderMembers();renderTitled();renderStaff();renderChampions();setupTournament();
+}
+init();
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("sw.js").catch(console.warn))}
+</script>
+</body>
+</html>
