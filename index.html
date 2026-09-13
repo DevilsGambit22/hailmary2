@@ -620,7 +620,7 @@ button{
 }
 
 /* =========================================================
-   NEW MEMBERS — EXACT ROW POSITIONING
+   NEW MEMBERS — CORRECTED ROW POSITIONS
    ========================================================= */
 
 .member-slots{
@@ -646,23 +646,23 @@ button{
 }
 
 .member:nth-child(1){
-  top:56.2%;
+  top:47.8%;
 }
 
 .member:nth-child(2){
-  top:64.6%;
+  top:56.2%;
 }
 
 .member:nth-child(3){
-  top:73.0%;
+  top:64.6%;
 }
 
 .member:nth-child(4){
-  top:81.4%;
+  top:73.0%;
 }
 
 .member:nth-child(5){
-  top:89.8%;
+  top:81.4%;
 }
 
 .member img{
@@ -817,10 +817,6 @@ button{
   box-shadow:0 0 10px rgba(194,148,42,.55);
 }
 
-/* =========================================================
-   TOURNAMENTS
-   ========================================================= */
-
 .countdown{
   padding:10px 0;
   color:var(--gold2);
@@ -902,10 +898,6 @@ button{
     left:130%;
   }
 }
-
-/* =========================================================
-   PODIUM
-   ========================================================= */
 
 .podium-stage{
   position:relative;
@@ -993,10 +985,6 @@ button{
   color:var(--gold2);
   font-size:8px;
 }
-
-/* =========================================================
-   STAFF
-   ========================================================= */
 
 .staff-grid{
   display:grid;
@@ -1119,9 +1107,7 @@ button{
 
 <div class="hero-copy">
 
-<h1>
-ACFA
-</h1>
+<h1>ACFA</h1>
 
 <div>
 Every Player Belongs • Every Move Matters
@@ -1523,7 +1509,7 @@ const TITLE_CODES = [
 ];
 
 const sleep = ms =>
-  new Promise(resolve => setTimeout(resolve, ms));
+  new Promise(resolve => setTimeout(resolve,ms));
 
 function esc(value = ""){
   return String(value).replace(
@@ -1542,7 +1528,7 @@ function profileURL(username){
   return "https://www.chess.com/member/" + encodeURIComponent(username);
 }
 
-async function getJSON(path, fallback){
+async function getJSON(path,fallback){
 
   try{
 
@@ -1563,7 +1549,7 @@ async function getJSON(path, fallback){
 
   catch(error){
 
-    console.warn(path, error);
+    console.warn(path,error);
 
     return fallback;
 
@@ -1592,7 +1578,8 @@ function parseClubMembers(data){
 
   const collection = [];
 
-  ["weekly","monthly","all_time"].forEach(bucket => {
+  ["weekly","monthly","all_time"]
+  .forEach(bucket => {
 
     const list =
       Array.isArray(data?.[bucket])
@@ -1670,8 +1657,10 @@ function bestRating(stats){
   });
 
   return ratings.length
-    ? Math.max(...ratings)
-    : 0;
+    ?
+    Math.max(...ratings)
+    :
+    0;
 
 }
 
@@ -1783,7 +1772,8 @@ async function loadChessComData(){
       const row =
         document.createElement("div");
 
-      row.className = "member";
+      row.className =
+        "member";
 
       row.innerHTML = `
         <img
@@ -1988,36 +1978,36 @@ async function loadTournamentButtons(){
   container.innerHTML = "";
 
   tournaments
-    .filter(
-      tournament =>
-        tournament.active &&
-        tournament.url
-    )
-    .forEach(tournament => {
+  .filter(
+    tournament =>
+      tournament.active &&
+      tournament.url
+  )
+  .forEach(tournament => {
 
-      const button =
-        document.createElement("a");
+    const button =
+      document.createElement("a");
 
-      button.className =
-        "tournament-button";
+    button.className =
+      "tournament-button";
 
-      button.href =
-        tournament.url;
+    button.href =
+      tournament.url;
 
-      button.target =
-        "_blank";
+    button.target =
+      "_blank";
 
-      button.rel =
-        "noopener noreferrer";
+    button.rel =
+      "noopener noreferrer";
 
-      button.textContent =
-        tournament.button ||
-        tournament.name ||
-        "Open Tournament";
+    button.textContent =
+      tournament.button ||
+      tournament.name ||
+      "Open Tournament";
 
-      container.appendChild(button);
+    container.appendChild(button);
 
-    });
+  });
 
 }
 
