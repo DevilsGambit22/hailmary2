@@ -11,9 +11,7 @@
 :root{
   --bg:#03070d;
   --navy:#06152f;
-  --navy2:#0a2b5d;
   --blue:#12488e;
-  --blue2:#1760bb;
   --gold:#d5a73d;
   --gold2:#f4d989;
   --text:#f7f9fc;
@@ -45,27 +43,11 @@ body::-webkit-scrollbar{
 
 body{
   color:var(--text);
-
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
 
   background:
-    radial-gradient(
-      circle at 50% -5%,
-      rgba(22,79,151,.38),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      #06101f,
-      #03070d 72%
-    );
+    radial-gradient(circle at 50% -5%,rgba(22,79,151,.38),transparent 34%),
+    linear-gradient(180deg,#06101f,#03070d 72%);
 }
 
 a{
@@ -78,7 +60,7 @@ button{
 }
 
 /* =========================================================
-   OUTER FX
+   OUTER EMBERS
    ========================================================= */
 
 #fx{
@@ -92,67 +74,47 @@ button{
 .spark{
   position:absolute;
   bottom:-10px;
-
   width:3px;
   height:3px;
-
   border-radius:50%;
-
   background:#f3c85c;
-
-  box-shadow:
-    0 0 8px #f3c85c;
-
+  box-shadow:0 0 8px #f3c85c;
   opacity:.55;
-
-  animation:
-    rise linear infinite;
+  animation:rise linear infinite;
 }
 
 @keyframes rise{
   to{
-    transform:
-      translateY(-110vh);
-
+    transform:translateY(-110vh);
     opacity:0;
   }
 }
 
 /* =========================================================
-   APP
+   MAIN APP
    ========================================================= */
 
 .app{
   position:relative;
   z-index:1;
-
   width:100%;
   max-width:470px;
-
   height:100vh;
   height:100dvh;
-
   margin:0 auto;
   padding:6px;
-
   overflow:hidden;
 }
 
 .frame{
   position:relative;
-
   display:flex;
   flex-direction:column;
-
   width:100%;
   height:100%;
-
   overflow:hidden;
 
-  border:
-    1px solid
-    rgba(216,172,71,.58);
-
+  border:1px solid rgba(216,172,71,.58);
   border-radius:20px;
 
   background:
@@ -167,12 +129,7 @@ button{
     0 0 26px rgba(25,89,180,.14),
     0 14px 38px rgba(0,0,0,.48);
 
-  animation:
-    frameGlow
-    4s
-    ease-in-out
-    infinite
-    alternate;
+  animation:frameGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes frameGlow{
@@ -192,30 +149,23 @@ button{
 }
 
 /* =========================================================
-   EMBERS
+   INTERNAL EMBERS
    ========================================================= */
 
 .frame-embers{
   position:absolute;
   inset:0;
-
   overflow:hidden;
-
   pointer-events:none;
-
   z-index:2;
 }
 
 .frame-ember{
   position:absolute;
-
   bottom:-12px;
-
   width:3px;
   height:3px;
-
   border-radius:50%;
-
   background:#ffd36b;
 
   box-shadow:
@@ -224,19 +174,12 @@ button{
 
   opacity:.7;
 
-  animation:
-    sidebarEmberRise
-    linear
-    infinite;
+  animation:sidebarEmberRise linear infinite;
 }
 
 @keyframes sidebarEmberRise{
   0%{
-    transform:
-      translateY(0)
-      translateX(0)
-      scale(.7);
-
+    transform:translateY(0) translateX(0) scale(.7);
     opacity:0;
   }
 
@@ -249,18 +192,10 @@ button{
   }
 
   100%{
-    transform:
-      translateY(-1100px)
-      translateX(30px)
-      scale(1.2);
-
+    transform:translateY(-1100px) translateX(30px) scale(1.2);
     opacity:0;
   }
 }
-
-/* =========================================================
-   FIXED TOP
-   ========================================================= */
 
 .hero,
 .clock-card,
@@ -276,67 +211,45 @@ button{
 .hero{
   position:relative;
   z-index:3;
-
   overflow:hidden;
 }
 
 .hero img{
   display:block;
-
   width:100%;
   max-height:245px;
-
   object-fit:contain;
-
   background:transparent;
 
   transition:
     transform .35s ease,
     filter .35s ease;
 
-  animation:
-    logoFloat
-    4.5s
-    ease-in-out
-    infinite;
+  animation:logoFloat 4.5s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
   0%,100%{
-    transform:
-      translateY(0)
-      scale(1);
+    transform:translateY(0) scale(1);
   }
 
   50%{
-    transform:
-      translateY(-4px)
-      scale(1.015);
+    transform:translateY(-4px) scale(1.015);
   }
 }
 
 .hero:hover img{
-  transform:
-    scale(1.055)
-    translateY(-4px);
+  transform:scale(1.055) translateY(-4px);
 
   filter:
-    drop-shadow(
-      0 0 10px
-      rgba(255,214,112,.55)
-    )
-    drop-shadow(
-      0 0 22px
-      rgba(45,132,255,.32)
-    );
+    drop-shadow(0 0 10px rgba(255,214,112,.55))
+    drop-shadow(0 0 22px rgba(45,132,255,.32));
 }
 
 .hero::after{
   content:"";
-
   position:absolute;
   inset:0;
-
   pointer-events:none;
 
   background:
@@ -350,38 +263,24 @@ button{
 .hero-copy{
   position:absolute;
   z-index:4;
-
   left:12px;
   right:12px;
   bottom:7px;
-
   text-align:center;
-
-  text-shadow:
-    0 2px 10px #000;
+  text-shadow:0 2px 10px #000;
 }
 
 .hero-copy h1{
   margin:0;
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:30px;
-
   letter-spacing:.08em;
 }
 
 .hero-copy div{
   color:var(--gold2);
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:13px;
-
   font-style:italic;
 }
 
@@ -392,19 +291,11 @@ button{
 .clock-card{
   position:relative;
   z-index:3;
-
-  margin:
-    5px
-    8px;
-
+  margin:5px 8px;
   padding:8px;
-
   text-align:center;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:15px;
 
   background:
@@ -417,42 +308,13 @@ button{
   box-shadow:
     inset 0 0 24px rgba(34,102,206,.16),
     0 8px 22px rgba(0,0,0,.28);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease;
-}
-
-.clock-card:hover{
-  transform:
-    translateY(-2px)
-    scale(1.01);
-
-  border-color:
-    rgba(244,217,137,.82);
-
-  box-shadow:
-    0 0 16px rgba(216,172,71,.22),
-    0 0 26px rgba(32,111,224,.24);
 }
 
 .digital-clock{
   color:#dff4ff;
-
-  font-family:
-    "Courier New",
-    monospace;
-
-  font-size:
-    clamp(
-      25px,
-      8vw,
-      38px
-    );
-
+  font-family:"Courier New",monospace;
+  font-size:clamp(25px,8vw,38px);
   font-weight:700;
-
   letter-spacing:.06em;
 
   text-shadow:
@@ -462,27 +324,17 @@ button{
 
 .digital-date{
   margin-top:1px;
-
   color:var(--gold2);
-
-  font-family:
-    Georgia,
-    serif;
-
+  font-family:Georgia,serif;
   font-size:11px;
-
   letter-spacing:.12em;
-
   text-transform:uppercase;
 }
 
 .clock-label{
   margin-top:3px;
-
   color:var(--muted);
-
   font-size:7px;
-
   letter-spacing:.2em;
 }
 
@@ -493,30 +345,17 @@ button{
 .stats{
   position:relative;
   z-index:3;
-
   display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
+  grid-template-columns:repeat(3,1fr);
   gap:6px;
-
-  padding:
-    4px
-    8px
-    7px;
+  padding:4px 8px 7px;
 }
 
 .stat{
-  padding:
-    7px
-    4px;
-
+  padding:7px 4px;
   text-align:center;
 
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:12px;
 
   background:
@@ -528,17 +367,11 @@ button{
 
   transition:
     transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease;
+    box-shadow .22s ease;
 }
 
 .stat:hover{
-  transform:
-    translateY(-3px)
-    scale(1.035);
-
-  border-color:
-    rgba(244,217,137,.82);
+  transform:translateY(-3px) scale(1.035);
 
   box-shadow:
     0 0 14px rgba(216,172,71,.30),
@@ -547,28 +380,21 @@ button{
 
 .stat b{
   display:block;
-
   color:var(--gold2);
-
   font-size:16px;
 }
 
 .stat span{
   display:block;
-
   margin-top:2px;
-
   color:var(--muted);
-
   font-size:8px;
-
   letter-spacing:.1em;
-
   text-transform:uppercase;
 }
 
 /* =========================================================
-   TABS
+   NAVIGATION
    ========================================================= */
 
 .tabs{
@@ -576,38 +402,24 @@ button{
   z-index:10;
 
   display:grid;
-
-  grid-template-columns:
-    repeat(5,1fr);
-
+  grid-template-columns:repeat(5,1fr);
   gap:5px;
 
-  padding:
-    5px
-    8px
-    7px;
+  padding:5px 8px 7px;
 
-  background:
-    rgba(3,8,16,.95);
+  background:rgba(3,8,16,.95);
 
-  backdrop-filter:
-    blur(10px);
+  backdrop-filter:blur(10px);
 }
 
 .tab{
   cursor:pointer;
-
-  padding:
-    7px
-    2px;
+  padding:7px 2px;
 
   color:#dfe8f5;
-
   font-size:10px;
 
-  border:
-    1px solid var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:10px;
 
   background:#0a2449;
@@ -615,20 +427,13 @@ button{
   transition:
     transform .22s ease,
     box-shadow .22s ease,
-    background .22s ease,
-    border-color .22s ease;
+    background .22s ease;
 }
 
 .tab:hover,
 .tab.active{
-  transform:
-    translateY(-2px)
-    scale(1.05);
-
+  transform:translateY(-2px) scale(1.05);
   background:#12488e;
-
-  border-color:
-    rgba(244,217,137,.82);
 
   box-shadow:
     0 0 16px rgba(40,118,235,.42),
@@ -636,41 +441,29 @@ button{
 }
 
 /* =========================================================
-   SCROLL AREA
+   INTERNAL SCROLL
    ========================================================= */
 
 .content{
   position:relative;
   z-index:3;
 
-  flex:
-    1
-    1
-    auto;
-
+  flex:1 1 auto;
   min-height:0;
-
   width:100%;
 
-  padding:
-    0
-    8px
-    16px;
+  padding:0 8px 16px;
 
   overflow-y:auto !important;
   overflow-x:hidden !important;
 
   overscroll-behavior:contain;
-
   touch-action:pan-y;
 
   -webkit-overflow-scrolling:touch;
 
   scrollbar-width:thin;
-
-  scrollbar-color:
-    #d5a73d
-    transparent;
+  scrollbar-color:#d5a73d transparent;
 }
 
 .content::-webkit-scrollbar{
@@ -690,10 +483,6 @@ button{
     );
 
   border-radius:20px;
-
-  box-shadow:
-    0 0 8px
-    rgba(244,217,137,.55);
 }
 
 /* =========================================================
@@ -702,30 +491,10 @@ button{
 
 .panel{
   display:none;
-
-  animation:
-    fade
-    .2s
-    ease;
 }
 
 .panel.active{
   display:block;
-}
-
-@keyframes fade{
-  from{
-    opacity:0;
-
-    transform:
-      translateY(5px);
-  }
-
-  to{
-    opacity:1;
-
-    transform:none;
-  }
 }
 
 /* =========================================================
@@ -734,17 +503,10 @@ button{
 
 .card{
   position:relative;
-
-  margin:
-    8px
-    0;
-
+  margin:8px 0;
   padding:11px;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:15px;
 
   background:
@@ -754,22 +516,15 @@ button{
       rgba(5,18,38,.98)
     );
 
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 
   transition:
     transform .22s ease,
-    box-shadow .22s ease,
-    border-color .22s ease;
+    box-shadow .22s ease;
 }
 
 .card:hover{
-  transform:
-    translateY(-4px)
-    scale(1.015);
-
-  border-color:
-    rgba(244,217,137,.75);
+  transform:translateY(-4px) scale(1.015);
 
   box-shadow:
     0 0 15px rgba(216,172,71,.22),
@@ -778,177 +533,83 @@ button{
 }
 
 .card h2{
-  margin:
-    0
-    0
-    8px;
-
+  margin:0 0 8px;
   color:var(--gold2);
-
-  font:
-    700
-    18px
-    Georgia,
-    serif;
+  font:700 18px Georgia,serif;
 }
-
-/* =========================================================
-   LADY JUSTICE
-   ========================================================= */
 
 .lady{
   display:flex;
-
   gap:10px;
-
   align-items:center;
 }
 
 .lady img{
   width:105px;
   height:145px;
-
   object-fit:contain;
-
-  background:transparent;
-
-  transition:
-    transform .22s ease,
-    filter .22s ease;
-}
-
-.lady:hover img{
-  transform:
-    scale(1.06);
-
-  filter:
-    drop-shadow(
-      0 0 12px
-      rgba(244,217,137,.35)
-    );
 }
 
 .lady p{
   margin:0;
-
   color:#dce4f0;
-
   font-size:12px;
-
   line-height:1.5;
 }
 
-/* =========================================================
-   LINKS / ANNOUNCEMENTS
-   ========================================================= */
-
 .announcement{
   padding:9px;
-
-  border-left:
-    3px solid
-    var(--gold);
-
+  border-left:3px solid var(--gold);
   border-radius:8px;
-
-  background:
-    rgba(255,255,255,.035);
+  background:rgba(255,255,255,.035);
 }
 
 .announcement strong{
   display:block;
-
   margin-bottom:4px;
 }
 
 .links{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:6px;
 }
 
 .links a{
   padding:9px;
-
   text-align:center;
-
   font-size:11px;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:9px;
 
   background:#0d3470;
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease,
-    background .22s ease;
 }
-
-.links a:hover{
-  transform:
-    translateY(-3px)
-    scale(1.04);
-
-  background:#1552a0;
-
-  box-shadow:
-    0 0 14px
-    rgba(42,117,230,.36);
-}
-
-/* =========================================================
-   API STATUS
-   ========================================================= */
 
 .api-status{
   display:flex;
-
   gap:7px;
-
   align-items:center;
 }
 
 .dot{
   width:9px;
   height:9px;
-
   border-radius:50%;
-
   background:#f0b541;
-
-  box-shadow:
-    0 0 8px
-    #f0b541;
 }
 
 .dot.live{
   background:#45d17b;
-
-  box-shadow:
-    0 0 8px
-    #45d17b;
 }
 
 .dot.error{
   background:#ff5d5d;
-
-  box-shadow:
-    0 0 8px
-    #ff5d5d;
 }
 
 .note{
   color:var(--muted);
-
   font-size:10px;
-
   line-height:1.5;
 }
 
@@ -958,167 +619,177 @@ button{
 
 .board{
   position:relative;
-
   width:100%;
-
-  margin:
-    8px
-    0;
-
+  margin:8px 0;
   overflow:hidden;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:17px;
 
   background:transparent;
 
-  box-shadow:
-    var(--shadow);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
-}
-
-.board:hover{
-  transform:
-    translateY(-3px)
-    scale(1.008);
-
-  box-shadow:
-    0 0 14px rgba(216,172,71,.20),
-    0 18px 40px rgba(0,0,0,.45);
+  box-shadow:var(--shadow);
 }
 
 .board > img{
   display:block;
-
   width:100%;
   height:auto;
-
   margin:0;
-
-  background:transparent;
 }
 
 /* =========================================================
    NEW MEMBERS
-   EACH MEMBER IS ITS OWN POSITIONED OBJECT
+   EACH MEMBER IS COMPLETELY INDEPENDENT
    ========================================================= */
 
 .member-slots{
   position:absolute;
   inset:0;
-
   pointer-events:none;
 }
 
 .member{
   position:absolute;
-
-  height:7.2%;
-
   display:block;
-
-  color:#071b33;
-
-  cursor:pointer;
-
+  height:7.4%;
   pointer-events:auto;
-
-  transition:
-    transform .22s ease,
-    filter .22s ease;
+  cursor:pointer;
 }
 
-/* MEMBER 1 */
+/* =========================================================
+   MEMBER 1
+   ========================================================= */
 
 .member:nth-child(1){
-  top:42.3%;
-  left:18.5%;
-  width:71.5%;
+  top:43.2%;
+  left:16.8%;
+  width:73%;
 }
 
-/* MEMBER 2 */
+.member:nth-child(1) img{
+  left:0%;
+  top:50%;
+}
+
+.member:nth-child(1) > div{
+  left:37px;
+  top:52%;
+}
+
+/* =========================================================
+   MEMBER 2
+   ========================================================= */
 
 .member:nth-child(2){
-  top:50.7%;
-  left:18.5%;
-  width:71.5%;
+  top:51.6%;
+  left:16.8%;
+  width:73%;
 }
 
-/* MEMBER 3 */
+.member:nth-child(2) img{
+  left:0%;
+  top:50%;
+}
+
+.member:nth-child(2) > div{
+  left:37px;
+  top:52%;
+}
+
+/* =========================================================
+   MEMBER 3
+   ========================================================= */
 
 .member:nth-child(3){
-  top:59.1%;
-  left:18.5%;
-  width:71.5%;
+  top:60.0%;
+  left:16.8%;
+  width:73%;
 }
 
-/* MEMBER 4 */
+.member:nth-child(3) img{
+  left:0%;
+  top:50%;
+}
+
+.member:nth-child(3) > div{
+  left:37px;
+  top:52%;
+}
+
+/* =========================================================
+   MEMBER 4
+   ========================================================= */
 
 .member:nth-child(4){
-  top:67.5%;
-  left:18.5%;
-  width:71.5%;
+  top:68.4%;
+  left:16.8%;
+  width:73%;
 }
 
-/* MEMBER 5 */
+.member:nth-child(4) img{
+  left:0%;
+  top:50%;
+}
+
+.member:nth-child(4) > div{
+  left:37px;
+  top:52%;
+}
+
+/* =========================================================
+   MEMBER 5
+   ========================================================= */
 
 .member:nth-child(5){
-  top:75.9%;
-  left:18.5%;
-  width:71.5%;
+  top:76.8%;
+  left:16.8%;
+  width:73%;
 }
 
-/* MEMBER AVATAR */
+.member:nth-child(5) img{
+  left:0%;
+  top:50%;
+}
+
+.member:nth-child(5) > div{
+  left:37px;
+  top:52%;
+}
+
+/* =========================================================
+   MEMBER AVATAR
+   ========================================================= */
 
 .member img{
   position:absolute;
 
-  left:0;
-  top:50%;
-
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
   width:30px;
   height:30px;
 
   object-fit:cover;
 
-  border:
-    2px solid
-    #164b8f;
-
+  border:2px solid #164b8f;
   border-radius:50%;
 
   background:#d8e4f4;
 
   box-shadow:
-    0 0 5px
-    rgba(22,75,143,.30);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
+    0 0 6px rgba(22,75,143,.40);
 }
 
-/* MEMBER TEXT */
+/* =========================================================
+   MEMBER TEXT
+   ========================================================= */
 
 .member > div{
   position:absolute;
 
-  left:38px;
   right:4px;
 
-  top:50%;
-
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
   min-width:0;
 
@@ -1132,13 +803,11 @@ button{
 
   overflow:hidden;
 
-  color:#061b36;
+  color:#041426;
 
   font-size:12px;
-
-  font-weight:800;
-
-  line-height:1.05;
+  font-weight:900;
+  line-height:1;
 
   letter-spacing:.01em;
 
@@ -1146,8 +815,8 @@ button{
   white-space:nowrap;
 
   text-shadow:
-    0 1px 0
-    rgba(255,255,255,.65);
+    0 1px 0 #fff,
+    0 0 2px rgba(255,255,255,.75);
 }
 
 .member small{
@@ -1155,70 +824,35 @@ button{
 
   margin-top:2px;
 
-  overflow:hidden;
-
-  color:#38506d;
+  color:#233b58;
 
   font-size:8px;
-
-  font-weight:700;
-
+  font-weight:800;
   line-height:1;
 
-  text-overflow:ellipsis;
   white-space:nowrap;
-}
-
-.member:hover{
-  transform:
-    translateX(3px)
-    scale(1.015);
-
-  filter:
-    drop-shadow(
-      0 3px 4px
-      rgba(0,0,0,.18)
-    );
-}
-
-.member:hover img{
-  transform:
-    translateY(-50%)
-    scale(1.08);
-
-  box-shadow:
-    0 0 10px
-    rgba(25,88,185,.55);
 }
 
 /* =========================================================
    TITLED PLAYERS
-   EACH PLAYER IS NOW ITS OWN POSITIONED OBJECT
+   FULLY INDEPENDENT
    ========================================================= */
 
 .titled-slots{
   position:absolute;
   inset:0;
-
   pointer-events:none;
 }
 
 .titled-member{
   position:absolute;
-
-  height:11%;
-
   display:block;
 
-  color:#071b33;
-
-  cursor:pointer;
+  height:12%;
 
   pointer-events:auto;
 
-  transition:
-    transform .22s ease,
-    filter .22s ease;
+  cursor:pointer;
 }
 
 /* =========================================================
@@ -1226,9 +860,19 @@ button{
    ========================================================= */
 
 .titled-member:nth-child(1){
-  top:61.0%;
-  left:30.5%;
-  width:58%;
+  top:59.0%;
+  left:26.5%;
+  width:63%;
+}
+
+.titled-member:nth-child(1) img{
+  left:0%;
+  top:52%;
+}
+
+.titled-member:nth-child(1) > div{
+  left:44px;
+  top:52%;
 }
 
 /* =========================================================
@@ -1236,9 +880,19 @@ button{
    ========================================================= */
 
 .titled-member:nth-child(2){
-  top:74.0%;
-  left:30.5%;
-  width:58%;
+  top:72.0%;
+  left:26.5%;
+  width:63%;
+}
+
+.titled-member:nth-child(2) img{
+  left:0%;
+  top:52%;
+}
+
+.titled-member:nth-child(2) > div{
+  left:44px;
+  top:52%;
 }
 
 /* =========================================================
@@ -1248,102 +902,78 @@ button{
 .titled-member img{
   position:absolute;
 
-  left:0;
-  top:50%;
-
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
   width:38px;
   height:38px;
 
   object-fit:cover;
 
-  border:
-    2px solid
-    #c2942a;
-
+  border:2px solid #b98925;
   border-radius:50%;
 
   background:#e9eef7;
 
   box-shadow:
-    0 0 7px
-    rgba(194,148,42,.38);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
+    0 0 7px rgba(194,148,42,.45);
 }
 
 /* =========================================================
-   TITLED TEXT AREA
+   TITLED TEXT
    ========================================================= */
 
 .titled-member > div{
   position:absolute;
 
-  left:46px;
   right:3px;
 
-  top:50%;
-
-  transform:
-    translateY(-50%);
+  transform:translateY(-50%);
 
   min-width:0;
 
   overflow:hidden;
 }
 
-/* USERNAME */
-
 .titled-member strong{
   display:flex;
-
   align-items:center;
-
   gap:5px;
 
   width:100%;
 
   overflow:hidden;
 
-  color:#061b36;
+  color:#041426;
 
   font-size:12px;
-
-  font-weight:800;
-
-  line-height:1.05;
+  font-weight:900;
+  line-height:1;
 
   letter-spacing:.01em;
 
   white-space:nowrap;
 
   text-shadow:
-    0 1px 0
-    rgba(255,255,255,.70);
+    0 1px 0 #fff,
+    0 0 2px rgba(255,255,255,.75);
 }
 
-/* TITLE BADGE */
+.titled-username{
+  display:block;
+  min-width:0;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
 
 .badge{
   flex:0 0 auto;
 
-  display:inline-block;
-
-  padding:
-    2px
-    5px;
+  padding:2px 5px;
 
   color:#fff;
 
   font-size:7px;
-
-  font-weight:800;
-
-  line-height:1;
+  font-weight:900;
 
   border-radius:5px;
 
@@ -1353,39 +983,37 @@ button{
       #d6a83c,
       #936915
     );
-
-  box-shadow:
-    0 1px 4px
-    rgba(0,0,0,.25);
 }
-
-/* RATING */
 
 .titled-member small{
   display:block;
 
   margin-top:3px;
 
-  overflow:hidden;
-
-  color:#38506d;
+  color:#233b58;
 
   font-size:8px;
+  font-weight:800;
 
-  font-weight:700;
-
-  line-height:1;
-
-  text-overflow:ellipsis;
   white-space:nowrap;
 }
 
-/* TITLED HOVER */
+/* =========================================================
+   HOVER EFFECTS
+   ========================================================= */
 
+.member,
+.titled-member{
+  transition:
+    transform .22s ease,
+    filter .22s ease;
+}
+
+.member:hover,
 .titled-member:hover{
   transform:
     translateX(3px)
-    scale(1.015);
+    scale(1.02);
 
   filter:
     drop-shadow(
@@ -1394,44 +1022,24 @@ button{
     );
 }
 
-.titled-member:hover img{
-  transform:
-    translateY(-50%)
-    scale(1.08);
-
-  box-shadow:
-    0 0 12px
-    rgba(194,148,42,.62);
-}
-
 /* =========================================================
    TOURNAMENT
    ========================================================= */
 
 .countdown{
-  padding:
-    10px
-    0;
+  padding:10px 0;
 
   color:var(--gold2);
 
   font-size:21px;
-
   font-weight:800;
 
   text-align:center;
-
-  text-shadow:
-    0 0 10px
-    rgba(244,217,137,.30);
 }
 
 .status{
   display:inline-block;
-
-  padding:
-    4px
-    7px;
+  padding:4px 7px;
 
   color:#fff;
 
@@ -1444,35 +1052,23 @@ button{
 
 .tournament-buttons{
   display:grid;
-
   gap:8px;
-
   margin-top:12px;
 }
 
 .tournament-button{
-  position:relative;
-
   display:block;
 
-  overflow:hidden;
-
-  padding:
-    11px
-    12px;
+  padding:11px 12px;
 
   text-align:center;
 
   color:#fff;
 
   font-weight:700;
-
   font-size:12px;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:10px;
 
   background:
@@ -1481,66 +1077,6 @@ button{
       #1556a8,
       #0a2d63
     );
-
-  box-shadow:
-    0 0 14px
-    rgba(38,102,199,.22);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
-}
-
-.tournament-button:hover{
-  transform:
-    translateY(-4px)
-    scale(1.035);
-
-  box-shadow:
-    0 0 15px
-    rgba(216,172,71,.26),
-
-    0 0 25px
-    rgba(42,119,234,.38);
-}
-
-.tournament-button::after{
-  content:"";
-
-  position:absolute;
-
-  top:-30%;
-  left:-60%;
-
-  width:45%;
-  height:160%;
-
-  transform:
-    rotate(18deg);
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.32),
-      transparent
-    );
-
-  animation:
-    buttonShimmer
-    4.5s
-    ease-in-out
-    infinite;
-}
-
-@keyframes buttonShimmer{
-  0%,70%{
-    left:-60%;
-  }
-
-  100%{
-    left:130%;
-  }
 }
 
 /* =========================================================
@@ -1549,55 +1085,25 @@ button{
 
 .podium-stage{
   position:relative;
-
   margin-top:12px;
-
   padding-top:82px;
 }
 
 .podium-art{
   display:block;
-
   width:100%;
   height:auto;
-
-  background:transparent;
-
-  filter:
-    drop-shadow(
-      0 10px 20px
-      rgba(0,0,0,.28)
-    );
 }
 
 .podium-player{
   position:absolute;
-
   z-index:5;
 
   width:29%;
 
   text-align:center;
 
-  transform:
-    translateX(-50%);
-
-  transition:
-    transform .22s ease,
-    filter .22s ease;
-}
-
-.podium-player:hover{
-  transform:
-    translateX(-50%)
-    translateY(-6px)
-    scale(1.08);
-
-  filter:
-    drop-shadow(
-      0 0 10px
-      rgba(255,214,112,.4)
-    );
+  transform:translateX(-50%);
 }
 
 .podium-player.first{
@@ -1616,40 +1122,20 @@ button{
 }
 
 .podium-avatar{
-  width:
-    clamp(
-      48px,
-      14vw,
-      68px
-    );
-
-  height:
-    clamp(
-      48px,
-      14vw,
-      68px
-    );
+  width:clamp(48px,14vw,68px);
+  height:clamp(48px,14vw,68px);
 
   object-fit:cover;
 
-  border:
-    3px solid
-    var(--gold2);
-
+  border:3px solid var(--gold2);
   border-radius:50%;
 
   background:#0a2851;
-
-  box-shadow:
-    0 0 14px
-    rgba(255,211,99,.68);
 }
 
 .podium-rank{
   color:var(--gold2);
-
   font-size:10px;
-
   font-weight:700;
 }
 
@@ -1659,17 +1145,14 @@ button{
   color:#fff;
 
   font-size:11px;
-
   font-weight:800;
 
   text-overflow:ellipsis;
-
   white-space:nowrap;
 }
 
 .podium-info{
   color:var(--gold2);
-
   font-size:8px;
 }
 
@@ -1679,10 +1162,7 @@ button{
 
 .staff-grid{
   display:grid;
-
-  grid-template-columns:
-    1fr 1fr;
-
+  grid-template-columns:1fr 1fr;
   gap:8px;
 }
 
@@ -1691,31 +1171,10 @@ button{
 
   text-align:center;
 
-  border:
-    1px solid
-    rgba(255,255,255,.08);
-
+  border:1px solid rgba(255,255,255,.08);
   border-radius:12px;
 
-  background:
-    rgba(255,255,255,.045);
-
-  transition:
-    transform .22s ease,
-    box-shadow .22s ease;
-}
-
-.staff-person:hover{
-  transform:
-    translateY(-5px)
-    scale(1.045);
-
-  box-shadow:
-    0 0 16px
-    rgba(216,172,71,.26),
-
-    0 0 24px
-    rgba(32,101,208,.20);
+  background:rgba(255,255,255,.045);
 }
 
 .staff-avatar{
@@ -1724,46 +1183,26 @@ button{
   width:54px;
   height:54px;
 
-  margin:
-    0 auto
-    7px;
+  margin:0 auto 7px;
 
   object-fit:cover;
 
-  border:
-    2px solid
-    var(--gold);
-
+  border:2px solid var(--gold);
   border-radius:50%;
-
-  background:#0a2851;
-
-  box-shadow:
-    0 0 12px
-    rgba(216,170,69,.32);
 }
 
 .staff-person strong{
   display:block;
-
   font-size:12px;
 }
 
 .staff-person small{
   color:var(--gold2);
-
   font-size:10px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
 .footer{
-  padding:
-    12px
-    0
-    4px;
+  padding:12px 0 4px;
 
   color:#7f8ea3;
 
@@ -1782,10 +1221,6 @@ button{
     padding:4px;
   }
 
-  .hero img{
-    max-height:215px;
-  }
-
   .digital-clock{
     font-size:27px;
   }
@@ -1793,10 +1228,6 @@ button{
   .member img{
     width:27px;
     height:27px;
-  }
-
-  .member > div{
-    left:34px;
   }
 
   .member strong{
@@ -1812,10 +1243,6 @@ button{
     height:34px;
   }
 
-  .titled-member > div{
-    left:41px;
-  }
-
   .titled-member strong{
     font-size:10px;
   }
@@ -1827,13 +1254,7 @@ button{
   .badge{
     font-size:6px;
   }
-
-  .podium-name{
-    font-size:9px;
-  }
-
 }
-
 </style>
 </head>
 
@@ -1845,10 +1266,7 @@ button{
 
 <div class="frame">
 
-<div
-  id="frameEmbers"
-  class="frame-embers"
-></div>
+<div id="frameEmbers" class="frame-embers"></div>
 
 <section class="hero">
 
@@ -1858,32 +1276,19 @@ button{
 >
 
 <div class="hero-copy">
-
-<h1>
-ACFA
-</h1>
-
-<div>
-Every Player Belongs • Every Move Matters
-</div>
-
+  <h1>ACFA</h1>
+  <div>Every Player Belongs • Every Move Matters</div>
 </div>
 
 </section>
 
 <section class="clock-card">
 
-<div
-  id="digitalClock"
-  class="digital-clock"
->
+<div id="digitalClock" class="digital-clock">
 --:--:--
 </div>
 
-<div
-  id="digitalDate"
-  class="digital-date"
->
+<div id="digitalDate" class="digital-date">
 Loading date…
 </div>
 
@@ -1914,52 +1319,31 @@ YOUR LOCAL TIME
 
 <nav class="tabs">
 
-<button
-  class="tab active"
-  data-go="home"
->
+<button class="tab active" data-go="home">
 Home
 </button>
 
-<button
-  class="tab"
-  data-go="members"
->
+<button class="tab" data-go="members">
 Members
 </button>
 
-<button
-  class="tab"
-  data-go="titled"
->
+<button class="tab" data-go="titled">
 Titled
 </button>
 
-<button
-  class="tab"
-  data-go="tourney"
->
+<button class="tab" data-go="tourney">
 Tourney
 </button>
 
-<button
-  class="tab"
-  data-go="staff"
->
+<button class="tab" data-go="staff">
 Staff
 </button>
 
 </nav>
 
-<div
-  id="scrollContent"
-  class="content"
->
+<div id="scrollContent" class="content">
 
-<section
-  id="home"
-  class="panel active"
->
+<section id="home" class="panel active">
 
 <article class="card lady">
 
@@ -1969,42 +1353,29 @@ Staff
 >
 
 <div>
+  <h2>Welcome to ACFA</h2>
 
-<h2>
-Welcome to ACFA
-</h2>
-
-<p>
-No matter your rating or experience, there’s a place for you here. Play, grow, support one another, and make every move count.
-</p>
-
+  <p>
+    No matter your rating or experience, there’s a place for you here. Play, grow, support one another, and make every move count.
+  </p>
 </div>
 
 </article>
 
 <article class="card">
 
-<h2>
-Announcements
-</h2>
+<h2>Announcements</h2>
 
 <div class="announcement">
-
-<strong>
-ACFA Fall Championship
-</strong>
-
-Registration is open through October 4.
-
+  <strong>ACFA Fall Championship</strong>
+  Registration is open through October 4.
 </div>
 
 </article>
 
 <article class="card">
 
-<h2>
-Quick Links
-</h2>
+<h2>Quick Links</h2>
 
 <div class="links">
 
@@ -2042,16 +1413,11 @@ Notes
 
 <article class="card">
 
-<h2>
-Chess.com PubAPI
-</h2>
+<h2>Chess.com PubAPI</h2>
 
 <div class="api-status">
 
-<span
-  id="apiDot"
-  class="dot"
-></span>
+<span id="apiDot" class="dot"></span>
 
 <strong id="apiStatus">
 Connecting…
@@ -2059,10 +1425,7 @@ Connecting…
 
 </div>
 
-<div
-  id="apiDetails"
-  class="note"
->
+<div id="apiDetails" class="note">
 Loading public ACFA data.
 </div>
 
@@ -2070,10 +1433,7 @@ Loading public ACFA data.
 
 </section>
 
-<section
-  id="members"
-  class="panel"
->
+<section id="members" class="panel">
 
 <div class="board">
 
@@ -2082,19 +1442,13 @@ Loading public ACFA data.
   alt="New Members"
 >
 
-<div
-  id="memberSlots"
-  class="member-slots"
-></div>
+<div id="memberSlots" class="member-slots"></div>
 
 </div>
 
 </section>
 
-<section
-  id="titled"
-  class="panel"
->
+<section id="titled" class="panel">
 
 <div class="board">
 
@@ -2103,25 +1457,17 @@ Loading public ACFA data.
   alt="Titled Players"
 >
 
-<div
-  id="titledSlots"
-  class="titled-slots"
-></div>
+<div id="titledSlots" class="titled-slots"></div>
 
 </div>
 
 </section>
 
-<section
-  id="tourney"
-  class="panel"
->
+<section id="tourney" class="panel">
 
 <article class="card">
 
-<h2>
-ACFA Seasonal Tournaments
-</h2>
+<h2>ACFA Seasonal Tournaments</h2>
 
 <span
   id="tourneyStatus"
@@ -2130,10 +1476,7 @@ ACFA Seasonal Tournaments
 Registration Open
 </span>
 
-<div
-  id="countdown"
-  class="countdown"
->
+<div id="countdown" class="countdown">
 —
 </div>
 
@@ -2146,9 +1489,7 @@ Registration Open
 
 <article class="card">
 
-<h2>
-Champions Podium
-</h2>
+<h2>Champions Podium</h2>
 
 <div class="podium-stage">
 
@@ -2239,16 +1580,11 @@ To Be Crowned
 
 </section>
 
-<section
-  id="staff"
-  class="panel"
->
+<section id="staff" class="panel">
 
 <article class="card">
 
-<h2>
-ACFA Staff
-</h2>
+<h2>ACFA Staff</h2>
 
 <div
   id="staffGrid"
@@ -2264,13 +1600,10 @@ And Chess For All Official
 </div>
 
 </div>
-
 </div>
-
 </main>
 
 <script>
-
 const API =
   "https://api.chess.com/pub";
 
@@ -2313,37 +1646,26 @@ const sleep =
         )
     );
 
-function esc(
-  value = ""
-){
+function esc(value = ""){
 
   return String(value).replace(
-
     /[&<>"']/g,
-
     char => ({
-
       "&":"&amp;",
       "<":"&lt;",
       ">":"&gt;",
       '"':"&quot;",
       "'":"&#039;"
-
     })[char]
-
   );
 
 }
 
-function profileURL(
-  username
-){
+function profileURL(username){
 
   return (
     "https://www.chess.com/member/" +
-    encodeURIComponent(
-      username
-    )
+    encodeURIComponent(username)
   );
 
 }
@@ -2357,20 +1679,15 @@ async function getJSON(
 
     const response =
       await fetch(
-
         path +
         "?v=" +
         Date.now(),
-
         {
           cache:"no-store"
         }
-
       );
 
-    if(
-      !response.ok
-    ){
+    if(!response.ok){
 
       throw new Error(
         "HTTP " +
@@ -2396,25 +1713,17 @@ async function getJSON(
 
 }
 
-async function chessFetch(
-  path
-){
+async function chessFetch(path){
 
   const response =
     await fetch(
-
-      API +
-      path,
-
+      API + path,
       {
         cache:"no-store"
       }
-
     );
 
-  if(
-    !response.ok
-  ){
+  if(!response.ok){
 
     throw new Error(
       "Chess.com HTTP " +
@@ -2427,9 +1736,7 @@ async function chessFetch(
 
 }
 
-function parseClubMembers(
-  data
-){
+function parseClubMembers(data){
 
   const collection = [];
 
@@ -2442,17 +1749,12 @@ function parseClubMembers(
     bucket => {
 
       const list =
-
         Array.isArray(
           data?.[bucket]
         )
-
         ?
-
         data[bucket]
-
         :
-
         [];
 
       list.forEach(
@@ -2464,11 +1766,9 @@ function parseClubMembers(
           ){
 
             collection.push({
-
               username:item,
               joined:0,
               title:""
-
             });
 
           }
@@ -2478,20 +1778,9 @@ function parseClubMembers(
           ){
 
             collection.push({
-
-              username:
-                item.username,
-
-              joined:
-                Number(
-                  item.joined ||
-                  0
-                ),
-
-              title:
-                item.title ||
-                ""
-
+              username:item.username,
+              joined:Number(item.joined || 0),
+              title:item.title || ""
             });
 
           }
@@ -2509,17 +1798,13 @@ function parseClubMembers(
     member => {
 
       const key =
-        member.username
-        .toLowerCase();
+        member.username.toLowerCase();
 
       const existing =
-        unique.get(
-          key
-        );
+        unique.get(key);
 
       if(
         !existing ||
-
         member.joined >
         existing.joined
       ){
@@ -2534,24 +1819,16 @@ function parseClubMembers(
     }
   );
 
-  return (
-
-    [...unique.values()]
+  return [...unique.values()]
     .sort(
-
       (a,b) =>
         b.joined -
         a.joined
-
-    )
-
-  );
+    );
 
 }
 
-function bestRating(
-  stats
-){
+function bestRating(stats){
 
   const ratings = [];
 
@@ -2584,39 +1861,21 @@ function bestRating(
     }
   );
 
-  return (
-
-    ratings.length
-
+  return ratings.length
     ?
-
-    Math.max(
-      ...ratings
-    )
-
+    Math.max(...ratings)
     :
-
-    0
-
-  );
+    0;
 
 }
 
-async function enrichPlayer(
-  member
-){
+async function enrichPlayer(member){
 
   const username =
-
-    typeof member ===
-    "string"
-
+    typeof member === "string"
     ?
-
     member
-
     :
-
     member.username;
 
   let profile = {};
@@ -2626,40 +1885,25 @@ async function enrichPlayer(
 
     profile =
       await chessFetch(
-
         "/player/" +
-
-        encodeURIComponent(
-          username
-        )
-
+        encodeURIComponent(username)
       );
 
   }
-
   catch{}
 
-  await sleep(
-    220
-  );
+  await sleep(150);
 
   try{
 
     stats =
       await chessFetch(
-
         "/player/" +
-
-        encodeURIComponent(
-          username
-        ) +
-
+        encodeURIComponent(username) +
         "/stats"
-
       );
 
   }
-
   catch{}
 
   return {
@@ -2667,34 +1911,21 @@ async function enrichPlayer(
     username,
 
     avatar:
-
       profile.avatar ||
-
       FALLBACK_AVATAR,
 
     title:
-
       profile.title ||
-
       (
-        typeof member ===
-        "object"
-
+        typeof member === "object"
         ?
-
-        member.title ||
-        ""
-
+        member.title || ""
         :
-
         ""
       ),
 
     rating:
-
-      bestRating(
-        stats
-      )
+      bestRating(stats)
 
   };
 
@@ -2721,23 +1952,15 @@ async function loadChessComData(){
 
     const club =
       await chessFetch(
-
         "/club/" +
         CLUB_SLUG
-
       );
-
-    await sleep(
-      300
-    );
 
     const memberData =
       await chessFetch(
-
         "/club/" +
         CLUB_SLUG +
         "/members"
-
       );
 
     const members =
@@ -2750,10 +1973,12 @@ async function loadChessComData(){
       "membersCount"
     )
     .textContent =
-
       club.members_count ??
-
       members.length;
+
+    /* ===============================
+       NEWEST MEMBERS
+       =============================== */
 
     const newest =
       members.slice(
@@ -2766,8 +1991,7 @@ async function loadChessComData(){
         "memberSlots"
       );
 
-    memberBox.innerHTML =
-      "";
+    memberBox.innerHTML = "";
 
     for(
       const member
@@ -2796,9 +2020,7 @@ async function loadChessComData(){
 
         <div>
 
-          <strong
-            title="${esc(player.username)}"
-          >
+          <strong>
             ${esc(player.username)}
           </strong>
 
@@ -2819,43 +2041,33 @@ async function loadChessComData(){
       row.onclick =
         () =>
           window.open(
-
             profileURL(
               player.username
             ),
-
             "_blank"
-
           );
 
       memberBox.appendChild(
         row
       );
 
-      await sleep(
-        180
-      );
-
     }
+
+    /* ===============================
+       TITLED PLAYERS
+       =============================== */
 
     const memberMap =
       new Map(
-
         members.map(
           member => [
-
-            member.username
-            .toLowerCase(),
-
+            member.username.toLowerCase(),
             member
-
           ]
         )
-
       );
 
-    const titledFound =
-      [];
+    const titledFound = [];
 
     for(
       const title
@@ -2866,19 +2078,15 @@ async function loadChessComData(){
         titledFound.length >=
         2
       ){
-
         break;
-
       }
 
       try{
 
         const data =
           await chessFetch(
-
             "/titled/" +
             title
-
           );
 
         for(
@@ -2888,44 +2096,30 @@ async function loadChessComData(){
 
           const member =
             memberMap.get(
-
-              username
-              .toLowerCase()
-
+              username.toLowerCase()
             );
 
           if(
             member &&
-
             !titledFound.some(
-
               item =>
-                item.username
-                .toLowerCase()
+                item.username.toLowerCase()
                 ===
-                username
-                .toLowerCase()
-
+                username.toLowerCase()
             )
           ){
 
             titledFound.push({
-
               ...member,
-
               username,
-
               title
-
             });
 
             if(
               titledFound.length >=
               2
             ){
-
               break;
-
             }
 
           }
@@ -2933,12 +2127,7 @@ async function loadChessComData(){
         }
 
       }
-
       catch{}
-
-      await sleep(
-        180
-      );
 
     }
 
@@ -2947,8 +2136,7 @@ async function loadChessComData(){
         "titledSlots"
       );
 
-    titledBox.innerHTML =
-      "";
+    titledBox.innerHTML = "";
 
     for(
       const member
@@ -2977,9 +2165,7 @@ async function loadChessComData(){
 
         <div>
 
-          <strong
-            title="${esc(player.username)}"
-          >
+          <strong>
 
             <span class="titled-username">
               ${esc(player.username)}
@@ -3008,13 +2194,10 @@ async function loadChessComData(){
       row.onclick =
         () =>
           window.open(
-
             profileURL(
               player.username
             ),
-
             "_blank"
-
           );
 
       titledBox.appendChild(
@@ -3058,15 +2241,16 @@ async function loadChessComData(){
 
 }
 
+/* =========================================================
+   TOURNAMENT BUTTONS
+   ========================================================= */
+
 async function loadTournamentButtons(){
 
   const tournaments =
     await getJSON(
-
       "generated/tournaments.json",
-
       []
-
     );
 
   const container =
@@ -3074,16 +2258,13 @@ async function loadTournamentButtons(){
       "tournamentButtons"
     );
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
   tournaments
   .filter(
-
     tournament =>
       tournament.active &&
       tournament.url
-
   )
   .forEach(
     tournament => {
@@ -3106,11 +2287,8 @@ async function loadTournamentButtons(){
         "noopener noreferrer";
 
       button.textContent =
-
         tournament.button ||
-
         tournament.name ||
-
         "Open Tournament";
 
       container.appendChild(
@@ -3122,15 +2300,16 @@ async function loadTournamentButtons(){
 
 }
 
+/* =========================================================
+   STAFF
+   ========================================================= */
+
 async function loadStaff(){
 
   const staff =
     await getJSON(
-
       "generated/staff.json",
-
       []
-
     );
 
   const container =
@@ -3138,15 +2317,12 @@ async function loadStaff(){
       "staffGrid"
     );
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
   staff.sort(
-
     (a,b) =>
       (a.order || 999) -
       (b.order || 999)
-
   );
 
   for(
@@ -3200,63 +2376,46 @@ async function loadStaff(){
       card
     );
 
-    await sleep(
-      180
-    );
-
   }
 
 }
+
+/* =========================================================
+   CHAMPIONS
+   ========================================================= */
 
 async function loadChampions(){
 
   const champions =
     await getJSON(
-
       "generated/champions.json",
-
       {
         first:"",
         second:"",
         third:""
       }
-
     );
 
   const data =
-
     champions["fall-2026"] ||
-
     champions;
 
   await populatePodium(
-
     "podiumFirst",
-
     data.first,
-
     "1ST PLACE"
-
   );
 
   await populatePodium(
-
     "podiumSecond",
-
     data.second,
-
     "2ND PLACE"
-
   );
 
   await populatePodium(
-
     "podiumThird",
-
     data.third,
-
     "3RD PLACE"
-
   );
 
 }
@@ -3267,19 +2426,13 @@ async function populatePodium(
   rank
 ){
 
-  if(
-    !username
-  ){
-
+  if(!username){
     return;
-
   }
 
   const player =
     await enrichPlayer({
-
       username
-
     });
 
   const element =
@@ -3288,46 +2441,43 @@ async function populatePodium(
     );
 
   element
-  .querySelector(
-    ".podium-avatar"
-  )
-  .src =
-    player.avatar;
-
-  element
-  .querySelector(
-    ".podium-rank"
-  )
-  .textContent =
-    rank;
-
-  element
-  .querySelector(
-    ".podium-name"
-  )
-  .textContent =
-    player.username;
-
-  element
-  .querySelector(
-    ".podium-info"
-  )
-  .textContent =
-
-    [
-      player.title,
-      player.rating
-    ]
-
-    .filter(
-      Boolean
+    .querySelector(
+      ".podium-avatar"
     )
+    .src =
+      player.avatar;
 
-    .join(
-      " • "
-    );
+  element
+    .querySelector(
+      ".podium-rank"
+    )
+    .textContent =
+      rank;
+
+  element
+    .querySelector(
+      ".podium-name"
+    )
+    .textContent =
+      player.username;
+
+  element
+    .querySelector(
+      ".podium-info"
+    )
+    .textContent =
+      [
+        player.title,
+        player.rating
+      ]
+      .filter(Boolean)
+      .join(" • ");
 
 }
+
+/* =========================================================
+   CLOCK
+   ========================================================= */
 
 function updateClock(){
 
@@ -3335,46 +2485,40 @@ function updateClock(){
     new Date();
 
   document
-  .getElementById(
-    "digitalClock"
-  )
-  .textContent =
-
-    now
-    .toLocaleTimeString(
-
-      [],
-
-      {
-        hour:"2-digit",
-        minute:"2-digit",
-        second:"2-digit",
-        hour12:true
-      }
-
-    );
+    .getElementById(
+      "digitalClock"
+    )
+    .textContent =
+      now.toLocaleTimeString(
+        [],
+        {
+          hour:"2-digit",
+          minute:"2-digit",
+          second:"2-digit",
+          hour12:true
+        }
+      );
 
   document
-  .getElementById(
-    "digitalDate"
-  )
-  .textContent =
-
-    now
-    .toLocaleDateString(
-
-      [],
-
-      {
-        weekday:"short",
-        month:"short",
-        day:"numeric",
-        year:"numeric"
-      }
-
-    );
+    .getElementById(
+      "digitalDate"
+    )
+    .textContent =
+      now.toLocaleDateString(
+        [],
+        {
+          weekday:"short",
+          month:"short",
+          day:"numeric",
+          year:"numeric"
+        }
+      );
 
 }
+
+/* =========================================================
+   TOURNAMENT COUNTDOWN
+   ========================================================= */
 
 function updateTournament(){
 
@@ -3407,16 +2551,11 @@ function updateTournament(){
   }
 
   status.textContent =
-
     now <
     FALL_CLOSE
-
     ?
-
     "Registration Open"
-
     :
-
     "Registration Closed";
 
   let diff =
@@ -3429,8 +2568,7 @@ function updateTournament(){
       86400000
     );
 
-  diff %=
-    86400000;
+  diff %= 86400000;
 
   const hours =
     Math.floor(
@@ -3438,8 +2576,7 @@ function updateTournament(){
       3600000
     );
 
-  diff %=
-    3600000;
+  diff %= 3600000;
 
   const minutes =
     Math.floor(
@@ -3447,8 +2584,7 @@ function updateTournament(){
       60000
     );
 
-  diff %=
-    60000;
+  diff %= 60000;
 
   const seconds =
     Math.floor(
@@ -3457,13 +2593,12 @@ function updateTournament(){
     );
 
   output.textContent =
-
     `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
 }
 
 /* =========================================================
-   NAVIGATION
+   TAB NAVIGATION
    ========================================================= */
 
 document
@@ -3478,54 +2613,50 @@ document
       () => {
 
         document
-        .querySelectorAll(
-          ".tab"
-        )
-        .forEach(
-          tab =>
-            tab
-            .classList
-            .remove(
-              "active"
-            )
-        );
+          .querySelectorAll(
+            ".tab"
+          )
+          .forEach(
+            tab =>
+              tab.classList.remove(
+                "active"
+              )
+          );
 
         document
-        .querySelectorAll(
-          ".panel"
-        )
-        .forEach(
-          panel =>
-            panel
-            .classList
-            .remove(
-              "active"
-            )
-        );
+          .querySelectorAll(
+            ".panel"
+          )
+          .forEach(
+            panel =>
+              panel.classList.remove(
+                "active"
+              )
+          );
 
         button
-        .classList
-        .add(
-          "active"
-        );
+          .classList
+          .add(
+            "active"
+          );
 
         document
-        .getElementById(
-          button.dataset.go
-        )
-        .classList
-        .add(
-          "active"
-        );
+          .getElementById(
+            button.dataset.go
+          )
+          .classList
+          .add(
+            "active"
+          );
 
         document
-        .getElementById(
-          "scrollContent"
-        )
-        .scrollTo({
-          top:0,
-          behavior:"smooth"
-        });
+          .getElementById(
+            "scrollContent"
+          )
+          .scrollTo({
+            top:0,
+            behavior:"smooth"
+          });
 
       }
     );
@@ -3534,7 +2665,7 @@ document
 );
 
 /* =========================================================
-   PARTICLES
+   EMBERS
    ========================================================= */
 
 for(
@@ -3572,12 +2703,12 @@ for(
     "s";
 
   document
-  .getElementById(
-    "fx"
-  )
-  .appendChild(
-    spark
-  );
+    .getElementById(
+      "fx"
+    )
+    .appendChild(
+      spark
+    );
 
 }
 
@@ -3647,7 +2778,6 @@ for(
    ========================================================= */
 
 updateClock();
-
 updateTournament();
 
 setInterval(
@@ -3661,11 +2791,8 @@ setInterval(
 );
 
 loadChessComData();
-
 loadTournamentButtons();
-
 loadStaff();
-
 loadChampions();
 
 </script>
