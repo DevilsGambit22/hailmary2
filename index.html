@@ -45,10 +45,27 @@ body::-webkit-scrollbar{
 
 body{
   color:var(--text);
-  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+
+  font-family:
+    Inter,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+
   background:
-    radial-gradient(circle at 50% -5%,rgba(22,79,151,.38),transparent 34%),
-    linear-gradient(180deg,#06101f,#03070d 72%);
+    radial-gradient(
+      circle at 50% -5%,
+      rgba(22,79,151,.38),
+      transparent 34%
+    ),
+    linear-gradient(
+      180deg,
+      #06101f,
+      #03070d 72%
+    );
 }
 
 a{
@@ -59,6 +76,10 @@ a{
 button{
   font:inherit;
 }
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
 
 #fx{
   position:fixed;
@@ -87,37 +108,52 @@ button{
   }
 }
 
+/* =========================================================
+   APP
+   ========================================================= */
+
 .app{
   position:relative;
   z-index:1;
+
   width:100%;
   max-width:470px;
+
   height:100vh;
   height:100dvh;
+
   margin:0 auto;
   padding:6px;
+
   overflow:hidden;
 }
 
 .frame{
   position:relative;
+
   display:flex;
   flex-direction:column;
+
   width:100%;
   height:100%;
+
   overflow:hidden;
+
   border:1px solid rgba(216,172,71,.58);
   border-radius:20px;
+
   background:
     linear-gradient(
       180deg,
       rgba(8,30,60,.96),
       rgba(4,13,27,.99)
     );
+
   box-shadow:
     0 0 12px rgba(216,172,71,.18),
     0 0 26px rgba(25,89,180,.14),
     0 14px 38px rgba(0,0,0,.48);
+
   animation:frameGlow 4s ease-in-out infinite alternate;
 }
 
@@ -137,6 +173,10 @@ button{
   }
 }
 
+/* =========================================================
+   INTERNAL EMBERS
+   ========================================================= */
+
 .frame-embers{
   position:absolute;
   inset:0;
@@ -148,20 +188,30 @@ button{
 .frame-ember{
   position:absolute;
   bottom:-12px;
+
   width:3px;
   height:3px;
+
   border-radius:50%;
+
   background:#ffd36b;
+
   box-shadow:
     0 0 7px #ffbf42,
     0 0 12px rgba(255,133,34,.65);
+
   opacity:.7;
+
   animation:sidebarEmberRise linear infinite;
 }
 
 @keyframes sidebarEmberRise{
   0%{
-    transform:translateY(0) translateX(0) scale(.7);
+    transform:
+      translateY(0)
+      translateX(0)
+      scale(.7);
+
     opacity:0;
   }
 
@@ -174,10 +224,18 @@ button{
   }
 
   100%{
-    transform:translateY(-1100px) translateX(30px) scale(1.2);
+    transform:
+      translateY(-1100px)
+      translateX(30px)
+      scale(1.2);
+
     opacity:0;
   }
 }
+
+/* =========================================================
+   FIXED TOP
+   ========================================================= */
 
 .hero,
 .clock-card,
@@ -185,6 +243,10 @@ button{
 .tabs{
   flex:0 0 auto;
 }
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .hero{
   position:relative;
@@ -194,38 +256,59 @@ button{
 
 .hero img{
   display:block;
+
   width:100%;
   max-height:245px;
+
   object-fit:contain;
+
   background:transparent;
+
   transition:
     transform .35s ease,
     filter .35s ease;
+
   animation:logoFloat 4.5s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
   0%,100%{
-    transform:translateY(0) scale(1);
+    transform:
+      translateY(0)
+      scale(1);
   }
 
   50%{
-    transform:translateY(-4px) scale(1.015);
+    transform:
+      translateY(-4px)
+      scale(1.015);
   }
 }
 
 .hero:hover img{
-  transform:scale(1.055) translateY(-4px);
+  transform:
+    scale(1.055)
+    translateY(-4px);
+
   filter:
-    drop-shadow(0 0 10px rgba(255,214,112,.55))
-    drop-shadow(0 0 22px rgba(45,132,255,.32));
+    drop-shadow(
+      0 0 10px
+      rgba(255,214,112,.55)
+    )
+    drop-shadow(
+      0 0 22px
+      rgba(45,132,255,.32)
+    );
 }
 
 .hero::after{
   content:"";
+
   position:absolute;
   inset:0;
+
   pointer-events:none;
+
   background:
     linear-gradient(
       180deg,
@@ -237,44 +320,67 @@ button{
 .hero-copy{
   position:absolute;
   z-index:4;
+
   left:12px;
   right:12px;
   bottom:7px;
+
   text-align:center;
+
   text-shadow:0 2px 10px #000;
 }
 
 .hero-copy h1{
   margin:0;
-  font-family:Georgia,serif;
+
+  font-family:
+    Georgia,
+    serif;
+
   font-size:30px;
+
   letter-spacing:.08em;
 }
 
 .hero-copy div{
   color:var(--gold2);
-  font-family:Georgia,serif;
+
+  font-family:
+    Georgia,
+    serif;
+
   font-size:13px;
+
   font-style:italic;
 }
+
+/* =========================================================
+   CLOCK
+   ========================================================= */
 
 .clock-card{
   position:relative;
   z-index:3;
+
   margin:5px 8px;
   padding:8px;
+
   text-align:center;
+
   border:1px solid var(--ring);
   border-radius:15px;
+
   background:
     radial-gradient(
       circle at 50% 0,
       rgba(24,92,184,.30),
       rgba(5,18,38,.97) 68%
     );
+
   box-shadow:
     inset 0 0 24px rgba(34,102,206,.16),
     0 8px 22px rgba(0,0,0,.28);
+
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -282,8 +388,13 @@ button{
 }
 
 .clock-card:hover{
-  transform:translateY(-2px) scale(1.01);
-  border-color:rgba(244,217,137,.82);
+  transform:
+    translateY(-2px)
+    scale(1.01);
+
+  border-color:
+    rgba(244,217,137,.82);
+
   box-shadow:
     0 0 16px rgba(216,172,71,.22),
     0 0 26px rgba(32,111,224,.24);
@@ -291,10 +402,22 @@ button{
 
 .digital-clock{
   color:#dff4ff;
-  font-family:"Courier New",monospace;
-  font-size:clamp(25px,8vw,38px);
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size:
+    clamp(
+      25px,
+      8vw,
+      38px
+    );
+
   font-weight:700;
+
   letter-spacing:.06em;
+
   text-shadow:
     0 0 6px #58b7ff,
     0 0 16px rgba(34,143,255,.9);
@@ -302,40 +425,70 @@ button{
 
 .digital-date{
   margin-top:1px;
+
   color:var(--gold2);
-  font-family:Georgia,serif;
+
+  font-family:
+    Georgia,
+    serif;
+
   font-size:11px;
+
   letter-spacing:.12em;
+
   text-transform:uppercase;
 }
 
 .clock-label{
   margin-top:3px;
+
   color:var(--muted);
+
   font-size:7px;
+
   letter-spacing:.2em;
 }
+
+/* =========================================================
+   STATS
+   ========================================================= */
 
 .stats{
   position:relative;
   z-index:3;
+
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+
+  grid-template-columns:
+    repeat(3,1fr);
+
   gap:6px;
-  padding:4px 8px 7px;
+
+  padding:
+    4px
+    8px
+    7px;
 }
 
 .stat{
-  padding:7px 4px;
+  padding:
+    7px
+    4px;
+
   text-align:center;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:12px;
+
   background:
     linear-gradient(
       180deg,
       #0c2d5d,
       #071b38
     );
+
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -343,8 +496,13 @@ button{
 }
 
 .stat:hover{
-  transform:translateY(-3px) scale(1.035);
-  border-color:rgba(244,217,137,.82);
+  transform:
+    translateY(-3px)
+    scale(1.035);
+
+  border-color:
+    rgba(244,217,137,.82);
+
   box-shadow:
     0 0 14px rgba(216,172,71,.30),
     0 0 22px rgba(27,96,201,.22);
@@ -365,25 +523,51 @@ button{
   text-transform:uppercase;
 }
 
+/* =========================================================
+   NAV
+   ========================================================= */
+
 .tabs{
   position:relative;
   z-index:10;
+
   display:grid;
-  grid-template-columns:repeat(5,1fr);
+
+  grid-template-columns:
+    repeat(5,1fr);
+
   gap:5px;
-  padding:5px 8px 7px;
-  background:rgba(3,8,16,.95);
-  backdrop-filter:blur(10px);
+
+  padding:
+    5px
+    8px
+    7px;
+
+  background:
+    rgba(3,8,16,.95);
+
+  backdrop-filter:
+    blur(10px);
 }
 
 .tab{
   cursor:pointer;
-  padding:7px 2px;
+
+  padding:
+    7px
+    2px;
+
   color:#dfe8f5;
+
   font-size:10px;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:10px;
+
   background:#0a2449;
+
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -393,28 +577,51 @@ button{
 
 .tab:hover,
 .tab.active{
-  transform:translateY(-2px) scale(1.05);
+  transform:
+    translateY(-2px)
+    scale(1.05);
+
   background:#12488e;
-  border-color:rgba(244,217,137,.82);
+
+  border-color:
+    rgba(244,217,137,.82);
+
   box-shadow:
     0 0 16px rgba(40,118,235,.42),
     0 0 8px rgba(216,172,71,.24);
 }
 
+/* =========================================================
+   INTERNAL SCROLL
+   ========================================================= */
+
 .content{
   position:relative;
   z-index:3;
+
   flex:1 1 auto;
+
   min-height:0;
   width:100%;
-  padding:0 8px 16px;
+
+  padding:
+    0
+    8px
+    16px;
+
   overflow-y:auto !important;
   overflow-x:hidden !important;
+
   overscroll-behavior:contain;
   touch-action:pan-y;
+
   -webkit-overflow-scrolling:touch;
+
   scrollbar-width:thin;
-  scrollbar-color:#d5a73d transparent;
+
+  scrollbar-color:
+    #d5a73d
+    transparent;
 }
 
 .content::-webkit-scrollbar{
@@ -432,13 +639,23 @@ button{
       #f4d989,
       #b98220
     );
+
   border-radius:20px;
-  box-shadow:0 0 8px rgba(244,217,137,.55);
+
+  box-shadow:
+    0 0 8px
+    rgba(244,217,137,.55);
 }
+
+/* =========================================================
+   PANELS
+   ========================================================= */
 
 .panel{
   display:none;
-  animation:fade .2s ease;
+
+  animation:
+    fade .2s ease;
 }
 
 .panel.active{
@@ -448,28 +665,46 @@ button{
 @keyframes fade{
   from{
     opacity:0;
-    transform:translateY(5px);
+
+    transform:
+      translateY(5px);
   }
 
   to{
     opacity:1;
+
     transform:none;
   }
 }
 
+/* =========================================================
+   CARDS
+   ========================================================= */
+
 .card{
   position:relative;
-  margin:8px 0;
+
+  margin:
+    8px
+    0;
+
   padding:11px;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:15px;
+
   background:
     linear-gradient(
       145deg,
       rgba(13,45,89,.92),
       rgba(5,18,38,.98)
     );
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
+
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -477,8 +712,13 @@ button{
 }
 
 .card:hover{
-  transform:translateY(-4px) scale(1.015);
-  border-color:rgba(244,217,137,.75);
+  transform:
+    translateY(-4px)
+    scale(1.015);
+
+  border-color:
+    rgba(244,217,137,.75);
+
   box-shadow:
     0 0 15px rgba(216,172,71,.22),
     0 0 26px rgba(35,102,205,.22),
@@ -486,10 +726,23 @@ button{
 }
 
 .card h2{
-  margin:0 0 8px;
+  margin:
+    0
+    0
+    8px;
+
   color:var(--gold2);
-  font:700 18px Georgia,serif;
+
+  font:
+    700
+    18px
+    Georgia,
+    serif;
 }
+
+/* =========================================================
+   LADY JUSTICE
+   ========================================================= */
 
 .lady{
   display:flex;
@@ -500,8 +753,11 @@ button{
 .lady img{
   width:105px;
   height:145px;
+
   object-fit:contain;
+
   background:transparent;
+
   transition:
     transform .22s ease,
     filter .22s ease;
@@ -509,6 +765,7 @@ button{
 
 .lady:hover img{
   transform:scale(1.06);
+
   filter:
     drop-shadow(
       0 0 12px
@@ -518,16 +775,28 @@ button{
 
 .lady p{
   margin:0;
+
   color:#dce4f0;
+
   font-size:12px;
+
   line-height:1.5;
 }
 
+/* =========================================================
+   ANNOUNCEMENTS / LINKS
+   ========================================================= */
+
 .announcement{
   padding:9px;
-  border-left:3px solid var(--gold);
+
+  border-left:
+    3px solid var(--gold);
+
   border-radius:8px;
-  background:rgba(255,255,255,.035);
+
+  background:
+    rgba(255,255,255,.035);
 }
 
 .announcement strong{
@@ -537,17 +806,28 @@ button{
 
 .links{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:6px;
 }
 
 .links a{
   padding:9px;
+
   text-align:center;
+
   font-size:11px;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:9px;
-  background:#0d3470;
+
+  background:
+    #0d3470;
+
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -555,10 +835,20 @@ button{
 }
 
 .links a:hover{
-  transform:translateY(-3px) scale(1.04);
+  transform:
+    translateY(-3px)
+    scale(1.04);
+
   background:#1552a0;
-  box-shadow:0 0 14px rgba(42,117,230,.36);
+
+  box-shadow:
+    0 0 14px
+    rgba(42,117,230,.36);
 }
+
+/* =========================================================
+   API STATUS
+   ========================================================= */
 
 .api-status{
   display:flex;
@@ -569,43 +859,72 @@ button{
 .dot{
   width:9px;
   height:9px;
+
   border-radius:50%;
+
   background:#f0b541;
-  box-shadow:0 0 8px #f0b541;
+
+  box-shadow:
+    0 0 8px #f0b541;
 }
 
 .dot.live{
   background:#45d17b;
-  box-shadow:0 0 8px #45d17b;
+
+  box-shadow:
+    0 0 8px #45d17b;
 }
 
 .dot.error{
   background:#ff5d5d;
-  box-shadow:0 0 8px #ff5d5d;
+
+  box-shadow:
+    0 0 8px #ff5d5d;
 }
 
 .note{
   color:var(--muted);
+
   font-size:10px;
+
   line-height:1.5;
 }
 
+/* =========================================================
+   BOARD BASE
+   ========================================================= */
+
 .board{
   position:relative;
+
   width:100%;
-  margin:8px 0;
+
+  margin:
+    8px
+    0;
+
   overflow:hidden;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:17px;
+
   background:transparent;
-  box-shadow:var(--shadow);
+
+  box-shadow:
+    var(--shadow);
+
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .board:hover{
-  transform:translateY(-3px) scale(1.008);
+  transform:
+    translateY(-3px)
+    scale(1.008);
+
   box-shadow:
     0 0 14px rgba(216,172,71,.20),
     0 18px 40px rgba(0,0,0,.45);
@@ -613,38 +932,39 @@ button{
 
 .board > img{
   display:block;
+
   width:100%;
   height:auto;
+
   margin:0;
+
   background:transparent;
 }
 
 /* =========================================================
-   NEW MEMBERS — NUDGED LEFT + DOWN
+   NEW MEMBERS — EACH ROW IS ITS OWN OBJECT
    ========================================================= */
 
 .member-slots{
   position:absolute;
   inset:0;
+
   pointer-events:none;
 }
+
+/* COMMON ROW STYLE */
 
 .member{
   position:absolute;
 
-  left:18.5%;
-
-  width:71.5%;
   height:7.2%;
 
-  display:flex;
-  align-items:center;
-
-  padding:0 2%;
+  display:block;
 
   color:#071b33;
 
   cursor:pointer;
+
   pointer-events:auto;
 
   transition:
@@ -652,33 +972,72 @@ button{
     filter .22s ease;
 }
 
+/* =========================================================
+   ROW 1
+   ========================================================= */
+
 .member:nth-child(1){
   top:41.0%;
+  left:18.5%;
+  width:71.5%;
 }
+
+/* =========================================================
+   ROW 2
+   ========================================================= */
 
 .member:nth-child(2){
   top:49.4%;
+  left:18.5%;
+  width:71.5%;
 }
+
+/* =========================================================
+   ROW 3
+   ========================================================= */
 
 .member:nth-child(3){
   top:57.8%;
+  left:18.5%;
+  width:71.5%;
 }
+
+/* =========================================================
+   ROW 4
+   ========================================================= */
 
 .member:nth-child(4){
   top:66.2%;
+  left:18.5%;
+  width:71.5%;
 }
+
+/* =========================================================
+   ROW 5
+   ========================================================= */
 
 .member:nth-child(5){
   top:74.6%;
+  left:18.5%;
+  width:71.5%;
 }
 
+/* =========================================================
+   EACH MEMBER AVATAR IS INDIVIDUALLY POSITIONED
+   ========================================================= */
+
 .member img{
-  flex:0 0 auto;
+  position:absolute;
+
+  left:0;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
 
   width:30px;
   height:30px;
-
-  margin-right:7px;
 
   object-fit:cover;
 
@@ -692,15 +1051,28 @@ button{
   box-shadow:
     0 0 5px
     rgba(22,75,143,.28);
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
 }
 
+/* =========================================================
+   EACH MEMBER TEXT BLOCK IS SEPARATE
+   ========================================================= */
+
 .member > div{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+  position:absolute;
+
+  left:38px;
+  right:3px;
+
+  top:50%;
+
+  transform:
+    translateY(-50%);
 
   min-width:0;
-  width:100%;
 
   overflow:hidden;
 }
@@ -716,6 +1088,7 @@ button{
 
   font-size:11px;
   font-weight:700;
+
   line-height:1;
 
   text-overflow:ellipsis;
@@ -732,6 +1105,7 @@ button{
   color:#66778d;
 
   font-size:7px;
+
   line-height:1;
 
   text-overflow:ellipsis;
@@ -751,6 +1125,10 @@ button{
 }
 
 .member:hover img{
+  transform:
+    translateY(-50%)
+    scale(1.08);
+
   box-shadow:
     0 0 10px
     rgba(25,88,185,.55);
@@ -763,6 +1141,7 @@ button{
 .titled-slots{
   position:absolute;
   inset:0;
+
   pointer-events:none;
 }
 
@@ -777,11 +1156,14 @@ button{
   display:flex;
   align-items:center;
 
-  padding:0 2%;
+  padding:
+    0
+    2%;
 
   color:#071b33;
 
   cursor:pointer;
+
   pointer-events:auto;
 
   transition:
@@ -821,11 +1203,8 @@ button{
 }
 
 .titled-member > div{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-
   min-width:0;
+
   width:100%;
 
   overflow:hidden;
@@ -842,6 +1221,7 @@ button{
 
   font-size:11px;
   font-weight:700;
+
   line-height:1;
 
   text-overflow:ellipsis;
@@ -858,6 +1238,7 @@ button{
   color:#66778d;
 
   font-size:7px;
+
   line-height:1;
 
   text-overflow:ellipsis;
@@ -876,6 +1257,7 @@ button{
   color:#fff;
 
   font-size:6px;
+
   line-height:1;
 
   border-radius:4px;
@@ -903,68 +1285,119 @@ button{
     rgba(194,148,42,.55);
 }
 
+/* =========================================================
+   TOURNAMENT
+   ========================================================= */
+
 .countdown{
-  padding:10px 0;
+  padding:
+    10px
+    0;
+
   color:var(--gold2);
+
   font-size:21px;
+
   font-weight:800;
+
   text-align:center;
-  text-shadow:0 0 10px rgba(244,217,137,.30);
+
+  text-shadow:
+    0 0 10px
+    rgba(244,217,137,.30);
 }
 
 .status{
   display:inline-block;
-  padding:4px 7px;
+
+  padding:
+    4px
+    7px;
+
   color:#fff;
+
   font-size:10px;
+
   border-radius:999px;
+
   background:#174d98;
 }
 
 .tournament-buttons{
   display:grid;
+
   gap:8px;
+
   margin-top:12px;
 }
 
 .tournament-button{
   position:relative;
+
   display:block;
+
   overflow:hidden;
-  padding:11px 12px;
+
+  padding:
+    11px
+    12px;
+
   text-align:center;
+
   color:#fff;
+
   font-weight:700;
+
   font-size:12px;
-  border:1px solid var(--ring);
+
+  border:
+    1px solid var(--ring);
+
   border-radius:10px;
+
   background:
     linear-gradient(
       180deg,
       #1556a8,
       #0a2d63
     );
-  box-shadow:0 0 14px rgba(38,102,199,.22);
+
+  box-shadow:
+    0 0 14px
+    rgba(38,102,199,.22);
+
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .tournament-button:hover{
-  transform:translateY(-4px) scale(1.035);
+  transform:
+    translateY(-4px)
+    scale(1.035);
+
   box-shadow:
-    0 0 15px rgba(216,172,71,.26),
-    0 0 25px rgba(42,119,234,.38);
+    0 0 15px
+    rgba(216,172,71,.26),
+
+    0 0 25px
+    rgba(42,119,234,.38);
 }
 
 .tournament-button::after{
   content:"";
+
   position:absolute;
+
   top:-30%;
   left:-60%;
+
   width:45%;
   height:160%;
-  transform:rotate(18deg);
+
+  transform:
+    rotate(18deg);
+
   background:
     linear-gradient(
       90deg,
@@ -972,7 +1405,12 @@ button{
       rgba(255,255,255,.32),
       transparent
     );
-  animation:buttonShimmer 4.5s ease-in-out infinite;
+
+  animation:
+    buttonShimmer
+    4.5s
+    ease-in-out
+    infinite;
 }
 
 @keyframes buttonShimmer{
@@ -985,17 +1423,26 @@ button{
   }
 }
 
+/* =========================================================
+   PODIUM
+   ========================================================= */
+
 .podium-stage{
   position:relative;
+
   margin-top:12px;
+
   padding-top:82px;
 }
 
 .podium-art{
   display:block;
+
   width:100%;
   height:auto;
+
   background:transparent;
+
   filter:
     drop-shadow(
       0 10px 20px
@@ -1005,10 +1452,16 @@ button{
 
 .podium-player{
   position:absolute;
+
   z-index:5;
+
   width:29%;
+
   text-align:center;
-  transform:translateX(-50%);
+
+  transform:
+    translateX(-50%);
+
   transition:
     transform .22s ease,
     filter .22s ease;
@@ -1043,89 +1496,160 @@ button{
 }
 
 .podium-avatar{
-  width:clamp(48px,14vw,68px);
-  height:clamp(48px,14vw,68px);
+  width:
+    clamp(
+      48px,
+      14vw,
+      68px
+    );
+
+  height:
+    clamp(
+      48px,
+      14vw,
+      68px
+    );
+
   object-fit:cover;
-  border:3px solid var(--gold2);
+
+  border:
+    3px solid
+    var(--gold2);
+
   border-radius:50%;
+
   background:#0a2851;
-  box-shadow:0 0 14px rgba(255,211,99,.68);
+
+  box-shadow:
+    0 0 14px
+    rgba(255,211,99,.68);
 }
 
 .podium-rank{
   color:var(--gold2);
+
   font-size:10px;
+
   font-weight:700;
 }
 
 .podium-name{
   overflow:hidden;
+
   color:#fff;
+
   font-size:11px;
+
   font-weight:800;
+
   text-overflow:ellipsis;
+
   white-space:nowrap;
 }
 
 .podium-info{
   color:var(--gold2);
+
   font-size:8px;
 }
 
+/* =========================================================
+   STAFF
+   ========================================================= */
+
 .staff-grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+
+  grid-template-columns:
+    1fr 1fr;
+
   gap:8px;
 }
 
 .staff-person{
   padding:10px;
+
   text-align:center;
-  border:1px solid rgba(255,255,255,.08);
+
+  border:
+    1px solid
+    rgba(255,255,255,.08);
+
   border-radius:12px;
-  background:rgba(255,255,255,.045);
+
+  background:
+    rgba(255,255,255,.045);
+
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .staff-person:hover{
-  transform:translateY(-5px) scale(1.045);
+  transform:
+    translateY(-5px)
+    scale(1.045);
+
   box-shadow:
-    0 0 16px rgba(216,172,71,.26),
-    0 0 24px rgba(32,101,208,.20);
+    0 0 16px
+    rgba(216,172,71,.26),
+
+    0 0 24px
+    rgba(32,101,208,.20);
 }
 
 .staff-avatar{
   display:block;
+
   width:54px;
   height:54px;
-  margin:0 auto 7px;
+
+  margin:
+    0 auto
+    7px;
+
   object-fit:cover;
-  border:2px solid var(--gold);
+
+  border:
+    2px solid
+    var(--gold);
+
   border-radius:50%;
+
   background:#0a2851;
-  box-shadow:0 0 12px rgba(216,170,69,.32);
+
+  box-shadow:
+    0 0 12px
+    rgba(216,170,69,.32);
 }
 
 .staff-person strong{
   display:block;
+
   font-size:12px;
 }
 
 .staff-person small{
   color:var(--gold2);
+
   font-size:10px;
 }
 
 .footer{
-  padding:12px 0 4px;
+  padding:
+    12px
+    0
+    4px;
+
   color:#7f8ea3;
+
   font-size:9px;
+
   text-align:center;
 }
 
 @media(max-width:360px){
+
   .app{
     padding:4px;
   }
@@ -1141,6 +1665,10 @@ button{
   .member img{
     width:27px;
     height:27px;
+  }
+
+  .member > div{
+    left:34px;
   }
 
   .member strong{
@@ -1167,6 +1695,7 @@ button{
   .podium-name{
     font-size:9px;
   }
+
 }
 </style>
 </head>
@@ -1179,329 +1708,422 @@ button{
 
 <div class="frame">
 
-<div id="frameEmbers" class="frame-embers"></div>
+<div
+  id="frameEmbers"
+  class="frame-embers"
+></div>
 
 <section class="hero">
-  <img src="assets/images/acfa-emblem.png" alt="ACFA">
 
-  <div class="hero-copy">
-    <h1>ACFA</h1>
-    <div>Every Player Belongs • Every Move Matters</div>
-  </div>
+<img
+  src="assets/images/acfa-emblem.png"
+  alt="ACFA"
+>
+
+<div class="hero-copy">
+
+<h1>
+ACFA
+</h1>
+
+<div>
+Every Player Belongs • Every Move Matters
+</div>
+
+</div>
+
 </section>
 
 <section class="clock-card">
 
-  <div id="digitalClock" class="digital-clock">
-    --:--:--
-  </div>
+<div
+  id="digitalClock"
+  class="digital-clock"
+>
+--:--:--
+</div>
 
-  <div id="digitalDate" class="digital-date">
-    Loading date…
-  </div>
+<div
+  id="digitalDate"
+  class="digital-date"
+>
+Loading date…
+</div>
 
-  <div class="clock-label">
-    YOUR LOCAL TIME
-  </div>
+<div class="clock-label">
+YOUR LOCAL TIME
+</div>
 
 </section>
 
 <section class="stats">
 
-  <div class="stat">
-    <b id="membersCount">—</b>
-    <span>Members</span>
-  </div>
+<div class="stat">
+  <b id="membersCount">—</b>
+  <span>Members</span>
+</div>
 
-  <div class="stat">
-    <b id="titledCount">—</b>
-    <span>Titled</span>
-  </div>
+<div class="stat">
+  <b id="titledCount">—</b>
+  <span>Titled</span>
+</div>
 
-  <div class="stat">
-    <b id="nextEvent">Oct 5</b>
-    <span>Next Event</span>
-  </div>
+<div class="stat">
+  <b id="nextEvent">Oct 5</b>
+  <span>Next Event</span>
+</div>
 
 </section>
 
 <nav class="tabs">
 
-  <button class="tab active" data-go="home">
-    Home
-  </button>
+<button
+  class="tab active"
+  data-go="home"
+>
+Home
+</button>
 
-  <button class="tab" data-go="members">
-    Members
-  </button>
+<button
+  class="tab"
+  data-go="members"
+>
+Members
+</button>
 
-  <button class="tab" data-go="titled">
-    Titled
-  </button>
+<button
+  class="tab"
+  data-go="titled"
+>
+Titled
+</button>
 
-  <button class="tab" data-go="tourney">
-    Tourney
-  </button>
+<button
+  class="tab"
+  data-go="tourney"
+>
+Tourney
+</button>
 
-  <button class="tab" data-go="staff">
-    Staff
-  </button>
+<button
+  class="tab"
+  data-go="staff"
+>
+Staff
+</button>
 
 </nav>
 
-<div id="scrollContent" class="content">
+<div
+  id="scrollContent"
+  class="content"
+>
 
-<section id="home" class="panel active">
+<section
+  id="home"
+  class="panel active"
+>
 
-  <article class="card lady">
+<article class="card lady">
 
-    <img
-      src="assets/images/lady-justice.png"
-      alt="Lady Justice"
-    >
+<img
+  src="assets/images/lady-justice.png"
+  alt="Lady Justice"
+>
 
-    <div>
-      <h2>Welcome to ACFA</h2>
+<div>
 
-      <p>
-        No matter your rating or experience, there’s a place for you here. Play, grow, support one another, and make every move count.
-      </p>
-    </div>
+<h2>
+Welcome to ACFA
+</h2>
 
-  </article>
+<p>
+No matter your rating or experience, there’s a place for you here. Play, grow, support one another, and make every move count.
+</p>
 
-  <article class="card">
+</div>
 
-    <h2>Announcements</h2>
+</article>
 
-    <div class="announcement">
-      <strong>ACFA Fall Championship</strong>
-      Registration is open through October 4.
-    </div>
+<article class="card">
 
-  </article>
+<h2>
+Announcements
+</h2>
 
-  <article class="card">
+<div class="announcement">
 
-    <h2>Quick Links</h2>
+<strong>
+ACFA Fall Championship
+</strong>
 
-    <div class="links">
+Registration is open through October 4.
 
-      <a
-        href="https://www.chess.com/clubs/forum/and-chess-for-all-official"
-        target="_blank"
-      >
-        Forums
-      </a>
+</div>
 
-      <a
-        href="https://www.chess.com/clubs/events/and-chess-for-all-official"
-        target="_blank"
-      >
-        Events
-      </a>
+</article>
 
-      <a
-        href="https://www.chess.com/club/and-chess-for-all-official"
-        target="_blank"
-      >
-        Club
-      </a>
+<article class="card">
 
-      <a
-        href="https://www.chess.com/club/notes/and-chess-for-all-official"
-        target="_blank"
-      >
-        Notes
-      </a>
+<h2>
+Quick Links
+</h2>
 
-    </div>
+<div class="links">
 
-  </article>
+<a
+  href="https://www.chess.com/clubs/forum/and-chess-for-all-official"
+  target="_blank"
+>
+Forums
+</a>
 
-  <article class="card">
+<a
+  href="https://www.chess.com/clubs/events/and-chess-for-all-official"
+  target="_blank"
+>
+Events
+</a>
 
-    <h2>Chess.com PubAPI</h2>
+<a
+  href="https://www.chess.com/club/and-chess-for-all-official"
+  target="_blank"
+>
+Club
+</a>
 
-    <div class="api-status">
+<a
+  href="https://www.chess.com/club/notes/and-chess-for-all-official"
+  target="_blank"
+>
+Notes
+</a>
 
-      <span id="apiDot" class="dot"></span>
+</div>
 
-      <strong id="apiStatus">
-        Connecting…
-      </strong>
+</article>
 
-    </div>
+<article class="card">
 
-    <div id="apiDetails" class="note">
-      Loading public ACFA data.
-    </div>
+<h2>
+Chess.com PubAPI
+</h2>
 
-  </article>
+<div class="api-status">
 
-</section>
+<span
+  id="apiDot"
+  class="dot"
+></span>
 
-<section id="members" class="panel">
+<strong id="apiStatus">
+Connecting…
+</strong>
 
-  <div class="board">
+</div>
 
-    <img
-      src="assets/images/new-members-board.png"
-      alt="New Members"
-    >
+<div
+  id="apiDetails"
+  class="note"
+>
+Loading public ACFA data.
+</div>
 
-    <div id="memberSlots" class="member-slots"></div>
-
-  </div>
-
-</section>
-
-<section id="titled" class="panel">
-
-  <div class="board">
-
-    <img
-      src="assets/images/titled-players-board.png"
-      alt="Titled Players"
-    >
-
-    <div id="titledSlots" class="titled-slots"></div>
-
-  </div>
+</article>
 
 </section>
 
-<section id="tourney" class="panel">
+<section
+  id="members"
+  class="panel"
+>
 
-  <article class="card">
+<div class="board">
 
-    <h2>
-      ACFA Seasonal Tournaments
-    </h2>
+<img
+  src="assets/images/new-members-board.png"
+  alt="New Members"
+>
 
-    <span id="tourneyStatus" class="status">
-      Registration Open
-    </span>
+<div
+  id="memberSlots"
+  class="member-slots"
+></div>
 
-    <div id="countdown" class="countdown">
-      —
-    </div>
-
-    <div
-      id="tournamentButtons"
-      class="tournament-buttons"
-    ></div>
-
-  </article>
-
-  <article class="card">
-
-    <h2>
-      Champions Podium
-    </h2>
-
-    <div class="podium-stage">
-
-      <div
-        id="podiumSecond"
-        class="podium-player second"
-      >
-        <img
-          class="podium-avatar"
-          src="assets/icons/logo.svg"
-          alt=""
-        >
-
-        <div class="podium-rank">
-          2ND PLACE
-        </div>
-
-        <div class="podium-name">
-          To Be Crowned
-        </div>
-
-        <div class="podium-info">
-          —
-        </div>
-      </div>
-
-      <div
-        id="podiumFirst"
-        class="podium-player first"
-      >
-        <img
-          class="podium-avatar"
-          src="assets/icons/logo.svg"
-          alt=""
-        >
-
-        <div class="podium-rank">
-          1ST PLACE
-        </div>
-
-        <div class="podium-name">
-          To Be Crowned
-        </div>
-
-        <div class="podium-info">
-          —
-        </div>
-      </div>
-
-      <div
-        id="podiumThird"
-        class="podium-player third"
-      >
-        <img
-          class="podium-avatar"
-          src="assets/icons/logo.svg"
-          alt=""
-        >
-
-        <div class="podium-rank">
-          3RD PLACE
-        </div>
-
-        <div class="podium-name">
-          To Be Crowned
-        </div>
-
-        <div class="podium-info">
-          —
-        </div>
-      </div>
-
-      <img
-        class="podium-art"
-        src="assets/images/acfa-champions-podium.png"
-        alt="Champions Podium"
-      >
-
-    </div>
-
-  </article>
+</div>
 
 </section>
 
-<section id="staff" class="panel">
+<section
+  id="titled"
+  class="panel"
+>
 
-  <article class="card">
+<div class="board">
 
-    <h2>
-      ACFA Staff
-    </h2>
+<img
+  src="assets/images/titled-players-board.png"
+  alt="Titled Players"
+>
 
-    <div
-      id="staffGrid"
-      class="staff-grid"
-    ></div>
+<div
+  id="titledSlots"
+  class="titled-slots"
+></div>
 
-  </article>
+</div>
+
+</section>
+
+<section
+  id="tourney"
+  class="panel"
+>
+
+<article class="card">
+
+<h2>
+ACFA Seasonal Tournaments
+</h2>
+
+<span
+  id="tourneyStatus"
+  class="status"
+>
+Registration Open
+</span>
+
+<div
+  id="countdown"
+  class="countdown"
+>
+—
+</div>
+
+<div
+  id="tournamentButtons"
+  class="tournament-buttons"
+></div>
+
+</article>
+
+<article class="card">
+
+<h2>
+Champions Podium
+</h2>
+
+<div class="podium-stage">
+
+<div
+  id="podiumSecond"
+  class="podium-player second"
+>
+
+<img
+  class="podium-avatar"
+  src="assets/icons/logo.svg"
+  alt=""
+>
+
+<div class="podium-rank">
+2ND PLACE
+</div>
+
+<div class="podium-name">
+To Be Crowned
+</div>
+
+<div class="podium-info">
+—
+</div>
+
+</div>
+
+<div
+  id="podiumFirst"
+  class="podium-player first"
+>
+
+<img
+  class="podium-avatar"
+  src="assets/icons/logo.svg"
+  alt=""
+>
+
+<div class="podium-rank">
+1ST PLACE
+</div>
+
+<div class="podium-name">
+To Be Crowned
+</div>
+
+<div class="podium-info">
+—
+</div>
+
+</div>
+
+<div
+  id="podiumThird"
+  class="podium-player third"
+>
+
+<img
+  class="podium-avatar"
+  src="assets/icons/logo.svg"
+  alt=""
+>
+
+<div class="podium-rank">
+3RD PLACE
+</div>
+
+<div class="podium-name">
+To Be Crowned
+</div>
+
+<div class="podium-info">
+—
+</div>
+
+</div>
+
+<img
+  class="podium-art"
+  src="assets/images/acfa-champions-podium.png"
+  alt="Champions Podium"
+>
+
+</div>
+
+</article>
+
+</section>
+
+<section
+  id="staff"
+  class="panel"
+>
+
+<article class="card">
+
+<h2>
+ACFA Staff
+</h2>
+
+<div
+  id="staffGrid"
+  class="staff-grid"
+></div>
+
+</article>
 
 </section>
 
 <div class="footer">
-  And Chess For All Official
+And Chess For All Official
 </div>
 
 </div>
@@ -1512,8 +2134,12 @@ button{
 
 <script>
 const API = "https://api.chess.com/pub";
-const CLUB_SLUG = "and-chess-for-all-official";
-const FALLBACK_AVATAR = "assets/icons/logo.svg";
+
+const CLUB_SLUG =
+  "and-chess-for-all-official";
+
+const FALLBACK_AVATAR =
+  "assets/icons/logo.svg";
 
 const FALL_START =
   new Date(
@@ -1538,16 +2164,19 @@ const TITLE_CODES = [
   "WCM"
 ];
 
-const sleep = ms =>
-  new Promise(
-    resolve =>
-      setTimeout(
-        resolve,
-        ms
-      )
-  );
+const sleep =
+  ms =>
+    new Promise(
+      resolve =>
+        setTimeout(
+          resolve,
+          ms
+        )
+    );
 
-function esc(value = ""){
+function esc(
+  value = ""
+){
 
   return String(value).replace(
     /[&<>"']/g,
@@ -1562,16 +2191,23 @@ function esc(value = ""){
 
 }
 
-function profileURL(username){
+function profileURL(
+  username
+){
 
   return (
     "https://www.chess.com/member/" +
-    encodeURIComponent(username)
+    encodeURIComponent(
+      username
+    )
   );
 
 }
 
-async function getJSON(path,fallback){
+async function getJSON(
+  path,
+  fallback
+){
 
   try{
 
@@ -1611,7 +2247,9 @@ async function getJSON(path,fallback){
 
 }
 
-async function chessFetch(path){
+async function chessFetch(
+  path
+){
 
   const response =
     await fetch(
@@ -1635,7 +2273,9 @@ async function chessFetch(path){
 
 }
 
-function parseClubMembers(data){
+function parseClubMembers(
+  data
+){
 
   const collection = [];
 
@@ -1732,7 +2372,9 @@ function parseClubMembers(data){
 
 }
 
-function bestRating(stats){
+function bestRating(
+  stats
+){
 
   const ratings = [];
 
@@ -1777,7 +2419,9 @@ function bestRating(stats){
 
 }
 
-async function enrichPlayer(member){
+async function enrichPlayer(
+  member
+){
 
   const username =
     typeof member ===
@@ -1837,7 +2481,8 @@ async function enrichPlayer(member){
         typeof member ===
         "object"
         ?
-        member.title || ""
+        member.title ||
+        ""
         :
         ""
       ),
@@ -1933,12 +2578,14 @@ async function loadChessComData(){
         "member";
 
       row.innerHTML = `
+
         <img
           src="${esc(player.avatar)}"
           alt=""
         >
 
         <div>
+
           <strong
             title="${esc(player.username)}"
           >
@@ -1949,12 +2596,15 @@ async function loadChessComData(){
             ${
               player.rating
               ?
-              player.rating + " rating"
+              player.rating +
+              " rating"
               :
               "ACFA member"
             }
           </small>
+
         </div>
+
       `;
 
       row.onclick =
@@ -1995,7 +2645,8 @@ async function loadChessComData(){
     ){
 
       if(
-        titledFound.length >= 2
+        titledFound.length >=
+        2
       ){
         break;
       }
@@ -2039,7 +2690,8 @@ async function loadChessComData(){
             });
 
             if(
-              titledFound.length >= 2
+              titledFound.length >=
+              2
             ){
               break;
             }
@@ -2085,6 +2737,7 @@ async function loadChessComData(){
         "titled-member";
 
       row.innerHTML = `
+
         <img
           src="${esc(player.avatar)}"
           alt=""
@@ -2095,24 +2748,28 @@ async function loadChessComData(){
           <strong
             title="${esc(player.username)}"
           >
+
             ${esc(player.username)}
 
             <span class="badge">
               ${esc(player.title)}
             </span>
+
           </strong>
 
           <small>
             ${
               player.rating
               ?
-              player.rating + " rating"
+              player.rating +
+              " rating"
               :
               "Titled Player"
             }
           </small>
 
         </div>
+
       `;
 
       row.onclick =
@@ -2273,6 +2930,7 @@ async function loadStaff(){
       "noopener noreferrer";
 
     card.innerHTML = `
+
       <img
         class="staff-avatar"
         src="${esc(player.avatar)}"
@@ -2286,6 +2944,7 @@ async function loadStaff(){
       <small>
         ${esc(member.role)}
       </small>
+
     `;
 
     container.appendChild(
@@ -2510,6 +3169,10 @@ function updateTournament(){
 
 }
 
+/* =========================================================
+   TAB NAVIGATION
+   ========================================================= */
+
 document
 .querySelectorAll(
   ".tab"
@@ -2576,6 +3239,10 @@ document
 
   }
 );
+
+/* =========================================================
+   PARTICLES
+   ========================================================= */
 
 for(
   let i = 0;
@@ -2681,6 +3348,10 @@ for(
   );
 
 }
+
+/* =========================================================
+   START
+   ========================================================= */
 
 updateClock();
 updateTournament();
