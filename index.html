@@ -45,26 +45,10 @@ body::-webkit-scrollbar{
 
 body{
   color:var(--text);
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Arial,
-    sans-serif;
-
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
   background:
-    radial-gradient(
-      circle at 50% -5%,
-      rgba(22,79,151,.38),
-      transparent 34%
-    ),
-    linear-gradient(
-      180deg,
-      #06101f,
-      #03070d 72%
-    );
+    radial-gradient(circle at 50% -5%,rgba(22,79,151,.38),transparent 34%),
+    linear-gradient(180deg,#06101f,#03070d 72%);
 }
 
 a{
@@ -75,10 +59,6 @@ a{
 button{
   font:inherit;
 }
-
-/* =========================================================
-   OUTER PARTICLES
-   ========================================================= */
 
 #fx{
   position:fixed;
@@ -107,10 +87,6 @@ button{
   }
 }
 
-/* =========================================================
-   APP
-   ========================================================= */
-
 .app{
   position:relative;
   z-index:1;
@@ -123,10 +99,6 @@ button{
   overflow:hidden;
 }
 
-/* =========================================================
-   MAIN FRAME
-   ========================================================= */
-
 .frame{
   position:relative;
   display:flex;
@@ -134,22 +106,18 @@ button{
   width:100%;
   height:100%;
   overflow:hidden;
-
   border:1px solid rgba(216,172,71,.58);
   border-radius:20px;
-
   background:
     linear-gradient(
       180deg,
       rgba(8,30,60,.96),
       rgba(4,13,27,.99)
     );
-
   box-shadow:
     0 0 12px rgba(216,172,71,.18),
     0 0 26px rgba(25,89,180,.14),
     0 14px 38px rgba(0,0,0,.48);
-
   animation:frameGlow 4s ease-in-out infinite alternate;
 }
 
@@ -169,10 +137,6 @@ button{
   }
 }
 
-/* =========================================================
-   INTERNAL EMBERS
-   ========================================================= */
-
 .frame-embers{
   position:absolute;
   inset:0;
@@ -188,21 +152,16 @@ button{
   height:3px;
   border-radius:50%;
   background:#ffd36b;
-
   box-shadow:
     0 0 7px #ffbf42,
     0 0 12px rgba(255,133,34,.65);
-
   opacity:.7;
   animation:sidebarEmberRise linear infinite;
 }
 
 @keyframes sidebarEmberRise{
   0%{
-    transform:
-      translateY(0)
-      translateX(0)
-      scale(.7);
+    transform:translateY(0) translateX(0) scale(.7);
     opacity:0;
   }
 
@@ -215,17 +174,10 @@ button{
   }
 
   100%{
-    transform:
-      translateY(-1100px)
-      translateX(30px)
-      scale(1.2);
+    transform:translateY(-1100px) translateX(30px) scale(1.2);
     opacity:0;
   }
 }
-
-/* =========================================================
-   FIXED TOP
-   ========================================================= */
 
 .hero,
 .clock-card,
@@ -233,10 +185,6 @@ button{
 .tabs{
   flex:0 0 auto;
 }
-
-/* =========================================================
-   HERO
-   ========================================================= */
 
 .hero{
   position:relative;
@@ -250,33 +198,24 @@ button{
   max-height:245px;
   object-fit:contain;
   background:transparent;
-
   transition:
     transform .35s ease,
     filter .35s ease;
-
   animation:logoFloat 4.5s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
   0%,100%{
-    transform:
-      translateY(0)
-      scale(1);
+    transform:translateY(0) scale(1);
   }
 
   50%{
-    transform:
-      translateY(-4px)
-      scale(1.015);
+    transform:translateY(-4px) scale(1.015);
   }
 }
 
 .hero:hover img{
-  transform:
-    scale(1.055)
-    translateY(-4px);
-
+  transform:scale(1.055) translateY(-4px);
   filter:
     drop-shadow(0 0 10px rgba(255,214,112,.55))
     drop-shadow(0 0 22px rgba(45,132,255,.32));
@@ -287,7 +226,6 @@ button{
   position:absolute;
   inset:0;
   pointer-events:none;
-
   background:
     linear-gradient(
       180deg,
@@ -320,31 +258,23 @@ button{
   font-style:italic;
 }
 
-/* =========================================================
-   CLOCK
-   ========================================================= */
-
 .clock-card{
   position:relative;
   z-index:3;
   margin:5px 8px;
   padding:8px;
   text-align:center;
-
   border:1px solid var(--ring);
   border-radius:15px;
-
   background:
     radial-gradient(
       circle at 50% 0,
       rgba(24,92,184,.30),
       rgba(5,18,38,.97) 68%
     );
-
   box-shadow:
     inset 0 0 24px rgba(34,102,206,.16),
     0 8px 22px rgba(0,0,0,.28);
-
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -352,12 +282,8 @@ button{
 }
 
 .clock-card:hover{
-  transform:
-    translateY(-2px)
-    scale(1.01);
-
+  transform:translateY(-2px) scale(1.01);
   border-color:rgba(244,217,137,.82);
-
   box-shadow:
     0 0 16px rgba(216,172,71,.22),
     0 0 26px rgba(32,111,224,.24);
@@ -369,7 +295,6 @@ button{
   font-size:clamp(25px,8vw,38px);
   font-weight:700;
   letter-spacing:.06em;
-
   text-shadow:
     0 0 6px #58b7ff,
     0 0 16px rgba(34,143,255,.9);
@@ -391,10 +316,6 @@ button{
   letter-spacing:.2em;
 }
 
-/* =========================================================
-   STATS
-   ========================================================= */
-
 .stats{
   position:relative;
   z-index:3;
@@ -407,17 +328,14 @@ button{
 .stat{
   padding:7px 4px;
   text-align:center;
-
   border:1px solid var(--ring);
   border-radius:12px;
-
   background:
     linear-gradient(
       180deg,
       #0c2d5d,
       #071b38
     );
-
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -425,12 +343,8 @@ button{
 }
 
 .stat:hover{
-  transform:
-    translateY(-3px)
-    scale(1.035);
-
+  transform:translateY(-3px) scale(1.035);
   border-color:rgba(244,217,137,.82);
-
   box-shadow:
     0 0 14px rgba(216,172,71,.30),
     0 0 22px rgba(27,96,201,.22);
@@ -451,19 +365,13 @@ button{
   text-transform:uppercase;
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
 .tabs{
   position:relative;
   z-index:10;
-
   display:grid;
   grid-template-columns:repeat(5,1fr);
   gap:5px;
   padding:5px 8px 7px;
-
   background:rgba(3,8,16,.95);
   backdrop-filter:blur(10px);
 }
@@ -473,11 +381,9 @@ button{
   padding:7px 2px;
   color:#dfe8f5;
   font-size:10px;
-
   border:1px solid var(--ring);
   border-radius:10px;
   background:#0a2449;
-
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -487,39 +393,26 @@ button{
 
 .tab:hover,
 .tab.active{
-  transform:
-    translateY(-2px)
-    scale(1.05);
-
+  transform:translateY(-2px) scale(1.05);
   background:#12488e;
   border-color:rgba(244,217,137,.82);
-
   box-shadow:
     0 0 16px rgba(40,118,235,.42),
     0 0 8px rgba(216,172,71,.24);
 }
 
-/* =========================================================
-   INTERNAL SCROLL
-   ========================================================= */
-
 .content{
   position:relative;
   z-index:3;
-
   flex:1 1 auto;
   min-height:0;
   width:100%;
-
   padding:0 8px 16px;
-
   overflow-y:auto !important;
   overflow-x:hidden !important;
-
   overscroll-behavior:contain;
   touch-action:pan-y;
   -webkit-overflow-scrolling:touch;
-
   scrollbar-width:thin;
   scrollbar-color:#d5a73d transparent;
 }
@@ -539,16 +432,9 @@ button{
       #f4d989,
       #b98220
     );
-
   border-radius:20px;
-
-  box-shadow:
-    0 0 8px rgba(244,217,137,.55);
+  box-shadow:0 0 8px rgba(244,217,137,.55);
 }
-
-/* =========================================================
-   PANELS
-   ========================================================= */
 
 .panel{
   display:none;
@@ -571,27 +457,19 @@ button{
   }
 }
 
-/* =========================================================
-   CARDS
-   ========================================================= */
-
 .card{
   position:relative;
   margin:8px 0;
   padding:11px;
-
   border:1px solid var(--ring);
   border-radius:15px;
-
   background:
     linear-gradient(
       145deg,
       rgba(13,45,89,.92),
       rgba(5,18,38,.98)
     );
-
   box-shadow:var(--shadow);
-
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -599,12 +477,8 @@ button{
 }
 
 .card:hover{
-  transform:
-    translateY(-4px)
-    scale(1.015);
-
+  transform:translateY(-4px) scale(1.015);
   border-color:rgba(244,217,137,.75);
-
   box-shadow:
     0 0 15px rgba(216,172,71,.22),
     0 0 26px rgba(35,102,205,.22),
@@ -617,10 +491,6 @@ button{
   font:700 18px Georgia,serif;
 }
 
-/* =========================================================
-   LADY JUSTICE
-   ========================================================= */
-
 .lady{
   display:flex;
   gap:10px;
@@ -632,7 +502,6 @@ button{
   height:145px;
   object-fit:contain;
   background:transparent;
-
   transition:
     transform .22s ease,
     filter .22s ease;
@@ -640,7 +509,6 @@ button{
 
 .lady:hover img{
   transform:scale(1.06);
-
   filter:
     drop-shadow(
       0 0 12px
@@ -655,10 +523,6 @@ button{
   line-height:1.5;
 }
 
-/* =========================================================
-   ANNOUNCEMENTS
-   ========================================================= */
-
 .announcement{
   padding:9px;
   border-left:3px solid var(--gold);
@@ -671,10 +535,6 @@ button{
   margin-bottom:4px;
 }
 
-/* =========================================================
-   LINKS
-   ========================================================= */
-
 .links{
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -685,11 +545,9 @@ button{
   padding:9px;
   text-align:center;
   font-size:11px;
-
   border:1px solid var(--ring);
   border-radius:9px;
   background:#0d3470;
-
   transition:
     transform .22s ease,
     box-shadow .22s ease,
@@ -697,19 +555,10 @@ button{
 }
 
 .links a:hover{
-  transform:
-    translateY(-3px)
-    scale(1.04);
-
+  transform:translateY(-3px) scale(1.04);
   background:#1552a0;
-
-  box-shadow:
-    0 0 14px rgba(42,117,230,.36);
+  box-shadow:0 0 14px rgba(42,117,230,.36);
 }
-
-/* =========================================================
-   API STATUS
-   ========================================================= */
 
 .api-status{
   display:flex;
@@ -741,32 +590,22 @@ button{
   line-height:1.5;
 }
 
-/* =========================================================
-   BOARD
-   ========================================================= */
-
 .board{
   position:relative;
   width:100%;
   margin:8px 0;
   overflow:hidden;
-
   border:1px solid var(--ring);
   border-radius:17px;
   background:transparent;
-
   box-shadow:var(--shadow);
-
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .board:hover{
-  transform:
-    translateY(-3px)
-    scale(1.008);
-
+  transform:translateY(-3px) scale(1.008);
   box-shadow:
     0 0 14px rgba(216,172,71,.20),
     0 18px 40px rgba(0,0,0,.45);
@@ -781,219 +620,201 @@ button{
 }
 
 /* =========================================================
-   NEW MEMBER BOARD
+   NEW MEMBERS — EXACT ROW POSITIONING
    ========================================================= */
 
 .member-slots{
   position:absolute;
-  left:18%;
-  right:10%;
-  top:42.8%;
-  bottom:13.4%;
-
-  display:grid;
-  grid-template-rows:repeat(5,1fr);
-  gap:1.8%;
+  inset:0;
+  pointer-events:none;
 }
 
 .member{
+  position:absolute;
+  left:29%;
+  width:61%;
+  height:7.2%;
   display:flex;
   align-items:center;
-  min-width:0;
-
-  padding:0 3.5%;
-
-  cursor:pointer;
-
+  padding:0 2%;
   color:#071b33;
-
+  cursor:pointer;
+  pointer-events:auto;
   transition:
     transform .22s ease,
     filter .22s ease;
 }
 
-.member:hover{
-  transform:
-    translateX(4px)
-    scale(1.02);
+.member:nth-child(1){
+  top:56.2%;
+}
 
-  filter:
-    drop-shadow(
-      0 4px 5px
-      rgba(0,0,0,.18)
-    );
+.member:nth-child(2){
+  top:64.6%;
+}
+
+.member:nth-child(3){
+  top:73.0%;
+}
+
+.member:nth-child(4){
+  top:81.4%;
+}
+
+.member:nth-child(5){
+  top:89.8%;
 }
 
 .member img{
   flex:0 0 auto;
-
-  width:32px;
-  height:32px;
-
-  margin-right:6px;
-
+  width:30px;
+  height:30px;
+  margin-right:7px;
   object-fit:cover;
-
   border:2px solid #164b8f;
   border-radius:50%;
-
   background:#d8e4f4;
+  box-shadow:0 0 5px rgba(22,75,143,.28);
 }
 
 .member > div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   min-width:0;
-  max-width:145px;
+  width:100%;
   overflow:hidden;
 }
 
 .member strong{
   display:block;
-
-  max-width:145px;
-
+  width:100%;
   overflow:hidden;
-
-  font-size:10px;
+  color:#173556;
+  font-size:11px;
   font-weight:700;
-  line-height:1.05;
-
+  line-height:1;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
 .member small{
   display:block;
-
-  max-width:145px;
-
-  margin-top:1px;
-
+  margin-top:2px;
   overflow:hidden;
-
-  color:#44576d;
-
+  color:#66778d;
   font-size:7px;
   line-height:1;
-
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
+.member:hover{
+  transform:translateX(3px) scale(1.015);
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.18));
+}
+
+.member:hover img{
+  box-shadow:0 0 10px rgba(25,88,185,.55);
+}
+
 /* =========================================================
-   TITLED BOARD
+   TITLED PLAYERS — EXACT ROW POSITIONING
    ========================================================= */
 
 .titled-slots{
   position:absolute;
-
-  left:22%;
-  right:12%;
-
-  top:58%;
-  bottom:17%;
-
-  display:grid;
-
-  grid-template-rows:
-    repeat(2,1fr);
-
-  gap:10%;
+  inset:0;
+  pointer-events:none;
 }
 
 .titled-member{
+  position:absolute;
+  left:31%;
+  width:56%;
+  height:10.5%;
   display:flex;
   align-items:center;
-  min-width:0;
-
-  padding:0 3%;
-
-  cursor:pointer;
-
+  padding:0 2%;
   color:#071b33;
-
+  cursor:pointer;
+  pointer-events:auto;
   transition:
     transform .22s ease,
     filter .22s ease;
 }
 
-.titled-member:hover{
-  transform:
-    translateX(4px)
-    scale(1.02);
+.titled-member:nth-child(1){
+  top:63.8%;
+}
+
+.titled-member:nth-child(2){
+  top:76.2%;
 }
 
 .titled-member img{
   flex:0 0 auto;
-
   width:34px;
   height:34px;
-
-  margin-right:6px;
-
+  margin-right:7px;
   object-fit:cover;
-
   border:2px solid #c2942a;
   border-radius:50%;
-
   background:#e9eef7;
+  box-shadow:0 0 5px rgba(194,148,42,.25);
 }
 
 .titled-member > div{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
   min-width:0;
-  max-width:150px;
+  width:100%;
   overflow:hidden;
 }
 
 .titled-member strong{
   display:block;
-
-  max-width:150px;
-
+  width:100%;
   overflow:hidden;
-
-  font-size:10px;
+  color:#173556;
+  font-size:11px;
   font-weight:700;
-  line-height:1.05;
-
+  line-height:1;
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
 .titled-member small{
   display:block;
-
-  max-width:150px;
-
-  margin-top:1px;
-
+  margin-top:2px;
   overflow:hidden;
-
-  color:#44576d;
-
+  color:#66778d;
   font-size:7px;
   line-height:1;
-
   text-overflow:ellipsis;
   white-space:nowrap;
 }
 
 .badge{
   display:inline-block;
-
   margin-left:3px;
-
   padding:1px 4px;
-
   color:#fff;
-
   font-size:6px;
   line-height:1;
-
   border-radius:4px;
-
   background:#b9861d;
-
   vertical-align:middle;
+}
+
+.titled-member:hover{
+  transform:translateX(3px) scale(1.015);
+  filter:drop-shadow(0 3px 4px rgba(0,0,0,.18));
+}
+
+.titled-member:hover img{
+  box-shadow:0 0 10px rgba(194,148,42,.55);
 }
 
 /* =========================================================
@@ -1006,9 +827,7 @@ button{
   font-size:21px;
   font-weight:800;
   text-align:center;
-
-  text-shadow:
-    0 0 10px rgba(244,217,137,.30);
+  text-shadow:0 0 10px rgba(244,217,137,.30);
 }
 
 .status{
@@ -1030,39 +849,27 @@ button{
   position:relative;
   display:block;
   overflow:hidden;
-
   padding:11px 12px;
-
   text-align:center;
-
   color:#fff;
-
   font-weight:700;
   font-size:12px;
-
   border:1px solid var(--ring);
   border-radius:10px;
-
   background:
     linear-gradient(
       180deg,
       #1556a8,
       #0a2d63
     );
-
-  box-shadow:
-    0 0 14px rgba(38,102,199,.22);
-
+  box-shadow:0 0 14px rgba(38,102,199,.22);
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .tournament-button:hover{
-  transform:
-    translateY(-4px)
-    scale(1.035);
-
+  transform:translateY(-4px) scale(1.035);
   box-shadow:
     0 0 15px rgba(216,172,71,.26),
     0 0 25px rgba(42,119,234,.38);
@@ -1070,17 +877,12 @@ button{
 
 .tournament-button::after{
   content:"";
-
   position:absolute;
-
   top:-30%;
   left:-60%;
-
   width:45%;
   height:160%;
-
   transform:rotate(18deg);
-
   background:
     linear-gradient(
       90deg,
@@ -1088,9 +890,7 @@ button{
       rgba(255,255,255,.32),
       transparent
     );
-
-  animation:
-    buttonShimmer 4.5s ease-in-out infinite;
+  animation:buttonShimmer 4.5s ease-in-out infinite;
 }
 
 @keyframes buttonShimmer{
@@ -1118,7 +918,6 @@ button{
   width:100%;
   height:auto;
   background:transparent;
-
   filter:
     drop-shadow(
       0 10px 20px
@@ -1129,14 +928,9 @@ button{
 .podium-player{
   position:absolute;
   z-index:5;
-
   width:29%;
-
   text-align:center;
-
-  transform:
-    translateX(-50%);
-
+  transform:translateX(-50%);
   transition:
     transform .22s ease,
     filter .22s ease;
@@ -1147,7 +941,6 @@ button{
     translateX(-50%)
     translateY(-6px)
     scale(1.08);
-
   filter:
     drop-shadow(
       0 0 10px
@@ -1173,14 +966,10 @@ button{
 .podium-avatar{
   width:clamp(48px,14vw,68px);
   height:clamp(48px,14vw,68px);
-
   object-fit:cover;
-
   border:3px solid var(--gold2);
   border-radius:50%;
-
   background:#0a2851;
-
   box-shadow:
     0 0 14px rgba(255,211,99,.68);
 }
@@ -1217,24 +1006,17 @@ button{
 
 .staff-person{
   padding:10px;
-
   text-align:center;
-
   border:1px solid rgba(255,255,255,.08);
   border-radius:12px;
-
   background:rgba(255,255,255,.045);
-
   transition:
     transform .22s ease,
     box-shadow .22s ease;
 }
 
 .staff-person:hover{
-  transform:
-    translateY(-5px)
-    scale(1.045);
-
+  transform:translateY(-5px) scale(1.045);
   box-shadow:
     0 0 16px rgba(216,172,71,.26),
     0 0 24px rgba(32,101,208,.20);
@@ -1242,21 +1024,14 @@ button{
 
 .staff-avatar{
   display:block;
-
   width:54px;
   height:54px;
-
   margin:0 auto 7px;
-
   object-fit:cover;
-
   border:2px solid var(--gold);
   border-radius:50%;
-
   background:#0a2851;
-
-  box-shadow:
-    0 0 12px rgba(216,170,69,.32);
+  box-shadow:0 0 12px rgba(216,170,69,.32);
 }
 
 .staff-person strong{
@@ -1269,10 +1044,6 @@ button{
   font-size:10px;
 }
 
-/* =========================================================
-   FOOTER
-   ========================================================= */
-
 .footer{
   padding:12px 0 4px;
   color:#7f8ea3;
@@ -1280,12 +1051,7 @@ button{
   text-align:center;
 }
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media(max-width:360px){
-
   .app{
     padding:4px;
   }
@@ -1299,8 +1065,8 @@ button{
   }
 
   .member img{
-    width:28px;
-    height:28px;
+    width:27px;
+    height:27px;
   }
 
   .member strong{
@@ -1327,7 +1093,6 @@ button{
   .podium-name{
     font-size:9px;
   }
-
 }
 </style>
 </head>
@@ -1488,31 +1253,19 @@ Quick Links
 
 <div class="links">
 
-<a
-  href="https://www.chess.com/clubs/forum/and-chess-for-all-official"
-  target="_blank"
->
+<a href="https://www.chess.com/clubs/forum/and-chess-for-all-official" target="_blank">
 Forums
 </a>
 
-<a
-  href="https://www.chess.com/clubs/events/and-chess-for-all-official"
-  target="_blank"
->
+<a href="https://www.chess.com/clubs/events/and-chess-for-all-official" target="_blank">
 Events
 </a>
 
-<a
-  href="https://www.chess.com/club/and-chess-for-all-official"
-  target="_blank"
->
+<a href="https://www.chess.com/club/and-chess-for-all-official" target="_blank">
 Club
 </a>
 
-<a
-  href="https://www.chess.com/club/notes/and-chess-for-all-official"
-  target="_blank"
->
+<a href="https://www.chess.com/club/notes/and-chess-for-all-official" target="_blank">
 Notes
 </a>
 
@@ -1750,25 +1503,11 @@ And Chess For All Official
 </main>
 
 <script>
-
-const API =
-  "https://api.chess.com/pub";
-
-const CLUB_SLUG =
-  "and-chess-for-all-official";
-
-const FALLBACK_AVATAR =
-  "assets/icons/logo.svg";
-
-const FALL_START =
-  new Date(
-    "2026-10-05T00:00:00-05:00"
-  );
-
-const FALL_CLOSE =
-  new Date(
-    "2026-10-04T23:59:59-05:00"
-  );
+const API = "https://api.chess.com/pub";
+const CLUB_SLUG = "and-chess-for-all-official";
+const FALLBACK_AVATAR = "assets/icons/logo.svg";
+const FALL_START = new Date("2026-10-05T00:00:00-05:00");
+const FALL_CLOSE = new Date("2026-10-04T23:59:59-05:00");
 
 const TITLE_CODES = [
   "GM",
@@ -1783,73 +1522,39 @@ const TITLE_CODES = [
   "WCM"
 ];
 
-const sleep =
-  ms =>
-    new Promise(
-      resolve =>
-        setTimeout(
-          resolve,
-          ms
-        )
-    );
+const sleep = ms =>
+  new Promise(resolve => setTimeout(resolve, ms));
 
-function esc(
-  value = ""
-){
-
+function esc(value = ""){
   return String(value).replace(
-
     /[&<>"']/g,
-
     char => ({
-
       "&":"&amp;",
       "<":"&lt;",
       ">":"&gt;",
       '"':"&quot;",
       "'":"&#039;"
-
     })[char]
-
   );
-
 }
 
-function profileURL(
-  username
-){
-
-  return (
-    "https://www.chess.com/member/" +
-    encodeURIComponent(
-      username
-    )
-  );
-
+function profileURL(username){
+  return "https://www.chess.com/member/" + encodeURIComponent(username);
 }
 
-async function getJSON(
-  path,
-  fallback
-){
+async function getJSON(path, fallback){
 
   try{
 
-    const response =
-      await fetch(
-        path +
-        "?v=" +
-        Date.now(),
-        {
-          cache:"no-store"
-        }
-      );
+    const response = await fetch(
+      path + "?v=" + Date.now(),
+      {
+        cache:"no-store"
+      }
+    );
 
     if(!response.ok){
-      throw new Error(
-        "HTTP " +
-        response.status
-      );
+      throw new Error("HTTP " + response.status);
     }
 
     return await response.json();
@@ -1858,10 +1563,7 @@ async function getJSON(
 
   catch(error){
 
-    console.warn(
-      path,
-      error
-    );
+    console.warn(path, error);
 
     return fallback;
 
@@ -1869,142 +1571,84 @@ async function getJSON(
 
 }
 
-async function chessFetch(
-  path
-){
+async function chessFetch(path){
 
-  const response =
-    await fetch(
-      API + path,
-      {
-        cache:"no-store"
-      }
-    );
+  const response = await fetch(
+    API + path,
+    {
+      cache:"no-store"
+    }
+  );
 
   if(!response.ok){
-
-    throw new Error(
-      "Chess.com HTTP " +
-      response.status
-    );
-
+    throw new Error("Chess.com HTTP " + response.status);
   }
 
   return await response.json();
 
 }
 
-function parseClubMembers(
-  data
-){
+function parseClubMembers(data){
 
   const collection = [];
 
-  [
-    "weekly",
-    "monthly",
-    "all_time"
-  ]
-  .forEach(
-    bucket => {
+  ["weekly","monthly","all_time"].forEach(bucket => {
 
-      const list =
-        Array.isArray(
-          data?.[bucket]
-        )
-        ?
-        data[bucket]
-        :
-        [];
+    const list =
+      Array.isArray(data?.[bucket])
+      ?
+      data[bucket]
+      :
+      [];
 
-      list.forEach(
-        item => {
+    list.forEach(item => {
 
-          if(
-            typeof item ===
-            "string"
-          ){
+      if(typeof item === "string"){
 
-            collection.push({
-              username:item,
-              joined:0,
-              title:""
-            });
-
-          }
-
-          else if(
-            item?.username
-          ){
-
-            collection.push({
-
-              username:
-                item.username,
-
-              joined:
-                Number(
-                  item.joined ||
-                  0
-                ),
-
-              title:
-                item.title ||
-                ""
-
-            });
-
-          }
-
-        }
-      );
-
-    }
-  );
-
-  const unique =
-    new Map();
-
-  collection.forEach(
-    member => {
-
-      const key =
-        member.username
-        .toLowerCase();
-
-      const existing =
-        unique.get(
-          key
-        );
-
-      if(
-        !existing ||
-        member.joined >
-        existing.joined
-      ){
-
-        unique.set(
-          key,
-          member
-        );
+        collection.push({
+          username:item,
+          joined:0,
+          title:""
+        });
 
       }
 
+      else if(item?.username){
+
+        collection.push({
+          username:item.username,
+          joined:Number(item.joined || 0),
+          title:item.title || ""
+        });
+
+      }
+
+    });
+
+  });
+
+  const unique = new Map();
+
+  collection.forEach(member => {
+
+    const key =
+      member.username.toLowerCase();
+
+    const existing =
+      unique.get(key);
+
+    if(!existing || member.joined > existing.joined){
+      unique.set(key,member);
     }
-  );
+
+  });
 
   return [...unique.values()]
-  .sort(
-    (a,b) =>
-      b.joined -
-      a.joined
-  );
+    .sort((a,b) => b.joined - a.joined);
 
 }
 
-function bestRating(
-  stats
-){
+function bestRating(stats){
 
   const ratings = [];
 
@@ -2014,54 +1658,30 @@ function bestRating(
     "chess_bullet",
     "chess_daily"
   ]
-  .forEach(
-    key => {
+  .forEach(key => {
 
-      const rating =
-        stats?.[key]
-        ?.last
-        ?.rating;
+    const rating =
+      stats?.[key]?.last?.rating;
 
-      if(
-        Number.isFinite(
-          rating
-        )
-      ){
-
-        ratings.push(
-          rating
-        );
-
-      }
-
+    if(Number.isFinite(rating)){
+      ratings.push(rating);
     }
-  );
+
+  });
 
   return ratings.length
-    ?
-    Math.max(
-      ...ratings
-    )
-    :
-    0;
+    ? Math.max(...ratings)
+    : 0;
 
 }
 
-async function enrichPlayer(
-  member
-){
+async function enrichPlayer(member){
 
   const username =
-
-    typeof member ===
-    "string"
-
+    typeof member === "string"
     ?
-
     member
-
     :
-
     member.username;
 
   let profile = {};
@@ -2069,39 +1689,28 @@ async function enrichPlayer(
 
   try{
 
-    profile =
-      await chessFetch(
-        "/player/" +
-        encodeURIComponent(
-          username
-        )
-      );
+    profile = await chessFetch(
+      "/player/" +
+      encodeURIComponent(username)
+    );
 
   }
-
   catch{}
 
-  await sleep(
-    220
-  );
+  await sleep(220);
 
   try{
 
-    stats =
-      await chessFetch(
-        "/player/" +
-        encodeURIComponent(
-          username
-        ) +
-        "/stats"
-      );
+    stats = await chessFetch(
+      "/player/" +
+      encodeURIComponent(username) +
+      "/stats"
+    );
 
   }
-
   catch{}
 
   return {
-
     username,
 
     avatar:
@@ -2111,20 +1720,15 @@ async function enrichPlayer(
     title:
       profile.title ||
       (
-        typeof member ===
-        "object"
+        typeof member === "object"
         ?
-        member.title ||
-        ""
+        member.title || ""
         :
         ""
       ),
 
     rating:
-      bestRating(
-        stats
-      )
-
+      bestRating(stats)
   };
 
 }
@@ -2132,86 +1736,56 @@ async function enrichPlayer(
 async function loadChessComData(){
 
   const dot =
-    document.getElementById(
-      "apiDot"
-    );
+    document.getElementById("apiDot");
 
   const status =
-    document.getElementById(
-      "apiStatus"
-    );
+    document.getElementById("apiStatus");
 
   const details =
-    document.getElementById(
-      "apiDetails"
-    );
+    document.getElementById("apiDetails");
 
   try{
 
-    const club =
-      await chessFetch(
-        "/club/" +
-        CLUB_SLUG
-      );
-
-    await sleep(
-      300
+    const club = await chessFetch(
+      "/club/" + CLUB_SLUG
     );
 
-    const memberData =
-      await chessFetch(
-        "/club/" +
-        CLUB_SLUG +
-        "/members"
-      );
+    await sleep(300);
+
+    const memberData = await chessFetch(
+      "/club/" +
+      CLUB_SLUG +
+      "/members"
+    );
 
     const members =
-      parseClubMembers(
-        memberData
-      );
+      parseClubMembers(memberData);
 
     document
-    .getElementById(
-      "membersCount"
-    )
-    .textContent =
-      club.members_count ??
-      members.length;
+      .getElementById("membersCount")
+      .textContent =
+        club.members_count ??
+        members.length;
 
     const newest =
-      members.slice(
-        0,
-        5
-      );
+      members.slice(0,5);
 
     const memberBox =
-      document.getElementById(
-        "memberSlots"
-      );
+      document.getElementById("memberSlots");
 
-    memberBox.innerHTML =
-      "";
+    memberBox.innerHTML = "";
 
-    for(
-      const member
-      of newest
-    ){
+    for(const member of newest){
 
       const player =
-        await enrichPlayer(
-          member
-        );
+        await enrichPlayer(member);
 
       const row =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
-      row.className =
-        "member";
+      row.className = "member";
 
       row.innerHTML = `
-
         <img
           src="${esc(player.avatar)}"
           alt=""
@@ -2236,54 +1810,34 @@ async function loadChessComData(){
           </small>
 
         </div>
-
       `;
 
       row.onclick =
         () =>
           window.open(
-            profileURL(
-              player.username
-            ),
+            profileURL(player.username),
             "_blank"
           );
 
-      memberBox.appendChild(
-        row
-      );
+      memberBox.appendChild(row);
 
-      await sleep(
-        180
-      );
+      await sleep(180);
 
     }
 
     const memberMap =
       new Map(
-        members.map(
-          member => [
-
-            member.username
-            .toLowerCase(),
-
-            member
-
-          ]
-        )
+        members.map(member => [
+          member.username.toLowerCase(),
+          member
+        ])
       );
 
-    const titledFound =
-      [];
+    const titledFound = [];
 
-    for(
-      const title
-      of TITLE_CODES
-    ){
+    for(const title of TITLE_CODES){
 
-      if(
-        titledFound.length >=
-        2
-      ){
+      if(titledFound.length >= 2){
         break;
       }
 
@@ -2291,47 +1845,32 @@ async function loadChessComData(){
 
         const data =
           await chessFetch(
-            "/titled/" +
-            title
+            "/titled/" + title
           );
 
-        for(
-          const username
-          of data.players || []
-        ){
+        for(const username of data.players || []){
 
           const member =
             memberMap.get(
-              username
-              .toLowerCase()
+              username.toLowerCase()
             );
 
           if(
             member &&
             !titledFound.some(
               item =>
-                item.username
-                .toLowerCase()
-                ===
-                username
-                .toLowerCase()
+                item.username.toLowerCase() ===
+                username.toLowerCase()
             )
           ){
 
             titledFound.push({
-
               ...member,
-
               username,
-
               title
-
             });
 
-            if(
-              titledFound.length >=
-              2
-            ){
+            if(titledFound.length >= 2){
               break;
             }
 
@@ -2340,43 +1879,29 @@ async function loadChessComData(){
         }
 
       }
-
       catch{}
 
-      await sleep(
-        180
-      );
+      await sleep(180);
 
     }
 
     const titledBox =
-      document.getElementById(
-        "titledSlots"
-      );
+      document.getElementById("titledSlots");
 
-    titledBox.innerHTML =
-      "";
+    titledBox.innerHTML = "";
 
-    for(
-      const member
-      of titledFound
-    ){
+    for(const member of titledFound){
 
       const player =
-        await enrichPlayer(
-          member
-        );
+        await enrichPlayer(member);
 
       const row =
-        document.createElement(
-          "div"
-        );
+        document.createElement("div");
 
       row.className =
         "titled-member";
 
       row.innerHTML = `
-
         <img
           src="${esc(player.avatar)}"
           alt=""
@@ -2387,13 +1912,11 @@ async function loadChessComData(){
           <strong
             title="${esc(player.username)}"
           >
-
             ${esc(player.username)}
 
             <span class="badge">
               ${esc(player.title)}
             </span>
-
           </strong>
 
           <small>
@@ -2407,34 +1930,25 @@ async function loadChessComData(){
           </small>
 
         </div>
-
       `;
 
       row.onclick =
         () =>
           window.open(
-            profileURL(
-              player.username
-            ),
+            profileURL(player.username),
             "_blank"
           );
 
-      titledBox.appendChild(
-        row
-      );
+      titledBox.appendChild(row);
 
     }
 
     document
-    .getElementById(
-      "titledCount"
-    )
-    .textContent =
-      titledFound.length;
+      .getElementById("titledCount")
+      .textContent =
+        titledFound.length;
 
-    dot.classList.add(
-      "live"
-    );
+    dot.classList.add("live");
 
     status.textContent =
       "Chess.com PubAPI Connected";
@@ -2446,9 +1960,7 @@ async function loadChessComData(){
 
   catch(error){
 
-    dot.classList.add(
-      "error"
-    );
+    dot.classList.add("error");
 
     status.textContent =
       "Chess.com PubAPI Error";
@@ -2473,22 +1985,18 @@ async function loadTournamentButtons(){
       "tournamentButtons"
     );
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
   tournaments
-  .filter(
-    tournament =>
-      tournament.active &&
-      tournament.url
-  )
-  .forEach(
-    tournament => {
+    .filter(
+      tournament =>
+        tournament.active &&
+        tournament.url
+    )
+    .forEach(tournament => {
 
       const button =
-        document.createElement(
-          "a"
-        );
+        document.createElement("a");
 
       button.className =
         "tournament-button";
@@ -2507,12 +2015,9 @@ async function loadTournamentButtons(){
         tournament.name ||
         "Open Tournament";
 
-      container.appendChild(
-        button
-      );
+      container.appendChild(button);
 
-    }
-  );
+    });
 
 }
 
@@ -2529,8 +2034,7 @@ async function loadStaff(){
       "staffGrid"
     );
 
-  container.innerHTML =
-    "";
+  container.innerHTML = "";
 
   staff.sort(
     (a,b) =>
@@ -2538,28 +2042,19 @@ async function loadStaff(){
       (b.order || 999)
   );
 
-  for(
-    const member
-    of staff
-  ){
+  for(const member of staff){
 
     const player =
-      await enrichPlayer(
-        member
-      );
+      await enrichPlayer(member);
 
     const card =
-      document.createElement(
-        "a"
-      );
+      document.createElement("a");
 
     card.className =
       "staff-person";
 
     card.href =
-      profileURL(
-        member.username
-      );
+      profileURL(member.username);
 
     card.target =
       "_blank";
@@ -2568,7 +2063,6 @@ async function loadStaff(){
       "noopener noreferrer";
 
     card.innerHTML = `
-
       <img
         class="staff-avatar"
         src="${esc(player.avatar)}"
@@ -2582,16 +2076,11 @@ async function loadStaff(){
       <small>
         ${esc(member.role)}
       </small>
-
     `;
 
-    container.appendChild(
-      card
-    );
+    container.appendChild(card);
 
-    await sleep(
-      180
-    );
+    await sleep(180);
 
   }
 
@@ -2639,9 +2128,7 @@ async function populatePodium(
   rank
 ){
 
-  if(
-    !username
-  ){
+  if(!username){
     return;
   }
 
@@ -2651,42 +2138,32 @@ async function populatePodium(
     });
 
   const element =
-    document.getElementById(
-      id
-    );
+    document.getElementById(id);
 
   element
-  .querySelector(
-    ".podium-avatar"
-  )
-  .src =
-    player.avatar;
+    .querySelector(".podium-avatar")
+    .src =
+      player.avatar;
 
   element
-  .querySelector(
-    ".podium-rank"
-  )
-  .textContent =
-    rank;
+    .querySelector(".podium-rank")
+    .textContent =
+      rank;
 
   element
-  .querySelector(
-    ".podium-name"
-  )
-  .textContent =
-    player.username;
+    .querySelector(".podium-name")
+    .textContent =
+      player.username;
 
   element
-  .querySelector(
-    ".podium-info"
-  )
-  .textContent =
-    [
-      player.title,
-      player.rating
-    ]
-    .filter(Boolean)
-    .join(" • ");
+    .querySelector(".podium-info")
+    .textContent =
+      [
+        player.title,
+        player.rating
+      ]
+      .filter(Boolean)
+      .join(" • ");
 
 }
 
@@ -2696,34 +2173,30 @@ function updateClock(){
     new Date();
 
   document
-  .getElementById(
-    "digitalClock"
-  )
-  .textContent =
-    now.toLocaleTimeString(
-      [],
-      {
-        hour:"2-digit",
-        minute:"2-digit",
-        second:"2-digit",
-        hour12:true
-      }
-    );
+    .getElementById("digitalClock")
+    .textContent =
+      now.toLocaleTimeString(
+        [],
+        {
+          hour:"2-digit",
+          minute:"2-digit",
+          second:"2-digit",
+          hour12:true
+        }
+      );
 
   document
-  .getElementById(
-    "digitalDate"
-  )
-  .textContent =
-    now.toLocaleDateString(
-      [],
-      {
-        weekday:"short",
-        month:"short",
-        day:"numeric",
-        year:"numeric"
-      }
-    );
+    .getElementById("digitalDate")
+    .textContent =
+      now.toLocaleDateString(
+        [],
+        {
+          weekday:"short",
+          month:"short",
+          day:"numeric",
+          year:"numeric"
+        }
+      );
 
 }
 
@@ -2742,10 +2215,7 @@ function updateTournament(){
       "countdown"
     );
 
-  if(
-    now >=
-    FALL_START
-  ){
+  if(now >= FALL_START){
 
     status.textContent =
       "Tournament Started";
@@ -2765,40 +2235,32 @@ function updateTournament(){
     "Registration Closed";
 
   let diff =
-    FALL_START -
-    now;
+    FALL_START - now;
 
   const days =
     Math.floor(
-      diff /
-      86400000
+      diff / 86400000
     );
 
-  diff %=
-    86400000;
+  diff %= 86400000;
 
   const hours =
     Math.floor(
-      diff /
-      3600000
+      diff / 3600000
     );
 
-  diff %=
-    3600000;
+  diff %= 3600000;
 
   const minutes =
     Math.floor(
-      diff /
-      60000
+      diff / 60000
     );
 
-  diff %=
-    60000;
+  diff %= 60000;
 
   const seconds =
     Math.floor(
-      diff /
-      1000
+      diff / 1000
     );
 
   output.textContent =
@@ -2806,122 +2268,71 @@ function updateTournament(){
 
 }
 
-/* =========================================================
-   NAVIGATION
-   ========================================================= */
-
 document
-.querySelectorAll(
-  ".tab"
-)
-.forEach(
-  button => {
+.querySelectorAll(".tab")
+.forEach(button => {
 
-    button.addEventListener(
-      "click",
-      () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-        document
-        .querySelectorAll(
-          ".tab"
-        )
+      document
+        .querySelectorAll(".tab")
         .forEach(
           tab =>
-            tab
-            .classList
-            .remove(
-              "active"
-            )
+            tab.classList.remove("active")
         );
 
-        document
-        .querySelectorAll(
-          ".panel"
-        )
+      document
+        .querySelectorAll(".panel")
         .forEach(
           panel =>
-            panel
-            .classList
-            .remove(
-              "active"
-            )
+            panel.classList.remove("active")
         );
 
-        button
+      button
         .classList
-        .add(
-          "active"
-        );
+        .add("active");
 
-        document
+      document
         .getElementById(
           button.dataset.go
         )
         .classList
-        .add(
-          "active"
-        );
+        .add("active");
 
-        document
-        .getElementById(
-          "scrollContent"
-        )
+      document
+        .getElementById("scrollContent")
         .scrollTo({
           top:0,
           behavior:"smooth"
         });
 
-      }
-    );
+    }
+  );
 
-  }
-);
+});
 
-/* =========================================================
-   PARTICLES
-   ========================================================= */
-
-for(
-  let i = 0;
-  i < 24;
-  i++
-){
+for(let i=0;i<24;i++){
 
   const spark =
-    document.createElement(
-      "i"
-    );
+    document.createElement("i");
 
   spark.className =
     "spark";
 
   spark.style.left =
-    Math.random() *
-    100 +
-    "%";
+    Math.random()*100 + "%";
 
   spark.style.animationDuration =
-    (
-      8 +
-      Math.random() *
-      12
-    ) +
-    "s";
+    (8 + Math.random()*12) + "s";
 
   spark.style.animationDelay =
-    (
-      -Math.random() *
-      15
-    ) +
-    "s";
+    (-Math.random()*15) + "s";
 
   document
-  .getElementById(
-    "fx"
-  )
-  .appendChild(
-    spark
-  );
+    .getElementById("fx")
+    .appendChild(spark);
 
 }
 
@@ -2930,78 +2341,41 @@ const frameEmbers =
     "frameEmbers"
   );
 
-for(
-  let i = 0;
-  i < 40;
-  i++
-){
+for(let i=0;i<40;i++){
 
   const ember =
-    document.createElement(
-      "i"
-    );
+    document.createElement("i");
 
   ember.className =
     "frame-ember";
 
   ember.style.left =
-    Math.random() *
-    100 +
-    "%";
+    Math.random()*100 + "%";
 
   ember.style.animationDuration =
-    (
-      7 +
-      Math.random() *
-      10
-    ) +
-    "s";
+    (7 + Math.random()*10) + "s";
 
   ember.style.animationDelay =
-    (
-      -Math.random() *
-      15
-    ) +
-    "s";
+    (-Math.random()*15) + "s";
 
   ember.style.opacity =
-    .25 +
-    Math.random() *
-    .6;
+    .25 + Math.random()*.6;
 
   ember.style.width =
-    (
-      2 +
-      Math.random() *
-      3
-    ) +
-    "px";
+    (2 + Math.random()*3) + "px";
 
   ember.style.height =
     ember.style.width;
 
-  frameEmbers.appendChild(
-    ember
-  );
+  frameEmbers.appendChild(ember);
 
 }
-
-/* =========================================================
-   START
-   ========================================================= */
 
 updateClock();
 updateTournament();
 
-setInterval(
-  updateClock,
-  250
-);
-
-setInterval(
-  updateTournament,
-  1000
-);
+setInterval(updateClock,250);
+setInterval(updateTournament,1000);
 
 loadChessComData();
 loadTournamentButtons();
