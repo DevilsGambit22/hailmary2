@@ -2,48 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width,initial-scale=1,viewport-fit=cover"
->
-
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#071427">
 
 <title>ACFA Live Dashboard</title>
 
 <style>
-
-/* =========================================================
-   ACFA VARIABLES
-   ========================================================= */
-
 :root{
   --bg:#03070d;
-
   --navy:#06152f;
   --navy2:#0a2b5d;
-
   --blue:#12488e;
   --blue2:#1760bb;
-
   --gold:#d5a73d;
   --gold2:#f4d989;
-
   --text:#f7f9fc;
   --muted:#9eb0c9;
-
   --ring:rgba(216,172,71,.46);
-
-  --shadow:
-    0 12px 34px
-    rgba(0,0,0,.44);
+  --shadow:0 12px 34px rgba(0,0,0,.44);
 }
-
-
-/* =========================================================
-   RESET
-   ========================================================= */
 
 *{
   box-sizing:border-box;
@@ -53,13 +30,20 @@ html,
 body{
   width:100%;
   height:100%;
-
   margin:0;
   padding:0;
 
-  overflow:hidden;
+  overflow:hidden !important;
 
   background:#03070d;
+
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar{
+  display:none;
 }
 
 body{
@@ -96,7 +80,6 @@ button{
   font:inherit;
 }
 
-
 /* =========================================================
    OUTER PARTICLES
    ========================================================= */
@@ -114,7 +97,6 @@ button{
 
 .spark{
   position:absolute;
-
   bottom:-10px;
 
   width:3px;
@@ -129,21 +111,15 @@ button{
 
   opacity:.55;
 
-  animation:
-    rise linear infinite;
+  animation:rise linear infinite;
 }
 
 @keyframes rise{
-
   to{
-    transform:
-      translateY(-110vh);
-
+    transform:translateY(-110vh);
     opacity:0;
   }
-
 }
-
 
 /* =========================================================
    APP
@@ -151,7 +127,6 @@ button{
 
 .app{
   position:relative;
-
   z-index:1;
 
   width:100%;
@@ -167,16 +142,14 @@ button{
   overflow:hidden;
 }
 
-
 /* =========================================================
-   MAIN SIDEBAR FRAME
+   MAIN FRAME
    ========================================================= */
 
 .frame{
   position:relative;
 
   display:flex;
-
   flex-direction:column;
 
   width:100%;
@@ -184,10 +157,7 @@ button{
 
   overflow:hidden;
 
-  border:
-    1px solid
-    rgba(216,172,71,.58);
-
+  border:1px solid rgba(216,172,71,.58);
   border-radius:20px;
 
   background:
@@ -203,43 +173,31 @@ button{
     0 14px 38px rgba(0,0,0,.48);
 
   animation:
-    frameGlow
-    4s
-    ease-in-out
-    infinite
-    alternate;
+    frameGlow 4s ease-in-out infinite alternate;
 }
 
 @keyframes frameGlow{
-
   from{
-
     box-shadow:
       0 0 10px rgba(216,172,71,.18),
       0 0 20px rgba(25,89,180,.12),
       0 14px 38px rgba(0,0,0,.48);
-
   }
 
   to{
-
     box-shadow:
       0 0 18px rgba(216,172,71,.34),
       0 0 34px rgba(32,111,224,.24),
       0 16px 42px rgba(0,0,0,.52);
-
   }
-
 }
 
-
 /* =========================================================
-   EMBERS INSIDE SIDEBAR
+   INTERNAL EMBERS
    ========================================================= */
 
 .frame-embers{
   position:absolute;
-
   inset:0;
 
   overflow:hidden;
@@ -251,7 +209,6 @@ button{
 
 .frame-ember{
   position:absolute;
-
   bottom:-12px;
 
   width:3px;
@@ -268,52 +225,39 @@ button{
   opacity:.7;
 
   animation:
-    sidebarEmberRise
-    linear
-    infinite;
+    sidebarEmberRise linear infinite;
 }
 
 @keyframes sidebarEmberRise{
-
   0%{
-
     transform:
       translateY(0)
       translateX(0)
       scale(.7);
 
     opacity:0;
-
   }
 
   12%{
-
     opacity:.75;
-
   }
 
   70%{
-
     opacity:.55;
-
   }
 
   100%{
-
     transform:
       translateY(-1100px)
       translateX(30px)
       scale(1.2);
 
     opacity:0;
-
   }
-
 }
 
-
 /* =========================================================
-   FIXED TOP AREA
+   FIXED TOP SECTION
    ========================================================= */
 
 .hero,
@@ -323,22 +267,21 @@ button{
   flex:0 0 auto;
 }
 
-
 /* =========================================================
    HERO
    ========================================================= */
 
 .hero{
   position:relative;
-
   z-index:3;
+
+  overflow:hidden;
 }
 
 .hero img{
   display:block;
 
   width:100%;
-
   max-height:245px;
 
   object-fit:contain;
@@ -350,35 +293,25 @@ button{
     filter .35s ease;
 
   animation:
-    logoFloat
-    4.5s
-    ease-in-out
-    infinite;
+    logoFloat 4.5s ease-in-out infinite;
 }
 
 @keyframes logoFloat{
-
   0%,
   100%{
-
     transform:
       translateY(0)
       scale(1);
-
   }
 
   50%{
-
     transform:
       translateY(-4px)
       scale(1.015);
-
   }
-
 }
 
 .hero:hover img{
-
   transform:
     scale(1.055)
     translateY(-4px);
@@ -392,15 +325,12 @@ button{
       0 0 22px
       rgba(45,132,255,.32)
     );
-
 }
 
 .hero::after{
-
   content:"";
 
   position:absolute;
-
   inset:0;
 
   pointer-events:none;
@@ -408,21 +338,18 @@ button{
   background:
     linear-gradient(
       180deg,
-      transparent 55%,
+      transparent 58%,
       rgba(2,8,17,.88) 100%
     );
-
 }
 
 .hero-copy{
-
   position:absolute;
-
   z-index:4;
 
   left:12px;
   right:12px;
-  bottom:8px;
+  bottom:7px;
 
   text-align:center;
 
@@ -431,7 +358,6 @@ button{
 }
 
 .hero-copy h1{
-
   margin:0;
 
   font-family:
@@ -444,7 +370,6 @@ button{
 }
 
 .hero-copy div{
-
   color:var(--gold2);
 
   font-family:
@@ -456,31 +381,21 @@ button{
   font-style:italic;
 }
 
-
 /* =========================================================
    CLOCK
    ========================================================= */
 
 .clock-card{
-
   position:relative;
-
   z-index:3;
 
-  margin:
-    5px
-    8px;
+  margin:5px 8px;
 
-  padding:
-    8px
-    8px;
+  padding:8px;
 
   text-align:center;
 
-  border:
-    1px solid
-    var(--ring);
-
+  border:1px solid var(--ring);
   border-radius:15px;
 
   background:
@@ -491,12 +406,8 @@ button{
     );
 
   box-shadow:
-    inset
-    0 0 24px
-    rgba(34,102,206,.16),
-
-    0 8px 22px
-    rgba(0,0,0,.28);
+    inset 0 0 24px rgba(34,102,206,.16),
+    0 8px 22px rgba(0,0,0,.28);
 
   transition:
     transform .22s ease,
@@ -505,7 +416,6 @@ button{
 }
 
 .clock-card:hover{
-
   transform:
     translateY(-2px)
     scale(1.01);
@@ -514,15 +424,11 @@ button{
     rgba(244,217,137,.82);
 
   box-shadow:
-    0 0 16px
-    rgba(216,172,71,.22),
-
-    0 0 26px
-    rgba(32,111,224,.24);
+    0 0 16px rgba(216,172,71,.22),
+    0 0 26px rgba(32,111,224,.24);
 }
 
 .digital-clock{
-
   color:#dff4ff;
 
   font-family:
@@ -546,7 +452,6 @@ button{
 }
 
 .digital-date{
-
   margin-top:1px;
 
   color:var(--gold2);
@@ -563,7 +468,6 @@ button{
 }
 
 .clock-label{
-
   margin-top:3px;
 
   color:var(--muted);
@@ -573,15 +477,12 @@ button{
   letter-spacing:.2em;
 }
 
-
 /* =========================================================
    STATS
    ========================================================= */
 
 .stats{
-
   position:relative;
-
   z-index:3;
 
   display:grid;
@@ -598,18 +499,13 @@ button{
 }
 
 .stat{
-
-  position:relative;
-
   padding:
     7px
     4px;
 
   text-align:center;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:12px;
 
@@ -627,7 +523,6 @@ button{
 }
 
 .stat:hover{
-
   transform:
     translateY(-3px)
     scale(1.035);
@@ -636,15 +531,11 @@ button{
     rgba(244,217,137,.82);
 
   box-shadow:
-    0 0 14px
-    rgba(216,172,71,.30),
-
-    0 0 22px
-    rgba(27,96,201,.22);
+    0 0 14px rgba(216,172,71,.30),
+    0 0 22px rgba(27,96,201,.22);
 }
 
 .stat b{
-
   display:block;
 
   color:var(--gold2);
@@ -653,7 +544,6 @@ button{
 }
 
 .stat span{
-
   display:block;
 
   margin-top:2px;
@@ -667,15 +557,12 @@ button{
   text-transform:uppercase;
 }
 
-
 /* =========================================================
    NAVIGATION
    ========================================================= */
 
 .tabs{
-
   position:relative;
-
   z-index:10;
 
   display:grid;
@@ -698,7 +585,6 @@ button{
 }
 
 .tab{
-
   cursor:pointer;
 
   padding:
@@ -709,14 +595,11 @@ button{
 
   font-size:10px;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:10px;
 
-  background:
-    #0a2449;
+  background:#0a2449;
 
   transition:
     transform .22s ease,
@@ -727,50 +610,45 @@ button{
 
 .tab:hover,
 .tab.active{
-
   transform:
     translateY(-2px)
     scale(1.05);
 
-  background:
-    #12488e;
+  background:#12488e;
 
   border-color:
     rgba(244,217,137,.82);
 
   box-shadow:
-    0 0 16px
-    rgba(40,118,235,.42),
-
-    0 0 8px
-    rgba(216,172,71,.24);
+    0 0 16px rgba(40,118,235,.42),
+    0 0 8px rgba(216,172,71,.24);
 }
-
 
 /* =========================================================
    INTERNAL SCROLL AREA
    ========================================================= */
 
 .content{
-
   position:relative;
-
   z-index:3;
 
   flex:1 1 auto;
 
   min-height:0;
 
+  width:100%;
+
   padding:
     0
     8px
     16px;
 
-  overflow-y:auto;
-
-  overflow-x:hidden;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
 
   overscroll-behavior:contain;
+
+  touch-action:pan-y;
 
   -webkit-overflow-scrolling:touch;
 
@@ -782,18 +660,14 @@ button{
 }
 
 .content::-webkit-scrollbar{
-
   width:4px;
 }
 
 .content::-webkit-scrollbar-track{
-
-  background:
-    transparent;
+  background:transparent;
 }
 
 .content::-webkit-scrollbar-thumb{
-
   background:
     linear-gradient(
       180deg,
@@ -809,17 +683,14 @@ button{
 }
 
 .content::-webkit-scrollbar-thumb:hover{
-
   background:#f4d989;
 }
-
 
 /* =========================================================
    PANELS
    ========================================================= */
 
 .panel{
-
   display:none;
 
   animation:
@@ -827,38 +698,26 @@ button{
 }
 
 .panel.active{
-
   display:block;
 }
 
 @keyframes fade{
-
   from{
-
     opacity:0;
-
-    transform:
-      translateY(5px);
-
+    transform:translateY(5px);
   }
 
   to{
-
     opacity:1;
-
     transform:none;
-
   }
-
 }
-
 
 /* =========================================================
    CARDS
    ========================================================= */
 
 .card{
-
   position:relative;
 
   margin:
@@ -867,9 +726,7 @@ button{
 
   padding:11px;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:15px;
 
@@ -890,7 +747,6 @@ button{
 }
 
 .card:hover{
-
   transform:
     translateY(-4px)
     scale(1.015);
@@ -899,18 +755,12 @@ button{
     rgba(244,217,137,.75);
 
   box-shadow:
-    0 0 15px
-    rgba(216,172,71,.22),
-
-    0 0 26px
-    rgba(35,102,205,.22),
-
-    0 18px 40px
-    rgba(0,0,0,.48);
+    0 0 15px rgba(216,172,71,.22),
+    0 0 26px rgba(35,102,205,.22),
+    0 18px 40px rgba(0,0,0,.48);
 }
 
 .card h2{
-
   margin:
     0
     0
@@ -925,13 +775,11 @@ button{
     serif;
 }
 
-
 /* =========================================================
    LADY JUSTICE
    ========================================================= */
 
 .lady{
-
   display:flex;
 
   gap:10px;
@@ -940,7 +788,6 @@ button{
 }
 
 .lady img{
-
   width:105px;
   height:145px;
 
@@ -954,9 +801,7 @@ button{
 }
 
 .lady:hover img{
-
-  transform:
-    scale(1.06);
+  transform:scale(1.06);
 
   filter:
     drop-shadow(
@@ -966,7 +811,6 @@ button{
 }
 
 .lady p{
-
   margin:0;
 
   color:#dce4f0;
@@ -976,18 +820,15 @@ button{
   line-height:1.5;
 }
 
-
 /* =========================================================
    ANNOUNCEMENTS
    ========================================================= */
 
 .announcement{
-
   padding:9px;
 
   border-left:
-    3px solid
-    var(--gold);
+    3px solid var(--gold);
 
   border-radius:8px;
 
@@ -996,19 +837,16 @@ button{
 }
 
 .announcement strong{
-
   display:block;
 
   margin-bottom:4px;
 }
-
 
 /* =========================================================
    LINKS
    ========================================================= */
 
 .links{
-
   display:grid;
 
   grid-template-columns:
@@ -1018,52 +856,40 @@ button{
 }
 
 .links a{
-
   padding:9px;
 
   text-align:center;
 
   font-size:11px;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:9px;
 
-  background:
-    #0d3470;
+  background:#0d3470;
 
   transition:
     transform .22s ease,
     box-shadow .22s ease,
-    border-color .22s ease,
     background .22s ease;
 }
 
 .links a:hover{
-
   transform:
     translateY(-3px)
     scale(1.04);
 
-  border-color:
-    rgba(244,217,137,.8);
-
   background:#1552a0;
 
   box-shadow:
-    0 0 14px
-    rgba(42,117,230,.36);
+    0 0 14px rgba(42,117,230,.36);
 }
-
 
 /* =========================================================
    API STATUS
    ========================================================= */
 
 .api-status{
-
   display:flex;
 
   gap:7px;
@@ -1072,7 +898,6 @@ button{
 }
 
 .dot{
-
   width:9px;
   height:9px;
 
@@ -1081,30 +906,24 @@ button{
   background:#f0b541;
 
   box-shadow:
-    0 0 8px
-    #f0b541;
+    0 0 8px #f0b541;
 }
 
 .dot.live{
-
   background:#45d17b;
 
   box-shadow:
-    0 0 8px
-    #45d17b;
+    0 0 8px #45d17b;
 }
 
 .dot.error{
-
   background:#ff5d5d;
 
   box-shadow:
-    0 0 8px
-    #ff5d5d;
+    0 0 8px #ff5d5d;
 }
 
 .note{
-
   color:var(--muted);
 
   font-size:10px;
@@ -1112,14 +931,14 @@ button{
   line-height:1.5;
 }
 
-
 /* =========================================================
-   BOARDS
+   MEMBER / TITLED BOARD BASE
    ========================================================= */
 
 .board{
-
   position:relative;
+
+  width:100%;
 
   margin:
     8px
@@ -1127,16 +946,13 @@ button{
 
   overflow:hidden;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:17px;
 
   background:transparent;
 
-  box-shadow:
-    var(--shadow);
+  box-shadow:var(--shadow);
 
   transition:
     transform .22s ease,
@@ -1144,37 +960,32 @@ button{
 }
 
 .board:hover{
-
   transform:
     translateY(-3px)
     scale(1.008);
 
   box-shadow:
-    0 0 14px
-    rgba(216,172,71,.20),
-
-    0 18px 40px
-    rgba(0,0,0,.45);
+    0 0 14px rgba(216,172,71,.20),
+    0 18px 40px rgba(0,0,0,.45);
 }
 
 .board > img{
-
   display:block;
 
   width:100%;
-
   height:auto;
+
+  margin:0;
 
   background:transparent;
 }
 
-
 /* =========================================================
-   NEW MEMBERS
+   NEW MEMBERS BOARD
+   DO NOT CHANGE THESE OFFSETS
    ========================================================= */
 
 .member-slots{
-
   position:absolute;
 
   left:18%;
@@ -1192,7 +1003,6 @@ button{
 }
 
 .member{
-
   display:flex;
 
   align-items:center;
@@ -1213,7 +1023,6 @@ button{
 }
 
 .member:hover{
-
   transform:
     translateX(5px)
     scale(1.035);
@@ -1226,7 +1035,6 @@ button{
 }
 
 .member img{
-
   width:36px;
   height:36px;
 
@@ -1235,17 +1043,25 @@ button{
   object-fit:cover;
 
   border:
-    2px solid
-    #164b8f;
+    2px solid #164b8f;
 
   border-radius:50%;
 
-  background:
-    #d8e4f4;
+  background:#d8e4f4;
+
+  transition:
+    transform .22s ease,
+    box-shadow .22s ease;
+}
+
+.member:hover img{
+  transform:scale(1.06);
+
+  box-shadow:
+    0 0 11px rgba(25,88,185,.55);
 }
 
 .member strong{
-
   display:block;
 
   max-width:210px;
@@ -1260,7 +1076,6 @@ button{
 }
 
 .member small{
-
   display:block;
 
   margin-top:2px;
@@ -1270,13 +1085,11 @@ button{
   font-size:10px;
 }
 
-
 /* =========================================================
-   TITLED PLAYERS
+   TITLED PLAYERS BOARD
    ========================================================= */
 
 .titled-slots{
-
   position:absolute;
 
   left:22%;
@@ -1294,7 +1107,6 @@ button{
 }
 
 .titled-member{
-
   display:flex;
 
   align-items:center;
@@ -1313,14 +1125,12 @@ button{
 }
 
 .titled-member:hover{
-
   transform:
     translateX(5px)
     scale(1.04);
 }
 
 .titled-member img{
-
   width:42px;
   height:42px;
 
@@ -1329,8 +1139,7 @@ button{
   object-fit:cover;
 
   border:
-    2px solid
-    #c2942a;
+    2px solid #c2942a;
 
   border-radius:50%;
 
@@ -1338,7 +1147,6 @@ button{
 }
 
 .badge{
-
   display:inline-block;
 
   margin-left:4px;
@@ -1356,13 +1164,11 @@ button{
   background:#b9861d;
 }
 
-
 /* =========================================================
    TOURNAMENTS
    ========================================================= */
 
 .countdown{
-
   padding:
     10px
     0;
@@ -1381,7 +1187,6 @@ button{
 }
 
 .status{
-
   display:inline-block;
 
   padding:
@@ -1398,7 +1203,6 @@ button{
 }
 
 .tournament-buttons{
-
   display:grid;
 
   gap:8px;
@@ -1407,7 +1211,6 @@ button{
 }
 
 .tournament-button{
-
   position:relative;
 
   display:block;
@@ -1426,9 +1229,7 @@ button{
 
   font-size:12px;
 
-  border:
-    1px solid
-    var(--ring);
+  border:1px solid var(--ring);
 
   border-radius:10px;
 
@@ -1440,8 +1241,7 @@ button{
     );
 
   box-shadow:
-    0 0 14px
-    rgba(38,102,199,.22);
+    0 0 14px rgba(38,102,199,.22);
 
   transition:
     transform .22s ease,
@@ -1449,21 +1249,16 @@ button{
 }
 
 .tournament-button:hover{
-
   transform:
     translateY(-4px)
     scale(1.035);
 
   box-shadow:
-    0 0 15px
-    rgba(216,172,71,.26),
-
-    0 0 25px
-    rgba(42,119,234,.38);
+    0 0 15px rgba(216,172,71,.26),
+    0 0 25px rgba(42,119,234,.38);
 }
 
 .tournament-button::after{
-
   content:"";
 
   position:absolute;
@@ -1474,8 +1269,7 @@ button{
   width:45%;
   height:160%;
 
-  transform:
-    rotate(18deg);
+  transform:rotate(18deg);
 
   background:
     linear-gradient(
@@ -1486,36 +1280,25 @@ button{
     );
 
   animation:
-    buttonShimmer
-    4.5s
-    ease-in-out
-    infinite;
+    buttonShimmer 4.5s ease-in-out infinite;
 }
 
 @keyframes buttonShimmer{
-
   0%,
   70%{
-
     left:-60%;
-
   }
 
   100%{
-
     left:130%;
-
   }
-
 }
-
 
 /* =========================================================
    PODIUM
    ========================================================= */
 
 .podium-stage{
-
   position:relative;
 
   margin-top:12px;
@@ -1524,11 +1307,9 @@ button{
 }
 
 .podium-art{
-
   display:block;
 
   width:100%;
-
   height:auto;
 
   background:transparent;
@@ -1541,7 +1322,6 @@ button{
 }
 
 .podium-player{
-
   position:absolute;
 
   z-index:5;
@@ -1559,7 +1339,6 @@ button{
 }
 
 .podium-player:hover{
-
   transform:
     translateX(-50%)
     translateY(-6px)
@@ -1573,25 +1352,21 @@ button{
 }
 
 .podium-player.first{
-
   left:50%;
   top:0;
 }
 
 .podium-player.second{
-
   left:23%;
   top:31px;
 }
 
 .podium-player.third{
-
   left:77%;
   top:31px;
 }
 
 .podium-avatar{
-
   width:
     clamp(
       48px,
@@ -1609,8 +1384,7 @@ button{
   object-fit:cover;
 
   border:
-    3px solid
-    var(--gold2);
+    3px solid var(--gold2);
 
   border-radius:50%;
 
@@ -1622,7 +1396,6 @@ button{
 }
 
 .podium-rank{
-
   color:var(--gold2);
 
   font-size:10px;
@@ -1631,7 +1404,6 @@ button{
 }
 
 .podium-name{
-
   overflow:hidden;
 
   color:#fff;
@@ -1646,19 +1418,16 @@ button{
 }
 
 .podium-info{
-
   color:var(--gold2);
 
   font-size:8px;
 }
-
 
 /* =========================================================
    STAFF
    ========================================================= */
 
 .staff-grid{
-
   display:grid;
 
   grid-template-columns:
@@ -1668,14 +1437,12 @@ button{
 }
 
 .staff-person{
-
   padding:10px;
 
   text-align:center;
 
   border:
-    1px solid
-    rgba(255,255,255,.08);
+    1px solid rgba(255,255,255,.08);
 
   border-radius:12px;
 
@@ -1688,21 +1455,16 @@ button{
 }
 
 .staff-person:hover{
-
   transform:
     translateY(-5px)
     scale(1.045);
 
   box-shadow:
-    0 0 16px
-    rgba(216,172,71,.26),
-
-    0 0 24px
-    rgba(32,101,208,.20);
+    0 0 16px rgba(216,172,71,.26),
+    0 0 24px rgba(32,101,208,.20);
 }
 
 .staff-avatar{
-
   display:block;
 
   width:54px;
@@ -1715,35 +1477,33 @@ button{
   object-fit:cover;
 
   border:
-    2px solid
-    var(--gold);
+    2px solid var(--gold);
 
   border-radius:50%;
 
   background:#0a2851;
+
+  box-shadow:
+    0 0 12px rgba(216,170,69,.32);
 }
 
 .staff-person strong{
-
   display:block;
 
   font-size:12px;
 }
 
 .staff-person small{
-
   color:var(--gold2);
 
   font-size:10px;
 }
-
 
 /* =========================================================
    FOOTER
    ========================================================= */
 
 .footer{
-
   padding:
     12px
     0
@@ -1756,7 +1516,6 @@ button{
   text-align:center;
 }
 
-
 /* =========================================================
    MOBILE
    ========================================================= */
@@ -1764,71 +1523,53 @@ button{
 @media(max-width:360px){
 
   .app{
-
     padding:4px;
   }
 
   .hero img{
-
     max-height:215px;
   }
 
   .digital-clock{
-
     font-size:27px;
   }
 
   .member img{
-
     width:31px;
     height:31px;
   }
 
   .member strong{
-
     font-size:12px;
   }
 
   .titled-member img{
-
     width:36px;
     height:36px;
   }
 
   .podium-name{
-
     font-size:9px;
   }
 
 }
-
 </style>
 </head>
-
 
 <body>
 
 <div id="fx"></div>
 
-
 <main class="app">
 
 <div class="frame">
-
-
-<!-- ======================================================
-     INTERNAL EMBERS
-     ====================================================== -->
 
 <div
   id="frameEmbers"
   class="frame-embers"
 ></div>
 
-
-<!-- ======================================================
-     HERO
-     ====================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
@@ -1851,10 +1592,7 @@ Every Player Belongs • Every Move Matters
 
 </section>
 
-
-<!-- ======================================================
-     CLOCK
-     ====================================================== -->
+<!-- CLOCK -->
 
 <section class="clock-card">
 
@@ -1878,57 +1616,28 @@ YOUR LOCAL TIME
 
 </section>
 
-
-<!-- ======================================================
-     STATS
-     ====================================================== -->
+<!-- STATS -->
 
 <section class="stats">
 
 <div class="stat">
-
-<b id="membersCount">
-—
-</b>
-
-<span>
-Members
-</span>
-
+  <b id="membersCount">—</b>
+  <span>Members</span>
 </div>
 
-
 <div class="stat">
-
-<b id="titledCount">
-—
-</b>
-
-<span>
-Titled
-</span>
-
+  <b id="titledCount">—</b>
+  <span>Titled</span>
 </div>
 
-
 <div class="stat">
-
-<b id="nextEvent">
-Oct 5
-</b>
-
-<span>
-Next Event
-</span>
-
+  <b id="nextEvent">Oct 5</b>
+  <span>Next Event</span>
 </div>
 
 </section>
 
-
-<!-- ======================================================
-     FIXED NAVIGATION
-     ====================================================== -->
+<!-- NAVIGATION -->
 
 <nav class="tabs">
 
@@ -1969,20 +1678,14 @@ Staff
 
 </nav>
 
-
-<!-- ======================================================
-     INTERNAL SCROLLABLE CONTENT
-     ====================================================== -->
+<!-- ONLY THIS AREA SCROLLS -->
 
 <div
   id="scrollContent"
   class="content"
 >
 
-
-<!-- ======================================================
-     HOME
-     ====================================================== -->
+<!-- HOME -->
 
 <section
   id="home"
@@ -2010,7 +1713,6 @@ No matter your rating or experience, there’s a place for you here. Play, grow,
 
 </article>
 
-
 <article class="card">
 
 <h2>
@@ -2028,7 +1730,6 @@ Registration is open through October 4.
 </div>
 
 </article>
-
 
 <article class="card">
 
@@ -2070,7 +1771,6 @@ Notes
 
 </article>
 
-
 <article class="card">
 
 <h2>
@@ -2101,10 +1801,7 @@ Loading public ACFA data.
 
 </section>
 
-
-<!-- ======================================================
-     MEMBERS
-     ====================================================== -->
+<!-- MEMBERS -->
 
 <section
   id="members"
@@ -2127,10 +1824,7 @@ Loading public ACFA data.
 
 </section>
 
-
-<!-- ======================================================
-     TITLED
-     ====================================================== -->
+<!-- TITLED -->
 
 <section
   id="titled"
@@ -2153,10 +1847,7 @@ Loading public ACFA data.
 
 </section>
 
-
-<!-- ======================================================
-     TOURNAMENTS
-     ====================================================== -->
+<!-- TOURNAMENT -->
 
 <section
   id="tourney"
@@ -2190,7 +1881,6 @@ Registration Open
 
 </article>
 
-
 <article class="card">
 
 <h2>
@@ -2198,7 +1888,6 @@ Champions Podium
 </h2>
 
 <div class="podium-stage">
-
 
 <div
   id="podiumSecond"
@@ -2225,7 +1914,6 @@ To Be Crowned
 
 </div>
 
-
 <div
   id="podiumFirst"
   class="podium-player first"
@@ -2250,7 +1938,6 @@ To Be Crowned
 </div>
 
 </div>
-
 
 <div
   id="podiumThird"
@@ -2277,7 +1964,6 @@ To Be Crowned
 
 </div>
 
-
 <img
   class="podium-art"
   src="assets/images/acfa-champions-podium.png"
@@ -2290,10 +1976,7 @@ To Be Crowned
 
 </section>
 
-
-<!-- ======================================================
-     STAFF
-     ====================================================== -->
+<!-- STAFF -->
 
 <section
   id="staff"
@@ -2315,7 +1998,6 @@ ACFA Staff
 
 </section>
 
-
 <div class="footer">
 And Chess For All Official
 </div>
@@ -2326,13 +2008,7 @@ And Chess For All Official
 
 </main>
 
-
 <script>
-
-/* =========================================================
-   CONFIG
-   ========================================================= */
-
 const API =
   "https://api.chess.com/pub";
 
@@ -2375,11 +2051,6 @@ const sleep =
         )
     );
 
-
-/* =========================================================
-   HELPERS
-   ========================================================= */
-
 function esc(
   value = ""
 ){
@@ -2402,7 +2073,6 @@ function esc(
 
 }
 
-
 function profileURL(
   username
 ){
@@ -2415,11 +2085,6 @@ function profileURL(
   );
 
 }
-
-
-/* =========================================================
-   GITHUB JSON
-   ========================================================= */
 
 async function getJSON(
   path,
@@ -2469,11 +2134,6 @@ async function getJSON(
 
 }
 
-
-/* =========================================================
-   CHESS.COM PUBLIC API
-   ========================================================= */
-
 async function chessFetch(
   path
 ){
@@ -2507,16 +2167,12 @@ async function chessFetch(
 
 }
 
-
-/* =========================================================
-   MEMBERS
-   ========================================================= */
-
 function parseClubMembers(
   data
 ){
 
-  const collection = [];
+  const collection =
+    [];
 
   [
     "weekly",
@@ -2539,7 +2195,6 @@ function parseClubMembers(
         :
 
         [];
-
 
       list.forEach(
         item => {
@@ -2590,10 +2245,8 @@ function parseClubMembers(
     }
   );
 
-
   const unique =
     new Map();
-
 
   collection.forEach(
     member => {
@@ -2602,12 +2255,10 @@ function parseClubMembers(
         member.username
         .toLowerCase();
 
-
       const existing =
         unique.get(
           key
         );
-
 
       if(
         !existing ||
@@ -2626,7 +2277,6 @@ function parseClubMembers(
     }
   );
 
-
   return (
 
     [...unique.values()]
@@ -2642,17 +2292,11 @@ function parseClubMembers(
 
 }
 
-
-/* =========================================================
-   RATINGS
-   ========================================================= */
-
 function bestRating(
   stats
 ){
 
   const ratings = [];
-
 
   [
     "chess_rapid",
@@ -2668,7 +2312,6 @@ function bestRating(
         ?.last
         ?.rating;
 
-
       if(
         Number.isFinite(
           rating
@@ -2683,7 +2326,6 @@ function bestRating(
 
     }
   );
-
 
   return (
 
@@ -2703,11 +2345,6 @@ function bestRating(
 
 }
 
-
-/* =========================================================
-   PLAYER DETAILS
-   ========================================================= */
-
 async function enrichPlayer(
   member
 ){
@@ -2725,11 +2362,8 @@ async function enrichPlayer(
 
     member.username;
 
-
   let profile = {};
-
   let stats = {};
-
 
   try{
 
@@ -2748,11 +2382,9 @@ async function enrichPlayer(
 
   catch{}
 
-
   await sleep(
     250
   );
-
 
   try{
 
@@ -2773,7 +2405,6 @@ async function enrichPlayer(
 
   catch{}
 
-
   return {
 
     username,
@@ -2788,9 +2419,19 @@ async function enrichPlayer(
 
       profile.title ||
 
-      member.title ||
+      (
+        typeof member ===
+        "object"
 
-      "",
+        ?
+
+        member.title ||
+        ""
+
+        :
+
+        ""
+      ),
 
     rating:
 
@@ -2802,11 +2443,6 @@ async function enrichPlayer(
 
 }
 
-
-/* =========================================================
-   LOAD CHESS.COM DATA
-   ========================================================= */
-
 async function loadChessComData(){
 
   const dot =
@@ -2814,21 +2450,17 @@ async function loadChessComData(){
       "apiDot"
     );
 
-
   const status =
     document.getElementById(
       "apiStatus"
     );
-
 
   const details =
     document.getElementById(
       "apiDetails"
     );
 
-
   try{
-
 
     const club =
       await chessFetch(
@@ -2838,11 +2470,9 @@ async function loadChessComData(){
 
       );
 
-
     await sleep(
       300
     );
-
 
     const memberData =
       await chessFetch(
@@ -2853,12 +2483,10 @@ async function loadChessComData(){
 
       );
 
-
     const members =
       parseClubMembers(
         memberData
       );
-
 
     document
     .getElementById(
@@ -2870,25 +2498,19 @@ async function loadChessComData(){
 
       members.length;
 
-
-    /* NEWEST MEMBERS */
-
     const newest =
       members.slice(
         0,
         5
       );
 
-
     const memberBox =
       document.getElementById(
         "memberSlots"
       );
 
-
     memberBox.innerHTML =
       "";
-
 
     for(
       const member
@@ -2900,16 +2522,13 @@ async function loadChessComData(){
           member
         );
 
-
       const row =
         document.createElement(
           "div"
         );
 
-
       row.className =
         "member";
-
 
       row.innerHTML = `
 
@@ -2925,13 +2544,18 @@ async function loadChessComData(){
           </strong>
 
           <small>
-            ${player.rating || "ACFA member"}
+            ${
+              player.rating
+              ?
+              player.rating + " rating"
+              :
+              "ACFA member"
+            }
           </small>
 
         </div>
 
       `;
-
 
       row.onclick =
         () =>
@@ -2945,11 +2569,9 @@ async function loadChessComData(){
 
           );
 
-
       memberBox.appendChild(
         row
       );
-
 
       await sleep(
         200
@@ -2957,29 +2579,24 @@ async function loadChessComData(){
 
     }
 
-
-    /* TITLED PLAYERS */
-
     const memberMap =
       new Map(
 
         members.map(
-          m => [
+          member => [
 
-            m.username
+            member.username
             .toLowerCase(),
 
-            m
+            member
 
           ]
         )
 
       );
 
-
     const titledFound =
       [];
-
 
     for(
       const title
@@ -2995,7 +2612,6 @@ async function loadChessComData(){
 
       }
 
-
       try{
 
         const data =
@@ -3005,7 +2621,6 @@ async function loadChessComData(){
             title
 
           );
-
 
         for(
           const username
@@ -3020,14 +2635,13 @@ async function loadChessComData(){
 
             );
 
-
           if(
             member &&
 
             !titledFound.some(
 
-              x =>
-                x.username
+              item =>
+                item.username
                 .toLowerCase()
                 ===
                 username
@@ -3046,7 +2660,6 @@ async function loadChessComData(){
 
             });
 
-
             if(
               titledFound.length >=
               2
@@ -3064,23 +2677,19 @@ async function loadChessComData(){
 
       catch{}
 
-
       await sleep(
         200
       );
 
     }
 
-
     const titledBox =
       document.getElementById(
         "titledSlots"
       );
 
-
     titledBox.innerHTML =
       "";
-
 
     for(
       const member
@@ -3092,16 +2701,13 @@ async function loadChessComData(){
           member
         );
 
-
       const row =
         document.createElement(
           "div"
         );
 
-
       row.className =
         "titled-member";
-
 
       row.innerHTML = `
 
@@ -3117,23 +2723,24 @@ async function loadChessComData(){
             ${esc(player.username)}
 
             <span class="badge">
-
               ${esc(player.title)}
-
             </span>
 
           </strong>
 
           <small>
-
-            ${player.rating || "Titled Player"}
-
+            ${
+              player.rating
+              ?
+              player.rating + " rating"
+              :
+              "Titled Player"
+            }
           </small>
 
         </div>
 
       `;
-
 
       row.onclick =
         () =>
@@ -3147,13 +2754,11 @@ async function loadChessComData(){
 
           );
 
-
       titledBox.appendChild(
         row
       );
 
     }
-
 
     document
     .getElementById(
@@ -3162,15 +2767,12 @@ async function loadChessComData(){
     .textContent =
       titledFound.length;
 
-
     dot.classList.add(
       "live"
     );
 
-
     status.textContent =
       "Chess.com PubAPI Connected";
-
 
     details.textContent =
       "Live ACFA public data loaded.";
@@ -3179,15 +2781,12 @@ async function loadChessComData(){
 
   catch(error){
 
-
     dot.classList.add(
       "error"
     );
 
-
     status.textContent =
       "Chess.com PubAPI Error";
-
 
     details.textContent =
       error.message;
@@ -3195,11 +2794,6 @@ async function loadChessComData(){
   }
 
 }
-
-
-/* =========================================================
-   TOURNAMENT BUTTONS
-   ========================================================= */
 
 async function loadTournamentButtons(){
 
@@ -3212,16 +2806,13 @@ async function loadTournamentButtons(){
 
     );
 
-
   const container =
     document.getElementById(
       "tournamentButtons"
     );
 
-
   container.innerHTML =
     "";
-
 
   tournaments
   .filter(
@@ -3234,28 +2825,22 @@ async function loadTournamentButtons(){
   .forEach(
     tournament => {
 
-
       const button =
         document.createElement(
           "a"
         );
 
-
       button.className =
         "tournament-button";
-
 
       button.href =
         tournament.url;
 
-
       button.target =
         "_blank";
 
-
       button.rel =
         "noopener noreferrer";
-
 
       button.textContent =
 
@@ -3265,7 +2850,6 @@ async function loadTournamentButtons(){
 
         "Open Tournament";
 
-
       container.appendChild(
         button
       );
@@ -3274,11 +2858,6 @@ async function loadTournamentButtons(){
   );
 
 }
-
-
-/* =========================================================
-   STAFF
-   ========================================================= */
 
 async function loadStaff(){
 
@@ -3291,16 +2870,13 @@ async function loadStaff(){
 
     );
 
-
   const container =
     document.getElementById(
       "staffGrid"
     );
 
-
   container.innerHTML =
     "";
-
 
   staff.sort(
 
@@ -3309,7 +2885,6 @@ async function loadStaff(){
       (b.order || 999)
 
   );
-
 
   for(
     const member
@@ -3321,30 +2896,24 @@ async function loadStaff(){
         member
       );
 
-
     const card =
       document.createElement(
         "a"
       );
 
-
     card.className =
       "staff-person";
-
 
     card.href =
       profileURL(
         member.username
       );
 
-
     card.target =
       "_blank";
 
-
     card.rel =
       "noopener noreferrer";
-
 
     card.innerHTML = `
 
@@ -3355,24 +2924,18 @@ async function loadStaff(){
       >
 
       <strong>
-
         ${esc(member.username)}
-
       </strong>
 
       <small>
-
         ${esc(member.role)}
-
       </small>
 
     `;
 
-
     container.appendChild(
       card
     );
-
 
     await sleep(
       200
@@ -3382,11 +2945,6 @@ async function loadStaff(){
 
 }
 
-
-/* =========================================================
-   CHAMPIONS
-   ========================================================= */
-
 async function loadChampions(){
 
   const champions =
@@ -3395,24 +2953,18 @@ async function loadChampions(){
       "generated/champions.json",
 
       {
-
         first:"",
-
         second:"",
-
         third:""
-
       }
 
     );
-
 
   const data =
 
     champions["fall-2026"] ||
 
     champions;
-
 
   await populatePodium(
 
@@ -3424,7 +2976,6 @@ async function loadChampions(){
 
   );
 
-
   await populatePodium(
 
     "podiumSecond",
@@ -3434,7 +2985,6 @@ async function loadChampions(){
     "2ND PLACE"
 
   );
-
 
   await populatePodium(
 
@@ -3447,7 +2997,6 @@ async function loadChampions(){
   );
 
 }
-
 
 async function populatePodium(
   id,
@@ -3463,7 +3012,6 @@ async function populatePodium(
 
   }
 
-
   const player =
     await enrichPlayer({
 
@@ -3471,12 +3019,10 @@ async function populatePodium(
 
     });
 
-
   const element =
     document.getElementById(
       id
     );
-
 
   element
   .querySelector(
@@ -3485,14 +3031,12 @@ async function populatePodium(
   .src =
     player.avatar;
 
-
   element
   .querySelector(
     ".podium-rank"
   )
   .textContent =
     rank;
-
 
   element
   .querySelector(
@@ -3501,7 +3045,6 @@ async function populatePodium(
   .textContent =
     player.username;
 
-
   element
   .querySelector(
     ".podium-info"
@@ -3509,11 +3052,8 @@ async function populatePodium(
   .textContent =
 
     [
-
       player.title,
-
       player.rating
-
     ]
 
     .filter(
@@ -3526,16 +3066,10 @@ async function populatePodium(
 
 }
 
-
-/* =========================================================
-   CLOCK
-   ========================================================= */
-
 function updateClock(){
 
   const now =
     new Date();
-
 
   document
   .getElementById(
@@ -3549,23 +3083,13 @@ function updateClock(){
       [],
 
       {
-
-        hour:
-          "2-digit",
-
-        minute:
-          "2-digit",
-
-        second:
-          "2-digit",
-
-        hour12:
-          true
-
+        hour:"2-digit",
+        minute:"2-digit",
+        second:"2-digit",
+        hour12:true
       }
 
     );
-
 
   document
   .getElementById(
@@ -3579,47 +3103,30 @@ function updateClock(){
       [],
 
       {
-
-        weekday:
-          "short",
-
-        month:
-          "short",
-
-        day:
-          "numeric",
-
-        year:
-          "numeric"
-
+        weekday:"short",
+        month:"short",
+        day:"numeric",
+        year:"numeric"
       }
 
     );
 
 }
 
-
-/* =========================================================
-   TOURNAMENT COUNTDOWN
-   ========================================================= */
-
 function updateTournament(){
 
   const now =
     new Date();
-
 
   const status =
     document.getElementById(
       "tourneyStatus"
     );
 
-
   const output =
     document.getElementById(
       "countdown"
     );
-
 
   if(
     now >=
@@ -3629,15 +3136,12 @@ function updateTournament(){
     status.textContent =
       "Tournament Started";
 
-
     output.textContent =
       "LIVE / STARTED";
-
 
     return;
 
   }
-
 
   status.textContent =
 
@@ -3652,11 +3156,9 @@ function updateTournament(){
 
     "Registration Closed";
 
-
   let diff =
     FALL_START -
     now;
-
 
   const days =
     Math.floor(
@@ -3664,10 +3166,8 @@ function updateTournament(){
       86400000
     );
 
-
   diff %=
     86400000;
-
 
   const hours =
     Math.floor(
@@ -3675,10 +3175,8 @@ function updateTournament(){
       3600000
     );
 
-
   diff %=
     3600000;
-
 
   const minutes =
     Math.floor(
@@ -3686,10 +3184,8 @@ function updateTournament(){
       60000
     );
 
-
   diff %=
     60000;
-
 
   const seconds =
     Math.floor(
@@ -3697,16 +3193,14 @@ function updateTournament(){
       1000
     );
 
-
   output.textContent =
 
     `${days}d ${hours}h ${minutes}m ${seconds}s`;
 
 }
 
-
 /* =========================================================
-   NAVIGATION
+   TAB NAVIGATION
    ========================================================= */
 
 document
@@ -3716,11 +3210,9 @@ document
 .forEach(
   button => {
 
-
     button.addEventListener(
       "click",
       () => {
-
 
         document
         .querySelectorAll(
@@ -3735,7 +3227,6 @@ document
             )
         );
 
-
         document
         .querySelectorAll(
           ".panel"
@@ -3749,13 +3240,11 @@ document
             )
         );
 
-
         button
         .classList
         .add(
           "active"
         );
-
 
         document
         .getElementById(
@@ -3766,23 +3255,13 @@ document
           "active"
         );
 
-
-        /*
-          When switching pages,
-          return internal sidebar
-          scroll to the top.
-        */
-
         document
         .getElementById(
           "scrollContent"
         )
         .scrollTo({
-
           top:0,
-
           behavior:"smooth"
-
         });
 
       }
@@ -3791,9 +3270,8 @@ document
   }
 );
 
-
 /* =========================================================
-   BACKGROUND PARTICLES
+   OUTER PARTICLES
    ========================================================= */
 
 for(
@@ -3807,39 +3285,28 @@ for(
       "i"
     );
 
-
   spark.className =
     "spark";
-
 
   spark.style.left =
     Math.random() *
     100 +
     "%";
 
-
   spark.style.animationDuration =
-
     (
       8 +
       Math.random() *
       12
-    )
-
-    +
+    ) +
     "s";
 
-
   spark.style.animationDelay =
-
     (
       -Math.random() *
       15
-    )
-
-    +
+    ) +
     "s";
-
 
   document
   .getElementById(
@@ -3851,16 +3318,14 @@ for(
 
 }
 
-
 /* =========================================================
-   INTERNAL EMBERS
+   SIDEBAR EMBERS
    ========================================================= */
 
 const frameEmbers =
   document.getElementById(
     "frameEmbers"
   );
-
 
 for(
   let i = 0;
@@ -3873,70 +3338,50 @@ for(
       "i"
     );
 
-
   ember.className =
     "frame-ember";
-
 
   ember.style.left =
     Math.random() *
     100 +
     "%";
 
-
   ember.style.animationDuration =
-
     (
       7 +
       Math.random() *
       10
-    )
-
-    +
+    ) +
     "s";
 
-
   ember.style.animationDelay =
-
     (
       -Math.random() *
       15
-    )
-
-    +
+    ) +
     "s";
 
-
   ember.style.opacity =
-
     .25 +
-
     Math.random() *
     .6;
 
-
   ember.style.width =
-
     (
       2 +
       Math.random() *
       3
-    )
-
-    +
+    ) +
     "px";
-
 
   ember.style.height =
     ember.style.width;
-
 
   frameEmbers.appendChild(
     ember
   );
 
 }
-
 
 /* =========================================================
    START
@@ -3946,24 +3391,15 @@ updateClock();
 
 updateTournament();
 
-
 setInterval(
-
   updateClock,
-
   250
-
 );
-
 
 setInterval(
-
   updateTournament,
-
   1000
-
 );
-
 
 loadChessComData();
 
