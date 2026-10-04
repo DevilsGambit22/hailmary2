@@ -681,34 +681,177 @@ button{
 }
 
 /* =========================================================
-   API STATUS
+   PARTNER CLUBS
    ========================================================= */
 
-.api-status{
+.partner-card{
+  overflow:hidden;
+}
+
+.partner-heading{
   display:flex;
-  gap:7px;
   align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:9px;
 }
 
-.dot{
-  width:9px;
-  height:9px;
-  border-radius:50%;
-  background:#f0b541;
+.partner-heading h2{
+  margin:0;
 }
 
-.dot.live{
-  background:#45d17b;
-}
-
-.dot.error{
-  background:#ff5d5d;
-}
-
-.note{
+.partner-subtitle{
+  margin-top:2px;
   color:var(--muted);
-  font-size:10px;
-  line-height:1.5;
+  font-size:9px;
+}
+
+.partner-status{
+  flex:0 0 auto;
+  padding:4px 7px;
+  color:var(--gold2);
+  font-size:7px;
+  font-weight:800;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  border:1px solid var(--ring);
+  border-radius:999px;
+  background:#071b38;
+}
+
+.partner-window{
+  position:relative;
+  height:190px;
+  overflow:hidden;
+  border:1px solid rgba(216,172,71,.24);
+  border-radius:12px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(4,14,29,.92),
+      rgba(8,28,57,.82)
+    );
+}
+
+.partner-window::before,
+.partner-window::after{
+  content:"";
+  position:absolute;
+  z-index:5;
+  left:0;
+  right:0;
+  height:25px;
+  pointer-events:none;
+}
+
+.partner-window::before{
+  top:0;
+  background:
+    linear-gradient(
+      180deg,
+      #061326,
+      transparent
+    );
+}
+
+.partner-window::after{
+  bottom:0;
+  background:
+    linear-gradient(
+      0deg,
+      #061326,
+      transparent
+    );
+}
+
+.partner-track{
+  display:flex;
+  flex-direction:column;
+  gap:7px;
+  padding:8px;
+  animation:partnerScroll 20s linear infinite;
+}
+
+.partner-window:hover .partner-track{
+  animation-play-state:paused;
+}
+
+@keyframes partnerScroll{
+  0%{
+    transform:translateY(0);
+  }
+
+  100%{
+    transform:translateY(-50%);
+  }
+}
+
+.partner-club{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-height:54px;
+  flex:0 0 54px;
+  padding:6px 8px;
+  border:1px solid rgba(216,172,71,.28);
+  border-radius:10px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(13,52,112,.82),
+      rgba(6,26,55,.94)
+    );
+  transition:
+    transform .2s ease,
+    border-color .2s ease,
+    box-shadow .2s ease;
+}
+
+.partner-club:hover{
+  transform:
+    translateX(3px)
+    scale(1.01);
+  border-color:rgba(244,217,137,.68);
+  box-shadow:
+    0 0 12px rgba(35,102,205,.25);
+}
+
+.partner-logo{
+  width:40px;
+  height:40px;
+  flex:0 0 40px;
+  object-fit:cover;
+  border:2px solid var(--gold);
+  border-radius:50%;
+  background:#071b38;
+}
+
+.partner-info{
+  min-width:0;
+  flex:1;
+}
+
+.partner-name{
+  display:block;
+  overflow:hidden;
+  color:#fff;
+  font-size:11px;
+  font-weight:800;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.partner-info small{
+  display:block;
+  margin-top:2px;
+  color:var(--gold2);
+  font-size:8px;
+}
+
+.partner-arrow{
+  flex:0 0 auto;
+  color:var(--gold2);
+  font-size:17px;
 }
 
 /* =========================================================
@@ -840,8 +983,7 @@ button{
   border:2px solid #164b8f;
   border-radius:50%;
   background:#d8e4f4;
-  box-shadow:
-    0 0 6px rgba(22,75,143,.40);
+  box-shadow:0 0 6px rgba(22,75,143,.40);
 }
 
 .member > div{
@@ -937,8 +1079,7 @@ button{
   border:2px solid #b98925;
   border-radius:50%;
   background:#e9eef7;
-  box-shadow:
-    0 0 7px rgba(194,148,42,.45);
+  box-shadow:0 0 7px rgba(194,148,42,.45);
 }
 
 .titled-member > div{
@@ -1228,6 +1369,10 @@ button{
   .badge{
     font-size:6px;
   }
+
+  .partner-window{
+    height:180px;
+  }
 }
 </style>
 </head>
@@ -1385,10 +1530,7 @@ No matter your rating or experience, there’s a place for you here. Play, grow,
 
 <div class="discord-icon">
 
-<svg
-  viewBox="0 0 24 24"
-  aria-hidden="true"
->
+<svg viewBox="0 0 24 24" aria-hidden="true">
 <path d="M19.54 5.34A16.3 16.3 0 0 0 15.5 4.1l-.5 1.03a14.7 14.7 0 0 0-6 0L8.5 4.1a16.4 16.4 0 0 0-4.05 1.25C1.9 9.1 1.2 12.76 1.55 16.36a16.2 16.2 0 0 0 4.96 2.52l1.19-1.63a10.7 10.7 0 0 1-1.86-.9l.46-.36a11.8 11.8 0 0 0 11.4 0l.47.36c-.6.35-1.22.65-1.87.9l1.2 1.63a16.1 16.1 0 0 0 4.96-2.52c.41-4.17-.72-7.8-3.02-11.02ZM8.68 14.44c-1.22 0-2.22-1.12-2.22-2.5s.98-2.5 2.22-2.5c1.25 0 2.25 1.13 2.22 2.5 0 1.38-.98 2.5-2.22 2.5Zm6.64 0c-1.22 0-2.22-1.12-2.22-2.5s.98-2.5 2.22-2.5c1.25 0 2.25 1.13 2.22 2.5 0 1.38-.97 2.5-2.22 2.5Z"/>
 </svg>
 
@@ -1419,10 +1561,7 @@ Discord gives ACFA members a place to communicate in real time. Discuss games, s
   rel="noopener noreferrer"
 >
 
-<svg
-  viewBox="0 0 24 24"
-  aria-hidden="true"
->
+<svg viewBox="0 0 24 24" aria-hidden="true">
 <path d="M19.54 5.34A16.3 16.3 0 0 0 15.5 4.1l-.5 1.03a14.7 14.7 0 0 0-6 0L8.5 4.1a16.4 16.4 0 0 0-4.05 1.25C1.9 9.1 1.2 12.76 1.55 16.36a16.2 16.2 0 0 0 4.96 2.52l1.19-1.63a10.7 10.7 0 0 1-1.86-.9l.46-.36a11.8 11.8 0 0 0 11.4 0l.47.36c-.6.35-1.22.65-1.87.9l1.2 1.63a16.1 16.1 0 0 0 4.96-2.52c.41-4.17-.72-7.8-3.02-11.02ZM8.68 14.44c-1.22 0-2.22-1.12-2.22-2.5s.98-2.5 2.22-2.5c1.25 0 2.25 1.13 2.22 2.5 0 1.38-.98 2.5-2.22 2.5Zm6.64 0c-1.22 0-2.22-1.12-2.22-2.5s.98-2.5 2.22-2.5c1.25 0 2.25 1.13 2.22 2.5 0 1.38-.97 2.5-2.22 2.5Z"/>
 </svg>
 
@@ -1503,33 +1642,41 @@ Notes
 </article>
 
 <!-- ======================================================
-     API STATUS
+     PARTNER CLUBS
      ====================================================== -->
 
-<article class="card">
+<article class="card partner-card">
+
+<div class="partner-heading">
+
+<div>
 
 <h2>
-Chess.com PubAPI
+Partner Clubs
 </h2>
 
-<div class="api-status">
-
-<span
-  id="apiDot"
-  class="dot"
-></span>
-
-<strong id="apiStatus">
-Connecting…
-</strong>
+<div class="partner-subtitle">
+Friends &amp; allies across the 64 squares
+</div>
 
 </div>
 
-<div
-  id="apiDetails"
-  class="note"
+<span
+  id="partnerStatus"
+  class="partner-status"
 >
-Loading public ACFA data.
+Loading…
+</span>
+
+</div>
+
+<div class="partner-window">
+
+<div
+  id="partnerTrack"
+  class="partner-track"
+></div>
+
 </div>
 
 </article>
@@ -1766,6 +1913,35 @@ const CLUB_URL =
 
 const FALLBACK_AVATAR =
   "assets/icons/logo.svg";
+
+const PARTNER_CLUBS = [
+
+  {
+    slug:"bgeerrs-hang-out",
+    fallbackName:"Bgeerr's Hang Out"
+  },
+
+  {
+    slug:"dust-kickers",
+    fallbackName:"Dust Kickers"
+  },
+
+  {
+    slug:"the-backrank-bandits",
+    fallbackName:"The Backrank Bandits"
+  },
+
+  {
+    slug:"panhandle-tumbleweed",
+    fallbackName:"Panhandle Tumbleweed"
+  },
+
+  {
+    slug:"panhandle-gunslingers",
+    fallbackName:"Panhandle Gunslingers"
+  }
+
+];
 
 const FALL_START =
   new Date(
@@ -2127,21 +2303,6 @@ async function enrichPlayer(member){
 
 async function loadChessComData(){
 
-  const dot =
-    document.getElementById(
-      "apiDot"
-    );
-
-  const status =
-    document.getElementById(
-      "apiStatus"
-    );
-
-  const details =
-    document.getElementById(
-      "apiDetails"
-    );
-
   try{
 
     const club =
@@ -2413,31 +2574,183 @@ async function loadChessComData(){
     .textContent =
       titledFound.length;
 
-    dot.classList.add(
-      "live"
-    );
-
-    status.textContent =
-      "Chess.com PubAPI Connected";
-
-    details.textContent =
-      "Live ACFA public data loaded.";
-
   }
 
   catch(error){
 
-    dot.classList.add(
-      "error"
+    console.error(
+      "ACFA PubAPI:",
+      error
     );
 
-    status.textContent =
-      "Chess.com PubAPI Error";
+  }
 
-    details.textContent =
-      error.message;
+}
+
+/* =========================================================
+   PARTNER CLUBS
+   ========================================================= */
+
+async function loadPartnerClubs(){
+
+  const track =
+    document.getElementById(
+      "partnerTrack"
+    );
+
+  const status =
+    document.getElementById(
+      "partnerStatus"
+    );
+
+  if(
+    !track ||
+    !status
+  ){
+    return;
+  }
+
+  track.innerHTML = "";
+
+  const clubs = [];
+
+  for(
+    const partner
+    of PARTNER_CLUBS
+  ){
+
+    try{
+
+      const data =
+        await chessFetch(
+          "/club/" +
+          partner.slug
+        );
+
+      clubs.push({
+
+        name:
+          data.name ||
+          partner.fallbackName,
+
+        icon:
+          data.icon ||
+          FALLBACK_AVATAR,
+
+        url:
+          data.url ||
+          (
+            "https://www.chess.com/club/" +
+            partner.slug
+          )
+
+      });
+
+    }
+
+    catch(error){
+
+      console.warn(
+        "Partner PubAPI:",
+        partner.slug,
+        error
+      );
+
+      clubs.push({
+
+        name:
+          partner.fallbackName,
+
+        icon:
+          FALLBACK_AVATAR,
+
+        url:
+          "https://www.chess.com/club/" +
+          partner.slug
+
+      });
+
+    }
+
+    await sleep(
+      100
+    );
 
   }
+
+  function createPartner(club){
+
+    const link =
+      document.createElement(
+        "a"
+      );
+
+    link.className =
+      "partner-club";
+
+    link.href =
+      club.url;
+
+    link.target =
+      "_blank";
+
+    link.rel =
+      "noopener noreferrer";
+
+    link.innerHTML = `
+
+      <img
+        class="partner-logo"
+        src="${esc(club.icon)}"
+        alt="${esc(club.name)}"
+      >
+
+      <div class="partner-info">
+
+        <strong class="partner-name">
+          ${esc(club.name)}
+        </strong>
+
+        <small>
+          ACFA Partner Club
+        </small>
+
+      </div>
+
+      <span class="partner-arrow">
+        ›
+      </span>
+
+    `;
+
+    return link;
+
+  }
+
+  /*
+    Duplicate the set so the vertical
+    animation can loop continuously.
+  */
+
+  [
+    ...clubs,
+    ...clubs
+  ]
+  .forEach(
+    club => {
+
+      track.appendChild(
+        createPartner(
+          club
+        )
+      );
+
+    }
+  );
+
+  status.textContent =
+    clubs.length +
+    " Partners";
 
 }
 
@@ -3116,6 +3429,8 @@ setInterval(
 );
 
 loadChessComData();
+
+loadPartnerClubs();
 
 loadTournamentButtons();
 
